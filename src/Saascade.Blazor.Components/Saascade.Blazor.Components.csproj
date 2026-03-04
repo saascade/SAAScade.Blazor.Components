@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="AlternativeTags\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

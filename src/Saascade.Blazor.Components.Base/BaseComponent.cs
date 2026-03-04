@@ -1,56 +1,69 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Humanizer;
+using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Saascade.Blazor.Components.Base;
 
 public abstract class BaseComponent : ComponentBase
 {
-    [CascadingParameter(Name = "Parent")] internal virtual BaseComponent? Parent { get; set; }
+    [CascadingParameter(Name = "Parent")] public virtual BaseComponent? Parent { get; set; }
 
     [Parameter] public virtual string Id { get; set; }
     [Parameter] public virtual string Name { get; set; }
     [Parameter] public virtual string Class { get; set; }
+    [Parameter] public virtual string Style { get; set; }
     [Parameter] public virtual string Tooltip { get; set; }
     [Parameter] public virtual string AriaLabel { get; set; }
     [Parameter] public virtual string AriaLabelledby { get; set; }
+    [Parameter] public virtual string AriaRole { get; set; }
 
-    protected string _initialClassesAsText = "NOT SET";
+//    [Parameter] public virtual Dictionary<string, string> Data { get; set; } = [];
 
-    //TODO: can't do this yet: [Inject(optional = true)] protected ICssNamingConventions? CssNamingConvention { get; set; }
+    protected string componentLibraryCssClasses = "NOT SET";
+
+    //TODO: can't do this yet: [Inject(optional = true)] protected IComponentLibrary? CssNamingConvention { get; set; }
     //So need to use IServiceProvider directly for now as a workaround
-    [Inject] private IServiceProvider _serviceProvider { get; set; }
+    [Inject] private IServiceProvider serviceProvider { get; set; }
 
 
     protected override Task OnParametersSetAsync()
     {
-        var initialClasses = GetInitialCssClasses();
-        _initialClassesAsText = string.Join(' ', initialClasses.Distinct());
+        componentLibraryCssClasses = GetComponentLibraryCssClasses();
 
         Name ??= GetType().Name;
         Name = Name.ToLowerSnakeCase();
 
-        // Tooltip = GetFullname();
         return base.OnParametersSetAsync();
     }
 
-    private IEnumerable<string> GetInitialCssClasses()
+    private string GetComponentLibraryCssClasses()
     {
-        var cssNamingConvention = _serviceProvider.GetService<ICssNamingConventions>();
-        if (cssNamingConvention != null)
-        {
-            return cssNamingConvention.GetInitialCssClassesForComponent(this);
-        }
-
-        return Enumerable.Empty<string>();
-    }
-
-    protected string GetFinalClassNames()
-    {
-        return $"{_initialClassesAsText.Trim()} {Class?.Trim()} {string.Join(" ", LateClassing.GetAppendedClasses(Name, GetFullname()))}".Trim();
+        var componentLibrary = serviceProvider.GetService<IComponentLibrary>();
+        return componentLibrary != null 
+            ? componentLibrary.GetClassesForComponent(this) 
+            : string.Empty;
     }
 
     protected string GetFullname()
     {
-        return Parent?.GetFullname() + ">" + Name;
+        return (Parent != null)
+                ? Parent?.GetFullname() + ">" + Name
+                : Name;
     }
+
+    protected string GetFinalClassNames()
+    {
+        return $"{Class?.Trim()} {componentLibraryCssClasses.Trim()}".Trim();
+    }
+
+    //private string? GetIdAttribute() => GetAttribute("id", Id);
+    //private string? GetStyleAttribute() => GetAttribute("style", Style);
+    //private string? GetTooltipAttribute() => GetAttribute("title", Tooltip);
+    //private string? GetAttribute(string name, string value) => string.IsNullOrWhiteSpace(Id) ? null : $@"{name}=""{value}""";
+
+    //private string? GetOtherDataAttributes()
+    //{
+    //    if (Data.Count == 0) { return null; }
+    //    return string.Join(" ", Data.Select(d => $@"data-{d.Key}=""{d.Value}"""));
+    //}
 }

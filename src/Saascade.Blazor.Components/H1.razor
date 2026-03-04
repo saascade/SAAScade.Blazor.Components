@@ -1,10 +1,4 @@
-﻿@* @inherits BaseElementComponent
+﻿@inherits BaseComponentWithRequiredChildContent
 <CascadingValue Name="Parent" Value="@this" IsFixed="true">
-    <h1 id="@Id" class="@GetFinalClassNames()" data-name="@Name" data-fullname="@GetFullname()" title="@Tooltip">@ChildContent</h1>
-</CascadingValue> *@
-<h1>@ChildContent</H1>
-@code
-{
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
-}
+    <h1 id="@Id" data-name="@Name" data-fullname="@GetFullname()" class="@GetFinalClassNames()" style="@Style" title="@Tooltip">@ChildContent</h1>
+</CascadingValue>

@@ -1,6 +1,4 @@
-﻿<h3 class="h3">@ChildContent</h3>
-@code
-{
-    [Parameter, EditorRequired]
-    public RenderFragment ChildContent { get; set; }
-}
+﻿@inherits BaseComponentWithRequiredChildContent
+<CascadingValue Name="Parent" Value="@this" IsFixed="true">
+    <h3 id="@Id" data-name="@Name" data-fullname="@GetFullname()" class="@GetFinalClassNames()" style="@Style" title="@Tooltip">@ChildContent</h3>
+</CascadingValue>
