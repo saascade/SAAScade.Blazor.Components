@@ -48,9 +48,18 @@ public abstract class BaseComponent : ComponentBase
 
     protected string? GetFullname()
     {
-        return (Parent is not null && Name is not null)
-                ? Parent?.GetFullname() + ">" + Name
-                : Name;
+        if (Name is null) { return null; }
+
+        if (Parent is not null)
+        {
+            var parentFullName = Parent?.GetFullname();
+            if (parentFullName is not null)
+            {
+                return parentFullName + ">" + Name;
+            }
+        }
+
+        return Name;
     }
 
     protected string GetFinalClassNames()
