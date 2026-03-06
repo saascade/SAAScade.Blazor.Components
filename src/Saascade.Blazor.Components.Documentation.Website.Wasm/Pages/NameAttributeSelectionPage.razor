@@ -1,0 +1,73 @@
+﻿@page "/name-attribute-selection"
+<div id="thisDivIsNeededForCssIsolationToWork">
+<H1>Name Selection</H1>
+    TODO: describe how to use CSS to target elements using the data-name and data-fullname attributes, to simplify writing semantic CSS like this:
+
+    <H2>CSS:</H2>
+    <code><pre>@ExampleCss</pre></code>
+
+    <H2>Razor: (Pay attention to the 'Name' properties)</H2>
+    <code><pre>@ExampleBlazorCode</pre></code>
+    
+    <H2>Output:</H2>
+    <Div>
+        <CardsGrid Name="Adverts">
+            <Card Name="Advert">
+                <Figure>
+                    <Img Alt="Shoes" Src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" />
+                </Figure>
+                <CardBody>
+                    <CardTitle>Card Title</CardTitle>
+                    <P>A card component has a figure, a body part, and inside body there are title and actions parts</P>
+                        <Div>
+                            @* Formatting div without a name (1) *@
+                            <div>
+                                @* Pure html formatting div without a name (2) *@
+                                @* Expected fullname = Adverts.Advert.BuyButton *@
+                                <Div Class="card-actions justify-end">
+                                    <PrimaryButton Name="BuyButton">Buy Now</PrimaryButton>
+                                </Div>
+                            </div>
+                        </Div>
+                </CardBody>
+            </Card>
+        </CardsGrid> 
+    </Div>
+</div>
+@code 
+{
+    private string ExampleBlazorCode =
+    """
+    <CardsGrid Name="Adverts">
+        <Card Name="Advert">
+            <Figure>
+                <Img Alt="Shoes" Src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" />
+            </Figure>
+            <CardBody>
+                <CardTitle>Card Title</CardTitle>
+                <P>A card component has a figure, a body part, and inside body there are title and actions parts</P>
+                    <Div>
+                        @* Formatting div without a name (1) *@
+                        <div>
+                            @* Pure html formatting div without a name (2) *@
+                            @* Expected fullname = Adverts.Advert.BuyButton *@
+                            <Div Class="card-actions justify-end">
+                                <PrimaryButton Name="BuyButton">Buy Now</PrimaryButton>
+                            </Div>
+                        </div>
+                    </Div>
+            </CardBody>
+        </Card>
+    </CardsGrid> 
+    """;
+
+    private string ExampleCss = 
+    """
+    ::deep [data-fullname="Adverts.Advert.BuyButton"]:hover 
+    {
+        /*  Making buy button bigger on hover  */
+        transform: scale(1.3) perspective(1px)
+    }
+    """;
+
+}

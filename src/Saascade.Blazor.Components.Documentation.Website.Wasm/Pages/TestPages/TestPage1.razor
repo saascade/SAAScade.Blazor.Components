@@ -1,0 +1,89 @@
+﻿@page "/test-page1"
+<div id="thisDivIsNeededForCssIsolationToWork">
+    <H1>Test page 1</H1>
+
+    <Main Name="TestPage1">
+
+    <Div Name="Buttons">
+        <Div Name="BasicButtons">
+            <PrimaryButton>Primary</PrimaryButton>
+            <SecondaryButton>Secondary</SecondaryButton>
+            <DestructiveButton>Destructive</DestructiveButton>
+        </Div>
+
+        <Div Name="StandardizedButtons">
+            <AcceptButton Name="Accept">Accept</AcceptButton>
+            <SubmitButton Name="Submit">Submit</SubmitButton>
+            <CancelButton Name="Cancel">Cancel</CancelButton>
+            <CloseButton Name="CloseForm">X</CloseButton>
+            <DeleteButton Name="DeleteStuff">Delete</DeleteButton>
+        </Div>
+    </Div>
+
+    <hr />
+
+    <Card Name="Advert">
+        <Figure>
+            <Img Alt="Shoes" Src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" />
+        </Figure>
+        <CardBody>
+            <CardTitle>Card Title</CardTitle>
+            <P>A card component has a figure, a body part, and inside body there are title and actions parts</P>
+            <Div class="card-actions justify-end">
+                <PrimaryButton Name="BuyButton">Buy Now</PrimaryButton>
+            </Div>
+        </CardBody>
+    </Card>
+
+
+    <hr />
+
+    <Card> 
+        <Header>
+            <H2>Meeting Notes</H2>
+            <P>Transcript from the meeting with the client.</P>
+        </Header>
+        <Section Class="text-sm">
+            <P>Client requested dashboard redesign with focus on mobile responsiveness.</P>
+            <Ol Class="mt-4 flex list-decimal flex-col gap-2 pl-6">
+                <Li>New analytics widgets for daily/weekly metrics</Li>
+                <Li>Simplified navigation menu</Li>
+                <Li>Dark mode support</Li>
+                <Li>Timeline: 6 weeks</Li>
+                <Li>Follow-up meeting scheduled for next Tuesday</Li>
+            </Ol>
+        </Section>
+        <Footer Class="flex items-center">
+            <Div Class="flex -space-x-2 [&_img]:ring-card [&_img]:ring-2 [&_img]:grayscale [&_img]:size-8 [&_img]:shrink-0 [&_img]:object-cover [&_img]:rounded-full">
+                <Img Alt="hunvreus" Src="https://github.com/hunvreus.png"/>
+                <Img Alt="shadcn" Src="https://github.com/shadcn.png"/>
+                <Img Alt="adamwathan" Src="https://github.com/adamwathan.png"/>
+            </Div>
+        </Footer> 
+    </Card>
+
+</Main>
+</div>
+@* 
+<hr />
+    <Button Class="btn-neutral">Neutral</Button>
+    <Button Class="btn-primary">Primary</Button>
+    <Button Class="btn-secondary">Secondary</Button>
+    <Button Class="btn-accent">Accent</Button>
+    <Button Class="btn-info">Info</Button>
+    <Button Class="btn-success">Success</Button>
+    <Button Class="btn-warning">Warning</Button>
+    <Button Class="btn-error">Error</Button>
+ *@
+@* <Card Name="PricingCard">
+    Card content
+</Card> *@
+@* 
+<Hero Name="Hero">
+    Some hero text
+    <Button Name="CallToActionButton">Buy now</Button>
+</Hero> *@
+@code 
+{
+
+}
