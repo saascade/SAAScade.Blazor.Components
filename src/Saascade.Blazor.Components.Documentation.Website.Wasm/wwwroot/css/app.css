@@ -13,3 +13,12 @@ html, body {
 .app-shell {
   min-height: 100vh;
 }
+
+
+
+/* Hide the automatic H1 highlighting for now - The highlighting is an accessibility feature 
+    that should be enabled, but we just need to figure out how to also make it look good the rest of the time */
+h1:focus 
+{
+    outline: none;
+}
