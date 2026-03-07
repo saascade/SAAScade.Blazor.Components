@@ -4,18 +4,18 @@
   <header class="topbar">
     <div class="topbar-left">
       <div class="brand">Saascade Docs</div>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      @* <button class="menu-toggle" aria-label="Toggle menu">☰</button> *@
     </div>
     <div class="topbar-center">
       <nav class="topnav">
-        <a class="topnav-item">Home</a>
-        <a class="topnav-item">Docs</a>
-        <a class="topnav-item">Blog</a>
+        <a class="topnav-link" href="/">Home</a>
+        <a class="topnav-link" href="docs">Docs</a>
+        @* <a class="topnav-link" href="">Blog</a> *@
       </nav>
     </div>
     <div class="topbar-right">
-      <a class="top-action">Pricing</a>
-      <a class="top-action">Account</a>
+        <a class="top-action" href="pricing">Pricing</a>
+        <a class="top-action" href="account">Account</a>
     </div>
   </header>
 
@@ -26,16 +26,14 @@
       <div class="sidebar-search"><input placeholder="Search..." /></div>
       <nav class="sidebar-nav">
         <ul>
-          <li class="active"><a class="sidebar-link" href="overview">Overview</a></li>
-          <li><a class="sidebar-link" href="quick-start">Quick Start</a></li>
-          <li><a class="sidebar-link" href="#">Integrations</a></li>
-          <li><a class="sidebar-link" href="#">Testing</a></li>
-          <li><a class="sidebar-link" href="#">Templates</a></li>
-          <li><a class="sidebar-link" href="#">Components</a></li>
-          <li><a class="sidebar-link" href="#">Extensions</a></li>
+          <li><NavLink class="sidebar-link" href="overview">Overview</NavLink></li>
+          <li><NavLink class="sidebar-link" href="quick-start">Quick Start</NavLink></li>
+          <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
+          <li><NavLink class="sidebar-link" href="components">Components</NavLink></li>
           <li><hr/></li>
-          <li><a class="sidebar-link" href="name-attribute-selection">Name Selection</a></li>
-          <li><a class="sidebar-link" href="test-page1">Test page 1</a></li>
+          <li><NavLink class="sidebar-link" href="cards">Cards</NavLink></li>
+          @* <li><a class="sidebar-link" href="name-attribute-selection">Name Selection</a></li> *@
+          <li><NavLink class="sidebar-link" href="test-page1">Test page 1</NavLink></li>
         </ul>
       </nav>
     </aside>

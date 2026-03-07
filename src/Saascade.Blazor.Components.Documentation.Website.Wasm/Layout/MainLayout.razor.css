@@ -1,94 +1,106 @@
-/* Documentation-style layout (dark theme) */
-.app-shell { 
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
-    color: #e6eef8; 
-    background: #0f1720; 
-    min-height: 100vh; 
-
+/* Documentation style layout dark theme */
+.app-shell {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #e6eef8;
+    background: #0f1720;
+    min-height: 100vh;
 }
 
-.topbar { 
-    height: 56px; 
-    display: flex; 
-    align-items: center; 
-    padding: 0 16px; 
-    background: #0b1220; 
-    border-bottom: 1px solid rgba(255,255,255,0.03); 
-
+.topbar {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background: #0b1220;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-.topbar-left { 
-    display:flex; 
-    align-items:center; 
-    gap:12px; 
-
+.topbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-left: 12px;
 }
 
-.brand { 
-    font-weight:700; 
-    color: #cbd5e1; 
-    padding-right:8px; 
-
+.brand {
+    font-weight: 700;
+    color: #ffffff;
+    padding-right: 8px;
 }
 
-.menu-toggle { 
-    background:transparent; 
-    border:none; color:#9fb0c9; 
-    font-size:18px; 
-    cursor:pointer; 
-}
-
-.topbar-center { 
-    flex:1; 
-    display:flex; 
-    justify-content:center; 
-}
-
-.topnav { 
-    display:flex; 
-    gap:14px; 
-}
-
-.topnav-item {
+/*.menu-toggle {
+    background: transparent;
+    border: none;
     color: #9fb0c9;
+    font-size: 18px;
+    cursor: pointer;
+}*/
+
+.topbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 105px;
+}
+
+.topnav {
+    display: flex;
+    gap: 14px;
+}
+
+.topnav-link {
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+.topnav-link:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+.topbar-right {
+    display: flex;
+    font-size: 14px;
+    gap: 12px;
+}
+
+.top-action {
+    color: #ffffff;
     font-size: 14px;
     text-decoration: none;
     padding: 6px 10px;
     border-radius: 6px;
 }
 
-.topnav-item:hover { 
-    background: rgba(255,255,255,0.02); 
+.top-action:hover {
+    background: rgba(255,255,255,0.02);
 }
 
-.topbar-right { 
-    display:flex; gap:12px; 
+.layout-body {
+    display: flex;
+    min-height: calc(100vh - 56px);
 }
 
-.top-action { 
-    color:#9fb0c9; 
-    text-decoration:none; 
+.sidebar {
+    width: 220px;
+    background: #0c1622;
+    border-right: 1px solid rgba(255,255,255,0.03);
+    padding: 10px 0;
+    box-sizing: border-box;
+    transition: width 180ms ease;
+    overflow: hidden;
 }
 
-.layout-body { 
-    display:flex; 
-    min-height: calc(100vh - 56px); 
-}
+/*.sidebar-brand {
+    font-weight: 100;
+    color: #ffffff;
+    margin-bottom: 16px;
+}*/
 
-.sidebar { 
-    width: 220px; 
-    background:#0c1622; 
-    border-right:1px solid rgba(255,255,255,0.03); 
-    padding:10px 12px; 
-    box-sizing:border-box; 
-    transition: width 180ms ease; 
-    overflow: hidden; 
-}
-
-.sidebar-brand { 
-    font-weight:100; 
-    color:#a3b7c9; 
-    margin-bottom:16px; 
+.sidebar-search {
+    padding: 0 6px;
 }
 
 .sidebar-search input {
@@ -96,101 +108,102 @@
     padding: 6px 10px;
     border-radius: 6px;
     border: 1px solid rgba(255,255,255,0.04);
-    background: #091019;
+    background: #0f1720;
     color: #cbd5e1;
+    box-sizing: border-box;
 }
 
-.sidebar-nav ul { 
-    list-style:none; 
-    padding:12px 0 0 0; 
-    margin:0; 
+.sidebar-nav ul {
+    list-style: none;
+    padding: 12px 0 0 0;
+    margin: 0;
 }
 
-.sidebar-nav li { 
-    padding:1px 8px; 
-    border-radius:6px; 
-}
-/*.sidebar-nav li + li { 
-    margin-top:4px; 
+/*.sidebar-nav li {
+    padding: 1px 0;
 }*/
 
-.sidebar-link { 
-    display:block; 
-    color:#9fb0c9; 
-    text-decoration:none; 
-    padding:6px 8px; 
-    border-radius:6px; 
+.sidebar-nav li hr {
+    color: #9fb0c9;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
-.sidebar-link:hover { 
-    background: rgba(255,255,255,0.02); 
-    color:#fff; 
+::deep .sidebar-link {
+    display: block;
+    color: #9fb0c9;
+    text-decoration: none;
+    padding: 10px 30px;
 }
 
-.sidebar-nav li.active .sidebar-link { 
-    background: rgba(255,255,255,0.02); 
-    color:#fff; 
-    font-weight:600; 
+::deep .sidebar-link:hover {
+    background: rgba(255,255,255,0.02);
+    color: #ffffff;
 }
 
-.main-content { 
-    flex:1; 
-    padding:28px 40px; 
-    background:transparent; 
+::deep .sidebar-link.active {
+    background: rgba(255,255,255,0.02);
+    color: #ffffff;
+    font-weight: 600;
 }
 
-.page-header .breadcrumb { 
-    color:#92a3b6; 
-    font-size:13px; 
-    margin-bottom:8px; 
+.main-content {
+    flex: 1;
+    padding: 28px 40px;
+    background: transparent;
 }
 
-.page-header h1 { 
-    margin:0 0 8px 0; 
-    color:#e6eef8; 
-    font-size:32px; 
+.page-header .breadcrumb {
+    color: #ffffff;
+    font-size: 13px;
+    margin-bottom: 8px;
 }
 
-.lead { 
-    color:#b9c7d6; 
-    margin:0 0 18px 0; 
+.page-header h1 {
+    margin: 0 0 8px 0;
+    color: #e6eef8;
+    font-size: 32px;
 }
 
-.doc-body { 
-    color:#cbd5e1; 
-    line-height:1.8; 
+.lead {
+    color: #b9c7d6;
+    margin: 0 0 18px 0;
+}
+
+.doc-body {
+    color: #ffffff;
+    line-height: 1.8;
 }
 
 @media (max-width: 880px) {
-  /* collapsed sidebar on narrow screens; expands on hover */
-  .sidebar { 
-      width: 60px; 
-      padding:12px 6px; 
-  }
+    .sidebar {
+        width: 60px;
+        padding: 12px 6px;
+    }
 
-  .sidebar-brand, .sidebar-search { 
-      display:none; 
-      opacity:0; 
-      height:0; 
-      overflow:hidden; 
-  }
+    .sidebar-brand,
+    .sidebar-search {
+        display: none;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+    }
 
-  .sidebar:hover { 
-      width: 220px; 
-  }
+    .sidebar:hover {
+        width: 220px;
+    }
 
-  .sidebar:hover .sidebar-brand, .sidebar:hover .sidebar-search { 
-      display:block; 
-      opacity:1; 
-      height:auto; 
-  }
+    .sidebar:hover .sidebar-brand,.sidebar:hover .sidebar-search {
+        display: block;
+        opacity: 1;
+        height: auto;
+    }
 
-  .topbar-center { 
-      display:none; 
-  }
+    .topbar-center {
+        display: none;
+    }
 
-  .main-content { 
-      padding:20px;
-  }
+    .main-content {
+        padding: 20px;
+    }
 }
-
