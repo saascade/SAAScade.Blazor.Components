@@ -1,0 +1,13 @@
+﻿.card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /*    padding: 24px;*/
+    border-radius: 12px;
+}
+
+
+.card .subtitle {
+    font-size: 0.95rem;
+/*    opacity: 0.2;*/
+}
