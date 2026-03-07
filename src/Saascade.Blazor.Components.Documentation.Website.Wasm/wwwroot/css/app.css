@@ -22,3 +22,13 @@ h1:focus
 {
     outline: none;
 }
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
