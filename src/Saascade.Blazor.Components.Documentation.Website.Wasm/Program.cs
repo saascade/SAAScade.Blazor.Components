@@ -15,11 +15,11 @@ services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvi
 
 //Pick a UI design system
 //services.AddSingleton(DesignSystems.Custom.Basic1);
-services.AddSingleton(DesignSystems.Custom.HanddrawnColor);
+//services.AddSingleton(DesignSystems.Custom.HanddrawnColor);
 //services.AddSingleton(DesignSystems.Custom.EmptyComponentLibrary);
 //services.AddSingleton(DesignSystems.Bootstrap5.VanillaBootstrap5);
 //services.AddSingleton(DesignSystems.Tailwind.Basecoat);
-//services.AddSingleton(DesignSystems.Tailwind.DaisyUI); 
+services.AddSingleton(DesignSystems.Tailwind.DaisyUI); 
 
 
 await builder.Build().RunAsync();

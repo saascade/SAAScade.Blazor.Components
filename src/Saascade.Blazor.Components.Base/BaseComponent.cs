@@ -12,8 +12,9 @@ public abstract class BaseComponent : ComponentBase
 
     [Parameter] public virtual string? Id { get; set; }
     [Parameter] public virtual string? Name { get; set; }
-    [Parameter] public virtual string? Class { get; set; }
-    [Parameter] public virtual string? Style { get; set; }
+    [Parameter] public virtual string? Class { get; set; } 
+    [Parameter] public virtual string? Specialization { get; set; }
+    [Parameter] public virtual string? Style { get; set; } 
     [Parameter] public virtual string? Tooltip { get; set; }
     [Parameter] public virtual string? AriaLabel { get; set; }
     [Parameter] public virtual string? AriaLabelledby { get; set; }
@@ -21,31 +22,11 @@ public abstract class BaseComponent : ComponentBase
 
 //    [Parameter] public virtual Dictionary<string, string> Data { get; set; } = [];
 
-    protected string componentLibraryCssClasses = "NOT SET";
-
+ 
     //TODO: can't do this yet: [Inject(optional = true)] protected IComponentLibrary? CssNamingConvention { get; set; }
     //So need to use IServiceProvider directly for now as a workaround
-    [Inject] private IServiceProvider serviceProvider { get; set; }
-
-
-    protected override Task OnParametersSetAsync()
-    {
-        componentLibraryCssClasses = GetComponentLibraryCssClasses();
-
-        //Name ??= GetType().Name;
-        //Name = Name?.ToLowerSnakeCase();
-
-        return base.OnParametersSetAsync();
-    }
-
-    private string GetComponentLibraryCssClasses()
-    {
-        var componentLibrary = serviceProvider.GetService<IDesignSystem>();
-        return componentLibrary != null 
-            ? componentLibrary.GetClassesForComponent(this) 
-            : string.Empty;
-    }
-
+    //[Inject] private IServiceProvider serviceProvider { get; set; }
+      
     protected string? GetFullname()
     {
         if (Name is null) { return null; }
@@ -82,8 +63,48 @@ public abstract class BaseComponent : ComponentBase
 
     protected string GetFinalClassNames()
     {
-        return $"{Class?.Trim()} {componentLibraryCssClasses.Trim()}".Trim();
+        try
+        {
+            var componentName = DesignSystem.GetComponentName(this);
+            string designSystemSpecializationClasses = DesignSystem.GetSpecializations(this)?.Trim();
+            string userSuppliedClasses = Class?.Trim();
+            string[] userSuppliedSpecializations = GetUserSuppliedSpecializationsPrefixedWithComponentName(componentName).ToArray();
+            var userSuppliedSpecializationsAtText = string.Join(" ", userSuppliedSpecializations);
+            var result = $"{componentName} {userSuppliedClasses} {userSuppliedSpecializationsAtText} {designSystemSpecializationClasses}".Trim();
+            return result;
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        } 
     }
+
+
+    private IEnumerable<string> GetUserSuppliedSpecializationsPrefixedWithComponentName(string componentName)
+    {
+        if (string.IsNullOrWhiteSpace(Specialization)) { yield break; }
+
+        var specializations = Specialization.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var componentNamePrefix = $"{componentName}-";
+        foreach (var specialization in specializations)
+        {
+            if (specialization.StartsWith(componentNamePrefix))
+            {
+               yield return specialization;
+            }
+            else
+            {
+                yield return $"{componentNamePrefix}{specialization}";
+            }
+        }
+    }
+
+
+    [Inject] private IDesignSystem DesignSystem { get; set; }
+
+
+
 
     //private string? GetIdAttribute() => GetAttribute("id", Id);
     //private string? GetStyleAttribute() => GetAttribute("style", Style);
@@ -95,4 +116,5 @@ public abstract class BaseComponent : ComponentBase
     //    if (Data.Count == 0) { return null; }
     //    return string.Join(" ", Data.Select(d => $@"data-{d.Key}=""{d.Value}"""));
     //}
+
 }

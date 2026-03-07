@@ -1,34 +1,52 @@
 ﻿@page "/test-page1"
 <div id="thisDivIsNeededForCssIsolationToWork">
-    <H1>Test page 1</H1>
-
-    <Main Name="TestPage1">
+     
+<Div Name="TestPage1">
+        <H1>Test page 1</H1>
 
     <Div Name="Buttons">
-        <Div Name="BasicButtons">
-            <PrimaryButton>Primary</PrimaryButton>
-            <SecondaryButton>Secondary</SecondaryButton>
-            <DestructiveButton>Destructive</DestructiveButton>
-        </Div>
+            <Div Name="BasicButtons">
+                <PrimaryButton>Primary</PrimaryButton>
+                <SecondaryButton>Secondary</SecondaryButton>
+                <DestructiveButton>Destructive</DestructiveButton>
+            </Div>
 
-        <Div Name="StandardizedButtons">
-            <AcceptButton Name="Accept">Accept</AcceptButton>
-            <SubmitButton Name="Submit">Submit</SubmitButton>
-            <CancelButton Name="Cancel">Cancel</CancelButton>
-            <CloseButton Name="CloseForm">X</CloseButton>
-            <DeleteButton Name="DeleteStuff">Delete</DeleteButton>
-        </Div> 
+            <hr />
+            <Div Name="StandardizedButtons">
+                <AcceptButton Name="Accept">Accept</AcceptButton>
+                <SubmitButton Name="Submit">Submit</SubmitButton>
+                <CancelButton Name="Cancel">Cancel</CancelButton>
+                <CloseButton Name="CloseForm">X</CloseButton>
+                <DeleteButton Name="DeleteStuff">Delete</DeleteButton>
+            </Div> 
 
-       @*  <Div Name="DashesButtons">
-                <Button Specializations="dash">Default</Button>
-                <Button Specializations="dash primary">Primary</Button>
-                <Button Specializations="dash secondary">Secondary</Button>
-                <Button Specializations="dash accent">Accent</Button>
-                <Button Specializations="dash info">Info</Button>
-                <Button Specializations="dash success">Success</Button>
-                <Button Specializations="btn-dash btn-warning">Warning</Button>
-                <Button Specializations="btn-dash btn-error">Error</Button>
-        </Div> *@
+            <hr />
+            <Div Name="DisabledlButtons">
+                <Button Specialization="disabled">Disabled</Button>
+            </Div> 
+
+            <hr />
+            <Div Name="DashedButtons"> 
+                <Button Specialization="dash">Dashed</Button>
+                <Button Specialization="dash primary">Primary</Button>
+                <Button Specialization="dash secondary">Secondary</Button>
+                <Button Specialization="dash accent">Accent</Button>
+                <Button Specialization="dash info">Info</Button>
+                <Button Specialization="dash success">Success</Button>
+                <Button Specialization="dash warning">Warning</Button>
+                <Button Specialization="dash error">Error</Button> 
+            </Div>
+
+            <hr />
+            <Div Name="SoftButtons"> 
+                <Button Specialization="soft primary">Primary</Button>
+                <Button Specialization="soft secondary">Secondary</Button>
+                <Button Specialization="soft accent">Accent</Button>
+                <Button Specialization="soft info">Info</Button>
+                <Button Specialization="soft success">Success</Button>
+                <Button Specialization="soft dash warning">Warning</Button>
+                <Button Specialization=" btn-soft  btn-dash btn-error">Error</Button>
+            </Div>
     </Div>
 
     <hr />
@@ -73,7 +91,9 @@
         </Footer> 
     </Card>
 
-</Main>
+</Div>
+
+
 </div>
 @* 
 <hr />

@@ -1,18 +1,17 @@
 ﻿using Saascade.Blazor.Components.Aliases;
 using Saascade.Blazor.Components.Base;
 using Saascade.Blazor.Components.Base.Extensions;
-using Saascade.Blazor.Components;
 
-namespace Saascade.Blazor.DesignSystems.Tailwind.Basecoat;
+namespace Saascade.Blazor.DesignSystems.Custom.Handdrawn;
 
-//https://basecoatui.com/
-public class BasecoatDesignSystem : IDesignSystem
+public class HanddrawnBlackAndWhiteDesignSystem : IDesignSystem
 {
-    public CssFramework CssFramework { get; } = CssFramework.Tailwind;
+    public CssFramework CssFramework { get; } = CssFramework.Custom;
+
 
     public string GetComponentName(BaseComponent component)
     => component.GetStandardizedComponentName() ?? component.GetType().Name switch
-    { 
+    {
         _ => component.GetType().Name.ToLowerSnakeCase()
     };
 
@@ -21,12 +20,12 @@ public class BasecoatDesignSystem : IDesignSystem
     {
         nameof(PrimaryButton) => "btn-primary",
         nameof(SecondaryButton) => "btn-secondary",
-        nameof(DestructiveButton) => "btn-destructive",
+        nameof(DestructiveButton) => "btn-error",
         nameof(AcceptButton) => "btn-success",
         nameof(SubmitButton) => "btn-primary",
         nameof(CloseButton) => "btn-secondary",
         nameof(CancelButton) => "btn-secondary",
-        nameof(DeleteButton) => "btn-destructive", 
+        nameof(DeleteButton) => "btn-error",
         _ => null
     };
 
@@ -35,15 +34,12 @@ public class BasecoatDesignSystem : IDesignSystem
     {
         _ => null
     };
-     
 
-    public string[] GetStylesheetReferences() => 
-    [
-        """ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.11/dist/basecoat.cdn.min.css"> """ 
-    ];
 
-    public string[] GetJavaScriptReferences() => 
-    [ 
-        """ <script src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.11/dist/js/all.min.js" defer></script> """
-    ];
+    public string[] GetStylesheetReferences() =>
+        [
+        """ <link rel="stylesheet" href="_content/Saascade.Blazor.Components/designSystems/custom/handdrawn/css/basic.css" /> """,
+        """ <link rel="stylesheet" href="_content/Saascade.Blazor.Components/designSystems/custom/handdrawn/css/handdrawn.bw.min.css" /> """
+        ];
+    public string[] GetJavaScriptReferences() => [];
 }
