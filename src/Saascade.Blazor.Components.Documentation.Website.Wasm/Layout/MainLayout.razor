@@ -1,5 +1,19 @@
 ﻿@using Saascade.Blazor.Components.Documentation.Website.Wasm.Components
 @inherits LayoutComponentBase
+@inject NavigationManager Navigation
+
+@{
+    var path = Navigation.ToBaseRelativePath(Navigation.Uri);
+    var segments = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
+    var breadcrumb = "Documentation";
+
+    foreach (var segment in segments)
+    {
+        var formatted = char.ToUpper(segment[0]) + segment.Substring(1);
+        breadcrumb += " / " + formatted;
+    }
+}
+
 <div class="app-shell">
   <header class="topbar">
     <div class="topbar-left">
@@ -10,7 +24,6 @@
       <nav class="topnav">
         <a class="topnav-link" href="/">Home</a>
         <a class="topnav-link" href="docs">Docs</a>
-        @* <a class="topnav-link" href="">Blog</a> *@
       </nav>
     </div>
     <div class="topbar-right">
@@ -42,7 +55,7 @@
 
     <main class="main-content">
       <div class="page-header">
-        <div class="breadcrumb">Documentation / Components / Bar</div>
+        <div class="breadcrumb">@breadcrumb</div>
 @*         <h1>Saascade Bar component</h1>
         <p class="lead">A responsive navbar that can support images, links, buttons, and dropdowns.</p>
  *@      </div>

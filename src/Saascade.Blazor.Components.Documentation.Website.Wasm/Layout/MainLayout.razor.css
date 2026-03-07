@@ -1,19 +1,9 @@
 /* Documentation style layout dark theme */
-h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-}
-
-h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
 .app-shell {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     color: #e6eef8;
-    background: #0f1720;
+    background: #1F232A;
+/*    background: #0f1720;*/
     min-height: 100vh;
 }
 
@@ -24,6 +14,7 @@ h2 {
     padding: 0 16px;
     background: #0b1220;
     border-bottom: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .topbar-left {
@@ -95,13 +86,14 @@ h2 {
 }
 
 .sidebar {
-    width: 220px;
+    width: 200px;
     background: #0c1622;
     border-right: 1px solid rgba(255,255,255,0.03);
     padding: 10px 0;
     box-sizing: border-box;
     transition: width 180ms ease;
     overflow: hidden;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.15);
 }
 
 /*.sidebar-brand {
@@ -116,10 +108,10 @@ h2 {
 
 .sidebar-search input {
     width: 100%;
-    padding: 6px 10px;
+    padding: 3px 10px;
     border-radius: 6px;
     border: 1px solid rgba(255,255,255,0.04);
-    background: #0f1720;
+    background: #1F232A;
     color: #cbd5e1;
     box-sizing: border-box;
 }
@@ -142,7 +134,7 @@ h2 {
 
 ::deep .sidebar-link {
     display: block;
-    color: #9fb0c9;
+    color: #ffffff;
     text-decoration: none;
     padding: 10px 30px;
 }
