@@ -3,12 +3,18 @@
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     color: #e6eef8;
     background: #1F232A;
-/*    background: #0f1720;*/
+    /*    background: #0f1720;*/
     min-height: 100vh;
 }
 
+.topnav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .topbar {
-    height: 56px;
+    height: 50px;
     display: flex;
     align-items: center;
     padding: 0 16px;
@@ -23,7 +29,16 @@
     justify-content: center;
     gap: 12px;
     margin-left: 12px;
+    transition: width 0.3s ease;
 }
+
+
+.topbar-left.closed {
+    width: 0px;
+    overflow: hidden;
+}
+
+
 
 .brand {
     font-weight: 700;
@@ -39,11 +54,20 @@
     cursor: pointer;
 }*/
 
+.menu-toggle {
+    cursor: pointer;
+/*    padding-left: 1px;*/
+}
+
 .topbar-center {
     flex: 1;
     display: flex;
     justify-content: flex-start;
-    padding-left: 105px;
+    padding-left: 55px;
+}
+
+.topbar-center.closed {
+    width: 0px;
 }
 
 .topnav {
@@ -58,6 +82,7 @@
     padding: 6px 10px;
     border-radius: 6px;
 }
+
 .topnav-link:hover {
     background: rgba(255,255,255,0.02);
 }
@@ -91,10 +116,15 @@
     border-right: 1px solid rgba(255,255,255,0.03);
     padding: 10px 0;
     box-sizing: border-box;
-    transition: width 180ms ease;
+    transition: transform 0.3s ease;
     overflow: hidden;
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.15);
+    transform: translateX(-100%);
 }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
 
 /*.sidebar-brand {
     font-weight: 100;
@@ -144,16 +174,25 @@
     color: #ffffff;
 }
 
-    ::deep .sidebar-link.active {
-        background: #1e293b;
-        color: #ffffff;
-        font-weight: 600;
-    }
+::deep .sidebar-link.active {
+    background: #1e293b;
+    color: #ffffff;
+    font-weight: 600;
+}
 
 .main-content {
     flex: 1;
     padding: 28px 40px;
     background: transparent;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.menu-open {
+    margin-left: 40px;
+}
+
+.main-content.menu-closed {
+    margin-left: 0px;
 }
 
 .page-header .breadcrumb {
@@ -180,9 +219,14 @@
 
 @media (max-width: 880px) {
     .sidebar {
-        width: 60px;
+        width: 200px;
         padding: 12px 6px;
+        transform: translateX(-100%);
     }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
 
     .sidebar-brand,
     .sidebar-search {
@@ -196,14 +240,14 @@
         width: 220px;
     }
 
-    .sidebar:hover .sidebar-brand,.sidebar:hover .sidebar-search {
+    .sidebar:hover .sidebar-brand, .sidebar:hover .sidebar-search {
         display: block;
         opacity: 1;
         height: auto;
     }
 
     .topbar-center {
-        display: none;
+        display: flex;
     }
 
     .main-content {
