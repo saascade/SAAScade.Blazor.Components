@@ -65,12 +65,12 @@
           <li><NavLink class="sidebar-link" href="header-footer">Header &amp; Footer</NavLink></li>
           <li><NavLink class="sidebar-link" href="hero">Hero</NavLink></li>
           <li><NavLink class="sidebar-link" href="drawer">Drawer</NavLink></li>
-          @* 
+           
           <li class="sidebar-section-label">Typography</li>
           <li><NavLink class="sidebar-link" href="headings">Headings (H1–H6)</NavLink></li>
           <li><NavLink class="sidebar-link" href="paragraph">Paragraph</NavLink></li>
 
-          <li class="sidebar-section-label">Data Display</li>
+        @*   <li class="sidebar-section-label">Data Display</li>
           <li><NavLink class="sidebar-link" href="cards">Card</NavLink></li>
           <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
           <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
@@ -97,7 +97,7 @@
 
           <li><NavLink class="sidebar-link" href="api-reference">API Reference</NavLink></li>
           <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
-          <li><NavLink class="sidebar-link" href="changelog">Changelog</NavLink></li> *@
+          <li><NavLink class="sidebar-link" href="changelog">Changelog</NavLink></li>  *@
         </ul>
       </nav>
     </aside>
@@ -115,6 +115,38 @@
       </section>
     </main>
   </div>
+
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="overview">Overview</a></li>
+          <li><a href="https://github.com/saascade/SAAScade.Blazor.Components" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="quick-start">Quick Start</a></li>
+          <li><a href="installation">Installation</a></li>
+          <li><a href="design-systems">Design Systems</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/saascade/SAAScade.Blazor.Components/issues" target="_blank" rel="noopener noreferrer">Issues ↗</a></li>
+          <li><a href="https://github.com/saascade/SAAScade.Blazor.Components/discussions" target="_blank" rel="noopener noreferrer">Discussions ↗</a></li>
+          <li><a href="https://www.nuget.org/packages?q=saascade" target="_blank" rel="noopener noreferrer">NuGet ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright &copy; @DateTime.Now.Year Saascade.
+    </div>
+  </footer>
 </div>  
 
 @code {
