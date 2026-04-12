@@ -1,13 +1,15 @@
 ﻿@page "/cards"
 <PageTitle>Cards Example</PageTitle>
 
-<h1>Card Components</h1>
+<h1 id="card-components">Card Components</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Example Card Title</h2>
+        <h2 id="example-card-title">Example Card Title</h2>
 
         <p class="subtitle">
             This is a simple subtitle inside the card component.
@@ -38,7 +40,12 @@
 
 </main>
 
+<TableOfContents Items="@([
+    new TocItem("card-components", "Card Components"),
+    new TocItem("example-card-title", "Example Card Title", 2)
+])" />
 
+</div>
 
 @* <Card>
 

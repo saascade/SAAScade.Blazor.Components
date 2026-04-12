@@ -1,13 +1,15 @@
 @page "/div-section-main"
 <PageTitle>Div / Section / Main - Saascade Docs</PageTitle>
 
-<h1>Div / Section / Main</h1>
+<h1 id="div-section-main">Div / Section / Main</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             Semantic HTML wrapper components that render <code>&lt;div&gt;</code>,
@@ -36,7 +38,7 @@
 
     <section class="card">
 
-        <h2>Common Parameters</h2>
+        <h2 id="common-parameters">Common Parameters</h2>
 
         <table>
             <thead>
@@ -53,3 +55,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("div-section-main", "Div / Section / Main"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("common-parameters", "Common Parameters", 2)
+])" />
+
+</div>

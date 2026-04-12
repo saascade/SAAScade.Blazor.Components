@@ -1,13 +1,15 @@
 @page "/list"
 <PageTitle>List - Saascade Docs</PageTitle>
 
-<h1>List (Ul / Li)</h1>
+<h1 id="list">List (Ul / Li)</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             The <code>&lt;Ul&gt;</code> and <code>&lt;Li&gt;</code> components render
@@ -28,7 +30,7 @@
 
     <section class="card">
 
-        <h2>Programmatic Lists</h2>
+        <h2 id="programmatic-lists">Programmatic Lists</h2>
 
         <p>
             Use the <code>&lt;Foreach&gt;</code> or <code>&lt;ListOf&gt;</code> base
@@ -39,3 +41,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("list", "List (Ul / Li)"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("programmatic-lists", "Programmatic Lists", 2)
+])" />
+
+</div>

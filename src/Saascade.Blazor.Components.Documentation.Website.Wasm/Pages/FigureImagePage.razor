@@ -1,13 +1,15 @@
 @page "/figure-image"
 <PageTitle>Figure &amp; Image - Saascade Docs</PageTitle>
 
-<h1>Figure &amp; Image</h1>
+<h1 id="figure-image">Figure &amp; Image</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Img</h2>
+        <h2 id="img">Img</h2>
 
         <p class="subtitle">
             The <code>&lt;Img&gt;</code> component renders an <code>&lt;img&gt;</code> element.
@@ -22,7 +24,7 @@
 
     <section class="card">
 
-        <h2>Figure</h2>
+        <h2 id="figure">Figure</h2>
 
         <p class="subtitle">
             The <code>&lt;Figure&gt;</code> component wraps an image with a caption
@@ -37,7 +39,7 @@
 
     <section class="card">
 
-        <h2>Parameters</h2>
+        <h2 id="parameters">Parameters</h2>
 
         <table>
             <thead>
@@ -54,3 +56,12 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("figure-image", "Figure & Image"),
+    new TocItem("img", "Img", 2),
+    new TocItem("figure", "Figure", 2),
+    new TocItem("parameters", "Parameters", 2)
+])" />
+
+</div>

@@ -2,13 +2,15 @@
 
 <PageTitle>Home - Saascade Docs</PageTitle>
 
-<h1>SAAScade Components</h1>
+<h1 id="saascade-components">SAAScade Components</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Welcome</h2>
+        <h2 id="welcome">Welcome</h2>
 
         <p class="subtitle">
             Get started with Saascade, one of the world's most popular Blazor component
@@ -27,7 +29,7 @@
 
     <section class="card">
 
-        <h2>Getting Started</h2>
+        <h2 id="getting-started">Getting Started</h2>
 
         <p class="subtitle">
             Quickly get a project started with any of our examples.
@@ -57,7 +59,7 @@
 
     <section class="card">
 
-        <h2>Design Systems</h2>
+        <h2 id="design-systems">Design Systems</h2>
 
         <p class="subtitle">
             Saascade components are design-system-agnostic — swap CSS frameworks without changing your markup.
@@ -76,7 +78,7 @@
 
     <section class="card">
 
-        <h2>AI Integration</h2>
+        <h2 id="ai-integration">AI Integration</h2>
 
         <p>
             Use an AI assistant? Connect it to the
@@ -87,3 +89,13 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("saascade-components", "SAAScade Components"),
+    new TocItem("welcome", "Welcome", 2),
+    new TocItem("getting-started", "Getting Started", 2),
+    new TocItem("design-systems", "Design Systems", 2),
+    new TocItem("ai-integration", "AI Integration", 2)
+])" />
+
+</div>

@@ -329,13 +329,20 @@
     letter-spacing: 0.01em;
 }
 
-/* ─── Documentation Content (::deep → every page) ─── */
+/* ─── Documentation Layout (::deep → every page) ─── */
+::deep .doc-layout {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-top: 15px;
+}
+
 ::deep .documentation {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
     max-width: 860px;
-    margin-top: 15px;
+    min-width: 0;
+    flex: 1;
 }
 
 ::deep .card {
@@ -448,6 +455,72 @@
 ::deep .card a:hover {
     color: var(--color-accent-hover);
     text-decoration: underline;
+}
+
+/* ─── Table of Contents (right sidebar) ─── */
+::deep .toc {
+    position: sticky;
+    top: calc(var(--topbar-height) + var(--spacing-xl));
+    align-self: flex-start;
+    flex-shrink: 0;
+    width: 200px;
+    padding: var(--spacing-md) 0;
+}
+
+::deep .toc-title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+}
+
+::deep .toc-list {
+    list-style: none;
+    margin: var(--spacing-md) 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+::deep .toc-list li a {
+    display: block;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    padding: 3px 0;
+    position: relative;
+    transition: color var(--transition-hover-out);
+}
+
+::deep .toc-list li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-accent);
+    transition: width var(--transition-hover-out);
+}
+
+::deep .toc-list li a:hover {
+    color: var(--color-accent-hover);
+    transition: color var(--transition-hover-in);
+}
+
+::deep .toc-list li a:hover::after {
+    width: 100%;
+    transition: width var(--transition-hover-in);
+}
+
+::deep .toc-h1 {
+    font-weight: 600;
+}
+
+::deep .toc-h2 {
+    padding-left: var(--spacing-lg);
 }
 
 /* ─── Footer ─── */
@@ -593,6 +666,10 @@
     .topbar-search input:focus {
         width: 160px;
     }
+
+    ::deep .toc {
+        display: none;
+    }
 }
 
 /* ─── Animations ─── */
@@ -640,7 +717,8 @@
     .sidebar,
     .theme-toggle,
     .menu-toggle,
-    .site-footer {
+    .site-footer,
+    ::deep .toc {
         display: none !important;
     }
 

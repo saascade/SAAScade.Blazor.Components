@@ -1,13 +1,15 @@
 @page "/column"
 <PageTitle>Column - Saascade Docs</PageTitle>
 
-<h1>Column</h1>
+<h1 id="column">Column</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             The <code>&lt;Column&gt;</code> component renders a column element,
@@ -26,7 +28,7 @@
 
     <section class="card">
 
-        <h2>Parameters</h2>
+        <h2 id="parameters">Parameters</h2>
 
         <table>
             <thead>
@@ -42,3 +44,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("column", "Column"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("parameters", "Parameters", 2)
+])" />
+
+</div>

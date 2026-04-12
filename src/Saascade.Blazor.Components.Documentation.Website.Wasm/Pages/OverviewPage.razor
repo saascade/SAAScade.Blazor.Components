@@ -1,13 +1,15 @@
 ﻿@page "/overview"
 <PageTitle>Overview Example</PageTitle>
 
-<h1>Overview Components</h1>
+<h1 id="overview-components">Overview Components</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Example Overview</h2>
+        <h2 id="example-overview">Example Overview</h2>
 
         <p class="subtitle">
             This is a simple subtitle inside the overview component.
@@ -37,3 +39,10 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("overview-components", "Overview Components"),
+    new TocItem("example-overview", "Example Overview", 2)
+])" />
+
+</div>

@@ -1,13 +1,15 @@
 @page "/carousel"
 <PageTitle>Carousel - Saascade Docs</PageTitle>
 
-<h1>Carousel</h1>
+<h1 id="carousel">Carousel</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             The <code>&lt;Carousel&gt;</code> component creates a slideshow
@@ -28,7 +30,7 @@
 
     <section class="card">
 
-        <h2>Parameters</h2>
+        <h2 id="parameters">Parameters</h2>
 
         <table>
             <thead>
@@ -44,3 +46,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("carousel", "Carousel"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("parameters", "Parameters", 2)
+])" />
+
+</div>

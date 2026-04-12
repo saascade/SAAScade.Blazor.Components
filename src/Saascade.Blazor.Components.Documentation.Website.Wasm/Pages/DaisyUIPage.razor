@@ -1,13 +1,15 @@
 @page "/daisyui"
 <PageTitle>Tailwind / DaisyUI - Saascade Docs</PageTitle>
 
-<h1>Tailwind / DaisyUI</h1>
+<h1 id="tailwind-daisyui">Tailwind / DaisyUI</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             DaisyUI is a Tailwind CSS component plugin that provides semantic class names
@@ -24,7 +26,7 @@
 
     <section class="card">
 
-        <h2>Specializations</h2>
+        <h2 id="specializations">Specializations</h2>
 
         <p>
             DaisyUI components support specializations such as <code>bg-base-100</code>,
@@ -35,3 +37,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("tailwind-daisyui", "Tailwind / DaisyUI"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("specializations", "Specializations", 2)
+])" />
+
+</div>

@@ -1,13 +1,15 @@
 @page "/headings"
 <PageTitle>Headings (H1–H6) - Saascade Docs</PageTitle>
 
-<h1>Headings (H1–H6)</h1>
+<h1 id="headings">Headings (H1–H6)</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             The <code>&lt;H1&gt;</code> through <code>&lt;H6&gt;</code> components
@@ -29,7 +31,7 @@
 
     <section class="card">
 
-        <h2>Visual Hierarchy</h2>
+        <h2 id="visual-hierarchy">Visual Hierarchy</h2>
 
         <p>Each heading level decreases in size and visual weight:</p>
 
@@ -44,7 +46,7 @@
 
     <section class="card">
 
-        <h2>Parameters</h2>
+        <h2 id="parameters">Parameters</h2>
 
         <table>
             <thead>
@@ -60,3 +62,12 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("headings", "Headings (H1–H6)"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("visual-hierarchy", "Visual Hierarchy", 2),
+    new TocItem("parameters", "Parameters", 2)
+])" />
+
+</div>

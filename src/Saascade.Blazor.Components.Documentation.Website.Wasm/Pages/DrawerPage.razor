@@ -1,13 +1,15 @@
 @page "/drawer"
 <PageTitle>Drawer - Saascade Docs</PageTitle>
 
-<h1>Drawer</h1>
+<h1 id="drawer">Drawer</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             The <code>&lt;Drawer&gt;</code> component creates a side-panel layout
@@ -32,7 +34,7 @@
 
     <section class="card">
 
-        <h2>Sub-components</h2>
+        <h2 id="sub-components">Sub-components</h2>
 
         <table>
             <thead>
@@ -47,3 +49,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("drawer", "Drawer"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("sub-components", "Sub-components", 2)
+])" />
+
+</div>

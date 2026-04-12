@@ -1,0 +1,15 @@
+<nav class="toc">
+    <span class="toc-title">On this page</span>
+    <ul class="toc-list">
+        @foreach (var item in Items)
+        {
+            <li class="@(item.Level == 2 ? "toc-h2" : "toc-h1")">
+                <a href="#@item.Id">@item.Text</a>
+            </li>
+        }
+    </ul>
+</nav>
+
+@code {
+    [Parameter] public List<TocItem> Items { get; set; } = [];
+}

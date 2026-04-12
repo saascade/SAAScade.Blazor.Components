@@ -1,13 +1,15 @@
 @page "/cards-grid"
 <PageTitle>Cards Grid - Saascade Docs</PageTitle>
 
-<h1>Cards Grid</h1>
+<h1 id="cards-grid">Cards Grid</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             The <code>&lt;CardsGrid&gt;</code> component renders a responsive
@@ -37,7 +39,7 @@
 
     <section class="card">
 
-        <h2>Related Components</h2>
+        <h2 id="related-components">Related Components</h2>
 
         <ul>
             <li><a href="cards">Card</a> — individual card container.</li>
@@ -48,3 +50,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("cards-grid", "Cards Grid"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("related-components", "Related Components", 2)
+])" />
+
+</div>

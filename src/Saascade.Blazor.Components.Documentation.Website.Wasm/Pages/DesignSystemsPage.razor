@@ -1,13 +1,15 @@
 @page "/design-systems"
 <PageTitle>Design Systems - Saascade Docs</PageTitle>
 
-<h1>Design Systems</h1>
+<h1 id="design-systems">Design Systems</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>How It Works</h2>
+        <h2 id="how-it-works">How It Works</h2>
 
         <p class="subtitle">
             Saascade components are design-system-agnostic. A single <code>IDesignSystem</code>
@@ -32,7 +34,7 @@
 
     <section class="card">
 
-        <h2>Supported Frameworks</h2>
+        <h2 id="supported-frameworks">Supported Frameworks</h2>
 
         <p>
             The <code>CssFramework</code> enum defines the supported targets:
@@ -49,7 +51,7 @@
 
     <section class="card">
 
-        <h2>Available Design Systems</h2>
+        <h2 id="available-design-systems">Available Design Systems</h2>
 
         <ul>
             <li><code>DesignSystems.Bootstrap5.VanillaBootstrap5</code></li>
@@ -65,3 +67,12 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("design-systems", "Design Systems"),
+    new TocItem("how-it-works", "How It Works", 2),
+    new TocItem("supported-frameworks", "Supported Frameworks", 2),
+    new TocItem("available-design-systems", "Available Design Systems", 2)
+])" />
+
+</div>

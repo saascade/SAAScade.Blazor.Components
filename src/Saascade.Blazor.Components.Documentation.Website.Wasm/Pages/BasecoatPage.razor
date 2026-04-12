@@ -1,13 +1,15 @@
 @page "/basecoat"
 <PageTitle>Tailwind / Basecoat - Saascade Docs</PageTitle>
 
-<h1>Tailwind / Basecoat</h1>
+<h1 id="tailwind-basecoat">Tailwind / Basecoat</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             Basecoat is a Tailwind CSS component library offering a clean,
@@ -24,7 +26,7 @@
 
     <section class="card">
 
-        <h2>Comparison with DaisyUI</h2>
+        <h2 id="comparison-with-daisyui">Comparison with DaisyUI</h2>
 
         <p>
             Basecoat provides a different aesthetic compared to DaisyUI while using the
@@ -34,3 +36,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("tailwind-basecoat", "Tailwind / Basecoat"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("comparison-with-daisyui", "Comparison with DaisyUI", 2)
+])" />
+
+</div>

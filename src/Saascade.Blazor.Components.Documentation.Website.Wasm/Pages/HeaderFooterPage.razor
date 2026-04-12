@@ -1,13 +1,15 @@
 @page "/header-footer"
 <PageTitle>Header &amp; Footer - Saascade Docs</PageTitle>
 
-<h1>Header &amp; Footer</h1>
+<h1 id="header-footer">Header &amp; Footer</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Header</h2>
+        <h2 id="header">Header</h2>
 
         <p class="subtitle">
             The <code>&lt;Header&gt;</code> component renders a semantic
@@ -25,7 +27,7 @@
 
     <section class="card">
 
-        <h2>Footer</h2>
+        <h2 id="footer">Footer</h2>
 
         <p class="subtitle">
             The <code>&lt;Footer&gt;</code> component renders a semantic
@@ -39,3 +41,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("header-footer", "Header & Footer"),
+    new TocItem("header", "Header", 2),
+    new TocItem("footer", "Footer", 2)
+])" />
+
+</div>

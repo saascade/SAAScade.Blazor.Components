@@ -1,13 +1,15 @@
 @page "/installation"
 <PageTitle>Installation - Saascade Docs</PageTitle>
 
-<h1>Installation</h1>
+<h1 id="installation">Installation</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>NuGet Package</h2>
+        <h2 id="nuget-package">NuGet Package</h2>
 
         <p class="subtitle">
             Install the Saascade Blazor Components library via NuGet or the .NET CLI.
@@ -25,7 +27,7 @@
 
     <section class="card">
 
-        <h2>Register Services</h2>
+        <h2 id="register-services">Register Services</h2>
 
         <p>
             Add the design system to your <code>Program.cs</code>:
@@ -37,7 +39,7 @@
 
     <section class="card">
 
-        <h2>Add Imports</h2>
+        <h2 id="add-imports">Add Imports</h2>
 
         <p>
             Add the following to your <code>_Imports.razor</code>:
@@ -48,3 +50,12 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("installation", "Installation"),
+    new TocItem("nuget-package", "NuGet Package", 2),
+    new TocItem("register-services", "Register Services", 2),
+    new TocItem("add-imports", "Add Imports", 2)
+])" />
+
+</div>

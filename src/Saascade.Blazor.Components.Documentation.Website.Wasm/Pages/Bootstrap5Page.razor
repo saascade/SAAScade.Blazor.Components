@@ -1,13 +1,15 @@
 @page "/bootstrap5"
 <PageTitle>Bootstrap 5 - Saascade Docs</PageTitle>
 
-<h1>Bootstrap 5</h1>
+<h1 id="bootstrap-5">Bootstrap 5</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
     <section class="card">
 
-        <h2>Overview</h2>
+        <h2 id="overview">Overview</h2>
 
         <p class="subtitle">
             Use Saascade components with Bootstrap 5's vanilla CSS classes.
@@ -28,7 +30,7 @@
 
     <section class="card">
 
-        <h2>Stylesheet References</h2>
+        <h2 id="stylesheet-references">Stylesheet References</h2>
 
         <p>
             The design system provides Bootstrap's CDN stylesheet automatically via
@@ -40,3 +42,11 @@
     </section>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("bootstrap-5", "Bootstrap 5"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("stylesheet-references", "Stylesheet References", 2)
+])" />
+
+</div>
