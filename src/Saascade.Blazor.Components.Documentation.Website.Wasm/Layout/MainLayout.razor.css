@@ -155,8 +155,8 @@
     color: var(--color-text);
     font-size: var(--font-size-base);
     text-decoration: none;
-    padding: 5px;
-    border-radius: var(--radius);
+    padding: 2px 5px;
+    border-radius: 15px;
     transition: background var(--transition-hover-out), color var(--transition-hover-out), transform var(--transition-hover-out);
 }
 
