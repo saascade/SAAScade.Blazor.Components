@@ -28,14 +28,14 @@
       </nav>
     </div>
     <div class="topbar-right">
-        <div class="topbar-search">
-          <input placeholder="Search..." />
-        </div>
         <a class="top-action" href="pricing">Pricing</a>
         <a class="top-action" href="account">Account</a>
         <button class="theme-toggle" @onclick="ToggleTheme">
             🌙
         </button>
+        <div class="topbar-search">
+          <input placeholder="Search..." />
+        </div>
     </div>
   </header>
 
@@ -67,17 +67,21 @@
           <li><NavLink class="sidebar-link" href="hero">Hero</NavLink></li>
           <li><NavLink class="sidebar-link" href="drawer">Drawer</NavLink></li>
            
+          <li><hr/></li>
+
           <li class="sidebar-section-label">Typography</li>
           <li><NavLink class="sidebar-link" href="headings">Headings (H1–H6)</NavLink></li>
           <li><NavLink class="sidebar-link" href="paragraph">Paragraph</NavLink></li>
 
-        @*   <li class="sidebar-section-label">Data Display</li>
+          <li><hr/></li>
+
+           <li class="sidebar-section-label">Data Display</li>
           <li><NavLink class="sidebar-link" href="cards">Card</NavLink></li>
           <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
           <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
           <li><NavLink class="sidebar-link" href="figure-image">Figure &amp; Image</NavLink></li>
           <li><NavLink class="sidebar-link" href="list">List</NavLink></li>
-
+          @*
           <li class="sidebar-section-label">Navigation</li>
           <li><NavLink class="sidebar-link" href="anchor">Anchor / Hyperlink</NavLink></li>
           <li><NavLink class="sidebar-link" href="navbar">Navbar</NavLink></li>
