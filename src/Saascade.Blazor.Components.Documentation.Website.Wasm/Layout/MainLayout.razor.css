@@ -210,7 +210,8 @@
 }
 
 .sidebar-search {
-    padding: 0 var(--spacing-sm);
+/*    padding: 0 var(--spacing-sm);*/
+    padding: 10px;
 }
 
 .sidebar-search input {
