@@ -61,26 +61,26 @@
 
 /* ─── Light Theme (variable overrides only) ─── */
 .app-shell.light-theme {
-    --color-bg: #f5f7fb;
-    --color-bg-surface: #f1f5f9;
+    --color-bg: #f1f5f9;
+    --color-bg-surface: #ffffff;
     --color-bg-topbar: #ffffff;
-    --color-bg-input: #ffffff;
+    --color-bg-input: #f8fafc;
     --color-text: #0f172a;
-    --color-text-muted: #334155;
-    --color-text-on-surface: #0f172a;
+    --color-text-muted: #475569;
+    --color-text-on-surface: #1e293b;
     --color-accent: #7C3AED;
-    --color-accent-hover: #7C3AED;
-    --color-border: #e5e7eb;
-    --color-border-input: #e5e7eb;
-    --color-hover-bg: rgba(0, 0, 0, 0.06);
-    --color-sidebar-hover-bg: #E5EBF3;
-    --color-sidebar-active-bg: #E5EBF3;
-    --color-scrollbar: rgba(0, 0, 0, 0.12);
-    --color-scrollbar-hover: rgba(0, 0, 0, 0.22);
-    --color-shadow: rgba(0, 0, 0, 0.06);
-    --color-overlay: rgba(0, 0, 0, 0.10);
-    --color-accent-focus: rgba(124, 58, 237, 0.25);
-    --color-accent-hint: rgba(124, 58, 237, 0.4);
+    --color-accent-hover: #6D28D9;
+    --color-border: #cbd5e1;
+    --color-border-input: #94a3b8;
+    --color-hover-bg: rgba(0, 0, 0, 0.05);
+    --color-sidebar-hover-bg: #f1f5f9;
+    --color-sidebar-active-bg: #ede9fe;
+    --color-scrollbar: rgba(0, 0, 0, 0.15);
+    --color-scrollbar-hover: rgba(0, 0, 0, 0.28);
+    --color-shadow: rgba(0, 0, 0, 0.10);
+    --color-overlay: rgba(0, 0, 0, 0.15);
+    --color-accent-focus: rgba(124, 58, 237, 0.20);
+    --color-accent-hint: rgba(124, 58, 237, 0.35);
 
     color-scheme: light;
 }
