@@ -1,0 +1,62 @@
+@page "/headings"
+<PageTitle>Headings (H1–H6) - Saascade Docs</PageTitle>
+
+<h1>Headings (H1–H6)</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Overview</h2>
+
+        <p class="subtitle">
+            The <code>&lt;H1&gt;</code> through <code>&lt;H6&gt;</code> components
+            render semantic heading elements with design-system-aware styling.
+        </p>
+
+        <hr />
+
+        <h3>Basic Usage</h3>
+
+        <pre><code>&lt;H1&gt;Main Title&lt;/H1&gt;
+&lt;H2&gt;Section Title&lt;/H2&gt;
+&lt;H3&gt;Subsection Title&lt;/H3&gt;
+&lt;H4&gt;Sub-subsection&lt;/H4&gt;
+&lt;H5&gt;Minor Heading&lt;/H5&gt;
+&lt;H6&gt;Smallest Heading&lt;/H6&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Visual Hierarchy</h2>
+
+        <p>Each heading level decreases in size and visual weight:</p>
+
+        <div style="padding: 16px 0;">
+            <h1 style="margin: 8px 0;">H1 — Main Title</h1>
+            <h2 style="margin: 8px 0;">H2 — Section Title</h2>
+            <h3 style="margin: 8px 0;">H3 — Subsection</h3>
+            <h4 style="margin: 8px 0;">H4 — Sub-subsection</h4>
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Parameters</h2>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                <tr><td>ChildContent</td><td>RenderFragment</td><td>Heading text.</td></tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</main>

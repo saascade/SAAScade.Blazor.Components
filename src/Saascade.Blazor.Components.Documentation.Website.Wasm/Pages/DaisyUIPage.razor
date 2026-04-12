@@ -1,0 +1,37 @@
+@page "/daisyui"
+<PageTitle>Tailwind / DaisyUI - Saascade Docs</PageTitle>
+
+<h1>Tailwind / DaisyUI</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Overview</h2>
+
+        <p class="subtitle">
+            DaisyUI is a Tailwind CSS component plugin that provides semantic class names
+            like <code>card</code>, <code>btn</code>, and <code>hero</code>.
+        </p>
+
+        <hr />
+
+        <h3>Setup</h3>
+
+        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Tailwind.DaisyUI);</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Specializations</h2>
+
+        <p>
+            DaisyUI components support specializations such as <code>bg-base-100</code>,
+            <code>w-96</code>, <code>shadow-sm</code>, which are returned by
+            <code>GetSpecializations()</code>.
+        </p>
+
+    </section>
+
+</main>

@@ -1,0 +1,56 @@
+@page "/figure-image"
+<PageTitle>Figure &amp; Image - Saascade Docs</PageTitle>
+
+<h1>Figure &amp; Image</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Img</h2>
+
+        <p class="subtitle">
+            The <code>&lt;Img&gt;</code> component renders an <code>&lt;img&gt;</code> element.
+            The <code>&lt;Image&gt;</code> alias is also available.
+        </p>
+
+        <hr />
+
+        <pre><code>&lt;Img Src="photo.jpg" AriaLabel="A scenic landscape" /&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Figure</h2>
+
+        <p class="subtitle">
+            The <code>&lt;Figure&gt;</code> component wraps an image with a caption
+            using the semantic <code>&lt;figure&gt;</code> element.
+        </p>
+
+        <pre><code>&lt;Figure&gt;
+    &lt;Img Src="diagram.png" /&gt;
+&lt;/Figure&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Parameters</h2>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Src</td><td>string?</td><td>Image source URL (Img only).</td></tr>
+                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
+                <tr><td>ChildContent</td><td>RenderFragment</td><td>Figure child content.</td></tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</main>

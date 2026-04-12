@@ -1,0 +1,49 @@
+@page "/anchor"
+<PageTitle>Anchor / Hyperlink - Saascade Docs</PageTitle>
+
+<h1>Anchor / Hyperlink</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Overview</h2>
+
+        <p class="subtitle">
+            The <code>&lt;A&gt;</code> component renders an anchor (<code>&lt;a&gt;</code>)
+            element. The <code>&lt;Hyperlink&gt;</code> alias is also available.
+        </p>
+
+        <hr />
+
+        <h3>Basic Usage</h3>
+
+        <pre><code>&lt;A Href="https://example.com"&gt;Visit Example&lt;/A&gt;</code></pre>
+
+        <h3>With HyperlinkTarget</h3>
+
+        <pre><code>&lt;A Href="/docs" Target="HyperlinkTarget.Blank"&gt;
+    Open in new tab
+&lt;/A&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Parameters</h2>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Href</td><td>string?</td><td>Link destination URL.</td></tr>
+                <tr><td>Target</td><td>HyperlinkTarget?</td><td>Link target behavior.</td></tr>
+                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                <tr><td>ChildContent</td><td>RenderFragment</td><td>Link text or content.</td></tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</main>

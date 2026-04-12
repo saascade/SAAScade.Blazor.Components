@@ -1,0 +1,49 @@
+@page "/button"
+<PageTitle>Button - Saascade Docs</PageTitle>
+
+<h1>Button</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Overview</h2>
+
+        <p class="subtitle">
+            The <code>&lt;Button&gt;</code> component renders a <code>&lt;button&gt;</code>
+            element with design-system-aware class names.
+        </p>
+
+        <hr />
+
+        <h3>Basic Usage</h3>
+
+        <pre><code>&lt;Button&gt;Click me&lt;/Button&gt;</code></pre>
+
+        <h3>With Specialization</h3>
+
+        <pre><code>&lt;Button Specialization="btn-primary"&gt;Primary Action&lt;/Button&gt;
+&lt;Button Specialization="btn-outline"&gt;Outline Style&lt;/Button&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Parameters</h2>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                <tr><td>Specialization</td><td>string?</td><td>Design system variant classes.</td></tr>
+                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                <tr><td>Tooltip</td><td>string?</td><td>Tooltip text.</td></tr>
+                <tr><td>ChildContent</td><td>RenderFragment</td><td>Button label/content.</td></tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</main>

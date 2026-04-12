@@ -1,0 +1,77 @@
+@page "/create-design-system"
+<PageTitle>Creating a Design System - Saascade Docs</PageTitle>
+
+<h1>Creating a Design System</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Overview</h2>
+
+        <p class="subtitle">
+            You can create your own design system by implementing the
+            <code>IDesignSystem</code> interface.
+        </p>
+
+        <hr />
+
+        <h3>Step 1: Implement IDesignSystem</h3>
+
+        <pre><code>public class MyDesignSystem : IDesignSystem
+{
+    public CssFramework CssFramework =&gt; CssFramework.Custom;
+
+    public string GetComponentName(BaseComponent component)
+    {
+        // Map component types to CSS class names
+        return component switch
+        {
+            Card =&gt; "my-card",
+            Button =&gt; "my-btn",
+            _ =&gt; ""
+        };
+    }
+
+    public string? GetSpecializations&lt;T&gt;(T component)
+        where T : BaseComponent
+    {
+        return component.Specialization;
+    }
+
+    public string? GetStyleForComponent&lt;T&gt;(T component)
+        where T : BaseComponent
+    {
+        return null;
+    }
+
+    public string[] GetStylesheetReferences()
+        =&gt; ["css/my-theme.css"];
+
+    public string[] GetJavaScriptReferences()
+        =&gt; [];
+}</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h3>Step 2: Register It</h3>
+
+        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(new MyDesignSystem());</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h3>Step 3: Add Your Stylesheets</h3>
+
+        <p>
+            Use <code>&lt;DesignSystemStylesheetReferences /&gt;</code> in your layout
+            to automatically include the CSS files returned by
+            <code>GetStylesheetReferences()</code>.
+        </p>
+
+    </section>
+
+</main>

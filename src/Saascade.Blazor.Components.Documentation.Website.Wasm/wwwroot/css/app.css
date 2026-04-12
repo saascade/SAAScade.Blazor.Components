@@ -1,34 +1,51 @@
-/* Global app styles to remove default body margin and set full-viewport background */
+/* Global app styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
-  margin: 0; /* remove default browser margin that looks like a white border */
-  background: #0f1720; /* match the dark app background so edges are seamless */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
+/* Loading fallback — visible only before Blazor renders .app-shell */
 #app {
   min-height: 100%;
+  background: #1F232A;
 }
 
-/* ensure our root app-shell fills the viewport */
-.app-shell {
-  min-height: 100vh;
-}
-
-
-
-/* Hide the automatic H1 highlighting for now - The highlighting is an accessibility feature 
-    that should be enabled, but we just need to figure out how to also make it look good the rest of the time */
-h1:focus 
-{
-    outline: none;
+h1:focus {
+  outline: none;
 }
 
 h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
 }

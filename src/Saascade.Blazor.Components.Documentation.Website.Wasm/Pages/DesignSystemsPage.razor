@@ -1,0 +1,67 @@
+@page "/design-systems"
+<PageTitle>Design Systems - Saascade Docs</PageTitle>
+
+<h1>Design Systems</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>How It Works</h2>
+
+        <p class="subtitle">
+            Saascade components are design-system-agnostic. A single <code>IDesignSystem</code>
+            abstraction maps your components to the correct CSS classes for any framework.
+        </p>
+
+        <hr />
+
+        <h3>The IDesignSystem Interface</h3>
+
+        <p>
+            Every design system implements <code>IDesignSystem</code>, which provides three key methods:
+        </p>
+
+        <ul>
+            <li><strong>GetComponentName</strong> — returns the CSS class name for a component (e.g. <code>card</code>, <code>btn</code>).</li>
+            <li><strong>GetSpecializations</strong> — returns variant classes (e.g. <code>bg-base-100 w-96 shadow-sm</code>).</li>
+            <li><strong>GetStyleForComponent</strong> — returns inline styles when needed.</li>
+        </ul>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Supported Frameworks</h2>
+
+        <p>
+            The <code>CssFramework</code> enum defines the supported targets:
+        </p>
+
+        <ul>
+            <li><strong>Custom</strong> — no framework, raw HTML/CSS.</li>
+            <li><strong>Bootstrap4</strong> — Bootstrap 4 (planned).</li>
+            <li><strong>Bootstrap5</strong> — Bootstrap 5 with vanilla classes.</li>
+            <li><strong>Tailwind</strong> — Tailwind CSS with DaisyUI or Basecoat plugins.</li>
+        </ul>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Available Design Systems</h2>
+
+        <ul>
+            <li><code>DesignSystems.Bootstrap5.VanillaBootstrap5</code></li>
+            <li><code>DesignSystems.Tailwind.DaisyUI</code></li>
+            <li><code>DesignSystems.Tailwind.Basecoat</code></li>
+            <li><code>DesignSystems.Custom.Basic1</code></li>
+            <li><code>DesignSystems.Custom.HanddrawnAssessible</code></li>
+            <li><code>DesignSystems.Custom.HanddrawnBlackAndWhite</code></li>
+            <li><code>DesignSystems.Custom.HanddrawnColor</code></li>
+            <li><code>DesignSystems.Custom.EmptyDesignSystem</code></li>
+        </ul>
+
+    </section>
+
+</main>

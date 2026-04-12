@@ -1,0 +1,82 @@
+@page "/base-components"
+<PageTitle>Base Components - Saascade Docs</PageTitle>
+
+<h1>Base Components</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Overview</h2>
+
+        <p class="subtitle">
+            All Saascade components inherit from a hierarchy of base classes
+            that provide common parameters, parent cascading, and design system integration.
+        </p>
+
+        <hr />
+
+        <h3>BaseComponent</h3>
+
+        <p>
+            The root abstract class. Provides these shared parameters:
+        </p>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Id</td><td>string?</td><td>HTML id attribute.</td></tr>
+                <tr><td>Name</td><td>string?</td><td>Component name for form hierarchies.</td></tr>
+                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                <tr><td>Specialization</td><td>string?</td><td>Design system variant classes.</td></tr>
+                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                <tr><td>Tooltip</td><td>string?</td><td>Tooltip text.</td></tr>
+                <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
+                <tr><td>AriaLabelledby</td><td>string?</td><td>ID of the labelling element.</td></tr>
+                <tr><td>AriaRole</td><td>string?</td><td>ARIA role attribute.</td></tr>
+                <tr><td>Parent</td><td>BaseComponent?</td><td>Cascading parent reference.</td></tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <section class="card">
+
+        <h2>BaseComponentWithOptionalChildContent</h2>
+
+        <p>
+            Extends <code>BaseComponent</code> with an optional
+            <code>ChildContent</code> render fragment.
+        </p>
+
+    </section>
+
+    <section class="card">
+
+        <h2>BaseComponentWithRequiredChildContent</h2>
+
+        <p>
+            Extends <code>BaseComponent</code> with a required
+            <code>ChildContent</code> render fragment via
+            <code>[EditorRequired]</code>.
+        </p>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Name Hierarchy</h2>
+
+        <p>
+            The <code>GetFullname()</code> method recursively builds a dot-separated
+            name path from parent components — useful for form field naming.
+        </p>
+
+        <pre><code>// If Parent.Name = "address" and Name = "street"
+// GetFullname() returns "address.street"</code></pre>
+
+    </section>
+
+</main>

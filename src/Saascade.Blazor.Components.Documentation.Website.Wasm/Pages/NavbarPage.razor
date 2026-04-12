@@ -1,0 +1,47 @@
+@page "/navbar"
+<PageTitle>Navbar - Saascade Docs</PageTitle>
+
+<h1>Navbar</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Overview</h2>
+
+        <p class="subtitle">
+            The <code>&lt;Navbar&gt;</code> component renders a responsive navigation bar
+            that adapts its CSS class names to the active design system.
+        </p>
+
+        <hr />
+
+        <h3>Basic Usage</h3>
+
+        <pre><code>&lt;Navbar&gt;
+    &lt;A Href="/"&gt;Home&lt;/A&gt;
+    &lt;A Href="/docs"&gt;Docs&lt;/A&gt;
+    &lt;A Href="/pricing"&gt;Pricing&lt;/A&gt;
+&lt;/Navbar&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Parameters</h2>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label for the nav.</td></tr>
+                <tr><td>ChildContent</td><td>RenderFragment</td><td>Navigation links and content.</td></tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</main>

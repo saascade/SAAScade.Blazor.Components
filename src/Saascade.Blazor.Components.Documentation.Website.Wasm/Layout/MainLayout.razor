@@ -16,15 +16,15 @@
 
 <div class="app-shell @(darkMode ? "dark-theme" : "light-theme")">
     <header class="topbar">
-    <div class="topbar-left @(menuOpen ? "open" : "closed")">
+    <div class="topbar-left @(menuOpen ? "" : "closed")">
       <div class="brand">Saascade Docs</div>
 
     </div>
     <div class="topbar-center">
       <nav class="topnav">
         <button class="menu-toggle" aria-label="Toggle menu" @onclick="ToggleMenu">☰</button>
-        <NavLink class="topnav-link" href="/">Home</NavLink>
-        <NavLink class="topnav-link" href="docs">Docs</NavLink>
+        <a class="top-action" href="/">Home</a>
+        <a class="top-action" href="docs">Docs</a>
       </nav>
     </div>
     <div class="topbar-right">
@@ -37,20 +37,65 @@
   </header>
 
 
-  <div class="layout-body @(menuOpen ? "open" : "closed")">
+  <div class="layout-body">
     <aside class="sidebar @(menuOpen ? "open" : "")" aria-label="Primary navigation">
       @* <div class="sidebar-brand">Blazorise</div> *@
       <div class="sidebar-search"><input placeholder="Search..." /></div>
       <nav class="sidebar-nav">
         <ul>
+          <li class="sidebar-section-label">Getting Started</li>
           <li><NavLink class="sidebar-link" href="overview">Overview</NavLink></li>
+          <li><NavLink class="sidebar-link" href="installation">Installation</NavLink></li>
           <li><NavLink class="sidebar-link" href="quick-start">Quick Start</NavLink></li>
-          <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
-          <li><NavLink class="sidebar-link" href="components">Components</NavLink></li>
+
+          <li class="sidebar-section-label">Design Systems</li>
+          <li><NavLink class="sidebar-link" href="design-systems">How It Works</NavLink></li>
+          <li><NavLink class="sidebar-link" href="bootstrap5">Bootstrap 5</NavLink></li>
+          <li><NavLink class="sidebar-link" href="daisyui">Tailwind / DaisyUI</NavLink></li>
+          <li><NavLink class="sidebar-link" href="basecoat">Tailwind / Basecoat</NavLink></li>
+          <li><NavLink class="sidebar-link" href="custom-themes">Custom Themes</NavLink></li>
+
           <li><hr/></li>
-          <li><NavLink class="sidebar-link" href="cards">Cards</NavLink></li>
-          @* <li><a class="sidebar-link" href="name-attribute-selection">Name Selection</a></li> *@
-          <li><NavLink class="sidebar-link" href="test-page1">Test page 1</NavLink></li>
+
+          <li class="sidebar-section-label">Layout</li>
+          <li><NavLink class="sidebar-link" href="column">Column</NavLink></li>
+          <li><NavLink class="sidebar-link" href="div-section-main">Div / Section / Main</NavLink></li>
+          <li><NavLink class="sidebar-link" href="header-footer">Header &amp; Footer</NavLink></li>
+          <li><NavLink class="sidebar-link" href="hero">Hero</NavLink></li>
+          <li><NavLink class="sidebar-link" href="drawer">Drawer</NavLink></li>
+
+          <li class="sidebar-section-label">Typography</li>
+          <li><NavLink class="sidebar-link" href="headings">Headings (H1–H6)</NavLink></li>
+          <li><NavLink class="sidebar-link" href="paragraph">Paragraph</NavLink></li>
+
+          <li class="sidebar-section-label">Data Display</li>
+          <li><NavLink class="sidebar-link" href="cards">Card</NavLink></li>
+          <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
+          <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
+          <li><NavLink class="sidebar-link" href="figure-image">Figure &amp; Image</NavLink></li>
+          <li><NavLink class="sidebar-link" href="list">List</NavLink></li>
+
+          <li class="sidebar-section-label">Navigation</li>
+          <li><NavLink class="sidebar-link" href="anchor">Anchor / Hyperlink</NavLink></li>
+          <li><NavLink class="sidebar-link" href="navbar">Navbar</NavLink></li>
+
+          <li class="sidebar-section-label">Actions</li>
+          <li><NavLink class="sidebar-link" href="button">Button</NavLink></li>
+          <li><NavLink class="sidebar-link" href="semantic-buttons">Semantic Buttons</NavLink></li>
+
+          <li><hr/></li>
+
+          <li class="sidebar-section-label">Advanced</li>
+          <li><NavLink class="sidebar-link" href="base-components">Base Components</NavLink></li>
+          <li><NavLink class="sidebar-link" href="render-foreach">Render &amp; Foreach</NavLink></li>
+          <li><NavLink class="sidebar-link" href="name-attribute-selection">Name Attribute</NavLink></li>
+          <li><NavLink class="sidebar-link" href="create-design-system">Creating a Design System</NavLink></li>
+
+          <li><hr/></li>
+
+          <li><NavLink class="sidebar-link" href="api-reference">API Reference</NavLink></li>
+          <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
+          <li><NavLink class="sidebar-link" href="changelog">Changelog</NavLink></li>
         </ul>
       </nav>
     </aside>

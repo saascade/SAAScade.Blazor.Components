@@ -1,0 +1,37 @@
+@page "/custom-themes"
+<PageTitle>Custom Themes - Saascade Docs</PageTitle>
+
+<h1>Custom Themes</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Built-in Custom Themes</h2>
+
+        <p class="subtitle">
+            Saascade ships with several custom design systems that don't depend
+            on any external CSS framework.
+        </p>
+
+        <hr />
+
+        <h3>Basic1</h3>
+        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Custom.Basic1);</code></pre>
+        <p>A minimal custom design system with basic styling.</p>
+
+        <h3>Handdrawn</h3>
+        <p>Three handdrawn variants are available:</p>
+        <ul>
+            <li><strong>HanddrawnAssessible</strong> — accessible color palette with hand-drawn borders.</li>
+            <li><strong>HanddrawnBlackAndWhite</strong> — monochrome hand-drawn aesthetic.</li>
+            <li><strong>HanddrawnColor</strong> — colorful hand-drawn style.</li>
+        </ul>
+
+        <h3>Empty</h3>
+        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Custom.EmptyDesignSystem);</code></pre>
+        <p>A blank canvas — no classes applied. Useful for fully custom CSS.</p>
+
+    </section>
+
+</main>

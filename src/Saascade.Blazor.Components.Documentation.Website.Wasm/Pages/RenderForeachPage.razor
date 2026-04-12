@@ -1,0 +1,58 @@
+@page "/render-foreach"
+<PageTitle>Render &amp; Foreach - Saascade Docs</PageTitle>
+
+<h1>Render &amp; Foreach</h1>
+
+<main class="documentation">
+
+    <section class="card">
+
+        <h2>Render</h2>
+
+        <p class="subtitle">
+            The <code>&lt;Render&gt;</code> component is a utility for conditionally
+            rendering content without introducing extra DOM elements.
+        </p>
+
+        <hr />
+
+        <pre><code>&lt;Render&gt;
+    @@ChildContent
+&lt;/Render&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Foreach</h2>
+
+        <p class="subtitle">
+            The <code>&lt;Foreach&gt;</code> component iterates over a collection
+            and renders a template for each item — a declarative alternative to
+            <code>@@foreach</code> in Razor markup.
+        </p>
+
+        <pre><code>&lt;Foreach Items="items" Context="item"&gt;
+    &lt;Li&gt;@@item.Name&lt;/Li&gt;
+&lt;/Foreach&gt;</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>ListOf</h2>
+
+        <p class="subtitle">
+            The <code>&lt;ListOf&gt;</code> component renders a typed list of items,
+            combining iteration with list-specific rendering logic.
+        </p>
+
+        <pre><code>&lt;ListOf Items="products" Context="product"&gt;
+    &lt;Card&gt;
+        &lt;CardTitle&gt;@@product.Name&lt;/CardTitle&gt;
+    &lt;/Card&gt;
+&lt;/ListOf&gt;</code></pre>
+
+    </section>
+
+</main>

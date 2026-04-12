@@ -1,19 +1,21 @@
-﻿@page "/" 
+﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Home - Saascade Docs</PageTitle>
 
-<H1>SAAScade Components</H1>
+<h1>SAAScade Components</h1>
+
 <main class="documentation">
 
-    <section class="hero">
-        @* <p class="breadcrumb">Documentation</p> *@
+    <section class="card">
 
-        @* <h1>Saascade Documentation</h1> *@
+        <h2>Welcome</h2>
 
         <p class="subtitle">
-            Get started with Saascade, one of the world's most popular Saascade framework
-            for building feature rich, blazing fast applications.
+            Get started with Saascade, one of the world's most popular Blazor component
+            frameworks for building feature rich, blazing fast applications.
         </p>
+
+        <hr />
 
         <p>
             Saascade consists of modern UI components with customizable styling,
@@ -21,83 +23,67 @@
             to build a solid foundation for your applications.
         </p>
 
-        @* <p>
-            On these pages you will find everything you need to create
-            a single-page application.
-        </p> *@
     </section>
 
-    <section class="getting-started">
-        <h2>Getting started</h2>
+    <section class="card">
+
+        <h2>Getting Started</h2>
+
+        <p class="subtitle">
+            Quickly get a project started with any of our examples.
+        </p>
 
         <hr />
 
         <p>
-            Quickly get a project started with any of our examples.
-            This <a href="/quick-start">quick start</a> guide will take you through
-            the downloading and getting started with Saascade.
+            The <a href="/quick-start">quick start</a> guide will take you through
+            downloading and getting started with Saascade.
         </p>
 
         <p>
             The best way to round up the whole story is to see Saascade in action.
         </p>
 
+        <h3>Installation</h3>
+        <pre><code>dotnet add package Saascade.Blazor.Components</code></pre>
+
+        <h3>Register a Design System</h3>
+        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Tailwind.DaisyUI);</code></pre>
+
+        <h3>Add Imports</h3>
+        <pre><code>@@using Saascade.Blazor.Components</code></pre>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Design Systems</h2>
+
+        <p class="subtitle">
+            Saascade components are design-system-agnostic — swap CSS frameworks without changing your markup.
+        </p>
+
+        <hr />
+
+        <ul>
+            <li><a href="/bootstrap5">Bootstrap 5</a> — vanilla Bootstrap classes.</li>
+            <li><a href="/daisyui">Tailwind / DaisyUI</a> — Tailwind with DaisyUI plugin.</li>
+            <li><a href="/basecoat">Tailwind / Basecoat</a> — Tailwind with Basecoat plugin.</li>
+            <li><a href="/custom-themes">Custom Themes</a> — create your own design system.</li>
+        </ul>
+
+    </section>
+
+    <section class="card">
+
+        <h2>AI Integration</h2>
+
         <p>
             Use an AI assistant? Connect it to the
-            <a href="/mcp-server-guide">MCP server guide</a>
+            <a href="/mcp-server-guide">MCP server</a>
             to pull Saascade docs and examples on demand.
         </p>
+
     </section>
 
 </main>
-
-
-@DateTime.Now.ToString()
-@* <br />
-@DateTime.Now.AddDays(1).AddHours(3).Humanize() *@
-
-@* 
-<Card class="shoes-card">
-    <Figure>
-        <Image Src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" Alt="Shoes"></Image>
-    </Figure>
-    <CardBody>
-        <H2>Title</H2>
-        <P>A card component has a figure, a body part, and inside body there are title and actions parts</P>
-        <CardActions>
-            <Button type="Primary">Buy Now</Button>
-        </CardActions>
-    </CardBody>
-</Card> *@
-
-@* 
-<HeroSection>
-    <Left>
-        <Image></Image>
-    </Left>
-    <Right>
-
-    </Right>
-</HeroSection>
- *@
-
-@* 
-
-
-
-<Select>
-    <SelectItem Value="1">One</SelectItem>
-    <SelectItem Value="2">Two</SelectItem>
-    <SelectItem Value="3">Three</SelectItem>
-    <SelectItem Value="4">Four</SelectItem>
-</Select>
-
-
-
-
-<SelectFromList List="TheInputList">
-    <SelectItem Value="">One</SelectItem>
-    <SelectItem Value="2">Two</SelectItem>
-    <SelectItem Value="3">Three</SelectItem>
-    <SelectItem Value="4">Four</SelectItem>
-</SelectFromList> *@
