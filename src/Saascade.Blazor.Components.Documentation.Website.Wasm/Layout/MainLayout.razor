@@ -28,6 +28,9 @@
       </nav>
     </div>
     <div class="topbar-right">
+        <div class="topbar-search">
+          <input placeholder="Search..." />
+        </div>
         <a class="top-action" href="pricing">Pricing</a>
         <a class="top-action" href="account">Account</a>
         <button class="theme-toggle" @onclick="ToggleTheme">
@@ -39,8 +42,6 @@
 
   <div class="layout-body">
     <aside class="sidebar @(menuOpen ? "open" : "")" aria-label="Primary navigation">
-      @* <div class="sidebar-brand">Blazorise</div> *@
-      <div class="sidebar-search"><input placeholder="Search..." /></div>
       <nav class="sidebar-nav">
         <ul>
           <li class="sidebar-section-label">Getting Started</li>
