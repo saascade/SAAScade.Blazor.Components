@@ -1,6 +1,8 @@
 ﻿@using Saascade.Blazor.Components.Documentation.Website.Wasm.Components
 @inherits LayoutComponentBase
+@implements IDisposable
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
 @{
     var path = Navigation.ToBaseRelativePath(Navigation.Uri);
@@ -67,7 +69,7 @@
           <li><NavLink class="sidebar-link" href="hero">Hero</NavLink></li>
           <li><NavLink class="sidebar-link" href="drawer">Drawer</NavLink></li>
            
-          <li><hr/></li>
+          @* <li><hr/></li>
 
           <li class="sidebar-section-label">Typography</li>
           <li><NavLink class="sidebar-link" href="headings">Headings (H1–H6)</NavLink></li>
@@ -80,7 +82,7 @@
           <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
           <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
           <li><NavLink class="sidebar-link" href="figure-image">Figure &amp; Image</NavLink></li>
-          <li><NavLink class="sidebar-link" href="list">List</NavLink></li>
+          <li><NavLink class="sidebar-link" href="list">List</NavLink></li> *@
           @*
           <li class="sidebar-section-label">Navigation</li>
           <li><NavLink class="sidebar-link" href="anchor">Anchor / Hyperlink</NavLink></li>
@@ -167,6 +169,25 @@
     void ToggleTheme()
     {
         darkMode = !darkMode;
+    }
+
+    protected override void OnInitialized()
+    {
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+
+    async void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        var uri = new Uri(e.Location);
+        if (string.IsNullOrEmpty(uri.Fragment))
+        {
+            await JS.InvokeVoidAsync("scrollToTop");
+        }
+    }
+
+    public void Dispose()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
     }
 }
 

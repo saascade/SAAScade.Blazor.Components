@@ -33,6 +33,11 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
+    <script>
+        window.scrollToTop = function () {
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        };
+    </script>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
 
     <!-- Design system JavaScript references magically get injected at the end of the body -->
