@@ -117,6 +117,10 @@
 .brand {
     font-weight: 700;
     white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .menu-toggle {
