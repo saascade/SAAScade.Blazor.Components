@@ -1,0 +1,120 @@
+<div class="video @Class" style="@WrapperStyle" @attributes="AdditionalAttributes" @onclick="OnVideoClicked">
+    <video
+        muted="@(Muted ? "muted" : null)"
+        autoplay="@(AutoPlay ? "autoplay" : null)"
+        loop="@(Loop ? "loop" : null)"
+        controls="@(Controls ? "controls" : null)"
+        poster="@(Poster)"
+        preload="@(Preload)"
+        width="@(Width)"
+        height="@(Height)"
+        crossorigin="@(CrossOrigin)"
+        playsinline> 
+        @foreach (var source in Sources)
+        {
+            <source src="@source.Source" type="@source.Type" />
+        }
+        @ChildContent
+    </video>
+</div>
+@code 
+{
+    /// <summary>
+    /// Collection of video sources to use for rendering the video element.
+    /// Each item provides a Source URL and an optional MIME Type.
+    /// </summary>
+    [Parameter, EditorRequired] public required IEnumerable<VideoSource> Sources { get; set; }
+
+    /// <summary>
+    /// If true, the video will start playing automatically when the page loads.
+    /// </summary>
+    [Parameter] public bool AutoPlay { get; set; } = true;
+
+    /// <summary>
+    /// If true, the video will be muted by default. Users can unmute manually.
+    /// </summary>
+    [Parameter] public bool Muted { get; set; } = true;
+
+    /// <summary>
+    /// If true, the video will loop back to the start when finished.
+    /// </summary>
+    [Parameter] public bool Loop { get; set; } = true;
+
+    /// <summary>
+    /// If true, browser UI controls will be shown for the video.
+    /// </summary>
+    [Parameter] public bool Controls { get; set; }
+
+    /// <summary>
+    /// Optional poster image URL displayed before the video plays.
+    /// </summary>
+    [Parameter] public string? Poster { get; set; }
+
+    /// <summary>
+    /// Hint to the browser about how the video should be loaded: none, metadata, or auto.
+    /// </summary>
+    [Parameter] public string? Preload { get; set; }
+
+    /// <summary>
+    /// Optional width (in pixels) for the video element.
+    /// </summary>
+    [Parameter] public int? Width { get; set; }
+
+    /// <summary>
+    /// Optional height (in pixels) for the video element.
+    /// </summary>
+    [Parameter] public int? Height { get; set; }
+
+    /// <summary>
+    /// Cross-origin attribute to use for CORS requests (e.g., anonymous, use-credentials).
+    /// </summary>
+    [Parameter] public string? CrossOrigin { get; set; } 
+
+    /// <summary>
+    /// CSS class(es) applied to the outer video wrapper container.
+    /// </summary>
+    [Parameter] public string? Class { get; set; }
+
+    /// <summary>
+    /// Inline styles applied to the outer video wrapper container.
+    /// </summary>
+    [Parameter] public string? Style { get; set; }
+
+    /// <summary>
+    /// Additional content to render inside the video element (fallback or overlays).
+    /// </summary>
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    /// <summary>
+    /// Any additional attributes to apply to the outer wrapper element.
+    /// </summary>
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? AdditionalAttributes { get; set; }
+
+    /// <summary>
+    /// Fired when the video element is clicked.
+    /// </summary>
+    [Parameter] public EventCallback Clicked { get; set; }
+
+    private async Task OnVideoClicked()
+    {
+        if (Clicked.HasDelegate)
+        {
+            await Clicked.InvokeAsync();
+        }
+    }
+
+    // Ensure the outer wrapper indicates clickability with a pointer cursor
+    private string WrapperStyle
+    {
+        get
+        {
+            var baseStyle = Style ?? string.Empty;
+            if (!string.IsNullOrWhiteSpace(baseStyle) && !baseStyle.Trim().EndsWith(";"))
+            {
+                baseStyle += ";";
+            }
+            return string.IsNullOrWhiteSpace(baseStyle) ? "cursor: pointer;" : $"{baseStyle} cursor: pointer;";
+        }
+    }
+}
