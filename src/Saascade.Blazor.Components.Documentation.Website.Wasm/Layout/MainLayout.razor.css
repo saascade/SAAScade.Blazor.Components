@@ -1,8 +1,8 @@
 /* ─── Design Tokens ─── */
 .app-shell {
     --color-bg: #1F232A;
-    --color-bg-surface: #0c1622;
-    --color-bg-topbar: #0b1220;
+    --color-bg-surface: #17171D;
+    --color-bg-topbar: #17171D;
     --color-bg-input: #1F232A;
     --color-text: #e6eef8;
     --color-text-muted: #94a3b8;
@@ -20,20 +20,17 @@
     --color-overlay: rgba(0, 0, 0, 0.20);
     --color-accent-focus: rgba(59, 130, 246, 0.25);
     --color-accent-hint: rgba(59, 130, 246, 0.4);
-
     --sidebar-width: 200px;
     --topbar-height: 50px;
     --content-margin-open: 40px;
     --content-margin-closed: 140px;
     --content-margin-mobile: 20px;
     --sidebar-link-indent: 30px;
-
     --spacing-xs: 4px;
     --spacing-sm: 6px;
     --spacing-md: 10px;
     --spacing-lg: 12px;
     --spacing-xl: 28px;
-
     --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-family-mono: ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
     --font-size-sm: 0.8125rem;
@@ -43,16 +40,28 @@
     --font-size-heading: 2rem;
     --line-height-base: 1.5;
     --line-height-tight: 1.2;
-
     --radius: 6px;
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-hover-in: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
     --transition-hover-out: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    /* ─── Hero glow — ajuste estes três tokens ─── */
+    --hero-glow-opacity: 0.18; /* transparência: 0 = invisível · 1 = sólido */
+    --hero-glow-spread: 70%; /* largura horizontal do brilho               */
+    --hero-glow-depth: 30%; /* altura / alcance vertical do brilho        */
 
     font-family: var(--font-family);
     color: var(--color-text);
-    background: var(--color-bg);
+    /*    amarelo*/
+    /*        background:
+        radial-gradient(
+            ellipse var(--hero-glow-spread) var(--hero-glow-depth) at 50% 0%,
+            rgba(255, 221, 39, var(--hero-glow-opacity)),
+            transparent
+        ),
+        var(--color-bg);*/
+    /*    background: radial-gradient(circle at 50% -20%, rgba(79, 142, 247, 0.12), transparent 50%), radial-gradient(circle at 10% 40%, rgba(139, 92, 246, 0.08), transparent 30%), radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05), transparent 30%), var(--bg);*/
+
     line-height: var(--line-height-base);
     color-scheme: dark;
     isolation: isolate;
@@ -178,6 +187,7 @@
 
 /* ─── Layout Body ─── */
 .layout-body {
+    background: var(--color-bg); 
     display: flex;
     min-height: calc(100vh - var(--topbar-height) - 6px);
 }
@@ -210,7 +220,7 @@
 }
 
 .sidebar::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
 }
 
 .sidebar::-webkit-scrollbar-track {
