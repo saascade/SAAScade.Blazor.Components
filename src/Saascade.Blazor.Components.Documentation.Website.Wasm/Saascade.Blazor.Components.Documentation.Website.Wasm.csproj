@@ -2,8 +2,7 @@
   <PropertyGroup>
     <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
     <PublishTrimmed>true</PublishTrimmed>
-<!--    <TrimMode>link</TrimMode>-->
-    <TrimMode>full</TrimMode>
+    <TrimMode>link</TrimMode>
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
