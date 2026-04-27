@@ -20,13 +20,13 @@
     --color-overlay: rgba(0, 0, 0, 0.20);
     --color-accent-focus: rgba(59, 130, 246, 0.25);
     --color-accent-hint: rgba(59, 130, 246, 0.4);
-    --sidebar-width: 200px;
+    --sidebar-width: 235px;
     --topbar-height: 50px;
     --techbar-height: 42px;
     --content-margin-open: 40px;
     --content-margin-closed: 140px;
     --content-margin-mobile: 20px;
-    --sidebar-link-indent: 30px;
+    --sidebar-link-indent: 50px;
     --spacing-xs: 4px;
     --spacing-sm: 6px;
     --spacing-md: 10px;
@@ -125,12 +125,36 @@
 }
 
 .brand {
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
     white-space: nowrap;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-mark {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+}
+
+.brand-name {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
 }
 
 .menu-toggle {
@@ -190,15 +214,15 @@
 .layout-body {
     background: var(--color-bg); 
     display: flex;
-    min-height: calc(100vh - var(--topbar-height) - var(--techbar-height) - 6px);
+    min-height: calc(100vh - var(--topbar-height) - 6px);
 }
 
 /* ─── Sidebar ─── */
 .sidebar {
     position: sticky;
-    top: calc(var(--topbar-height) + var(--techbar-height));
+    top: var(--topbar-height);
     width: var(--sidebar-width);
-    height: calc(100vh - var(--topbar-height) - var(--techbar-height));
+    height: calc(100vh - var(--topbar-height));
     flex-shrink: 0;
     align-self: flex-start;
     background: var(--color-bg-surface);
@@ -273,15 +297,25 @@
 }
 
 .sidebar-section-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 0.7rem;
     font-weight: 700;
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.20em;
-    padding: var(--spacing-lg) var(--sidebar-link-indent) var(--spacing-xs);
+    padding: var(--spacing-lg) 30px var(--spacing-xs);
     margin-top: var(--spacing-sm);
     user-select: none;
     pointer-events: none;
+}
+
+.section-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: currentColor;
 }
 
 .sidebar-section-label:first-child {
@@ -475,7 +509,7 @@
 /* ─── Table of Contents (right sidebar) ─── */
 ::deep .toc {
     position: sticky;
-    top: calc(var(--topbar-height) + var(--techbar-height) + var(--spacing-xl));
+    top: calc(var(--topbar-height) + var(--spacing-xl));
     align-self: flex-start;
     flex-shrink: 0;
     width: 200px;
@@ -553,7 +587,7 @@
 
 .footer-columns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-xl);
     max-width: 900px;
     margin: 0 auto;

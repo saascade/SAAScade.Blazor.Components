@@ -1,0 +1,47 @@
+@inject TechFilterService FilterService
+@implements IDisposable
+
+<div class="stf-wrapper">
+    <div class="stf-label">
+        <svg class="stf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+        </svg>
+        Filter by Framework
+    </div>
+
+    <button class="stf-btn @(FilterService.SelectedTech == "bootstrap" ? "stf-active" : "")"
+            @onclick='() => FilterService.Select("bootstrap")'>
+        Bootstrap 5
+    </button>
+
+    <button class="stf-btn @(FilterService.SelectedTech == "daisyui" ? "stf-active" : "")"
+            @onclick='() => FilterService.Select("daisyui")'>
+        DaisyUI
+    </button>
+
+    <button class="stf-btn @(FilterService.SelectedTech == "basecoat" ? "stf-active" : "")"
+            @onclick='() => FilterService.Select("basecoat")'>
+        Basecoat
+    </button>
+
+    @if (!string.IsNullOrEmpty(FilterService.SelectedTech))
+    {
+        <button class="stf-btn stf-clear" @onclick='() => FilterService.Select(FilterService.SelectedTech)'>
+            ✕ Clear filter
+        </button>
+    }
+
+    @* <div class="stf-divider"></div> *@
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        FilterService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        FilterService.OnChange -= StateHasChanged;
+    }
+}
