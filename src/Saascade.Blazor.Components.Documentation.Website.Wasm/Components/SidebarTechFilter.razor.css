@@ -21,7 +21,8 @@
 }
 
 .stf-icon {
-    color: #3b82f6;
+    color: white;
+/*    color: #3b82f6;*/
     width: 20px;
     height: 20px;
     flex-shrink: 0;
