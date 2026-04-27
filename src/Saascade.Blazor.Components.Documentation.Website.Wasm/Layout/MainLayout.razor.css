@@ -1,5 +1,6 @@
 /* ─── Design Tokens ─── */
 .app-shell {
+    --text-strong:#f4f4f5;
     --color-bg: #1F232A;
     --color-bg-surface: #17171D;
     --color-bg-topbar: #17171D;
@@ -20,7 +21,7 @@
     --color-overlay: rgba(0, 0, 0, 0.20);
     --color-accent-focus: rgba(59, 130, 246, 0.25);
     --color-accent-hint: rgba(59, 130, 246, 0.4);
-    --sidebar-width: 235px;
+    --sidebar-width: 250px;
     --topbar-height: 50px;
     --techbar-height: 42px;
     --content-margin-open: 40px;
@@ -32,7 +33,7 @@
     --spacing-md: 10px;
     --spacing-lg: 12px;
     --spacing-xl: 28px;
-    --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family: "Inter", system-ui, -apple-system, sans-serif;
     --font-family-mono: ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
     --font-size-sm: 0.8125rem;
     --font-size-base: 0.875rem;
@@ -135,26 +136,29 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
+/*    line-height: 1.1;*/
 }
 
 .brand-mark {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     color: var(--color-accent);
 }
 
 .brand-name {
-    font-size: 0.7rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 800;
     color: var(--color-text-muted);
-    letter-spacing: 0.04em;
+    line-height: 1;
+/*    letter-spacing: 0.04em;*/
+    color: var(--text-strong);
 }
 
 .menu-toggle {
