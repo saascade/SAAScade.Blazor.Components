@@ -22,6 +22,7 @@
     --color-accent-hint: rgba(59, 130, 246, 0.4);
     --sidebar-width: 200px;
     --topbar-height: 50px;
+    --techbar-height: 42px;
     --content-margin-open: 40px;
     --content-margin-closed: 140px;
     --content-margin-mobile: 20px;
@@ -189,15 +190,15 @@
 .layout-body {
     background: var(--color-bg); 
     display: flex;
-    min-height: calc(100vh - var(--topbar-height) - 6px);
+    min-height: calc(100vh - var(--topbar-height) - var(--techbar-height) - 6px);
 }
 
 /* ─── Sidebar ─── */
 .sidebar {
     position: sticky;
-    top: var(--topbar-height);
+    top: calc(var(--topbar-height) + var(--techbar-height));
     width: var(--sidebar-width);
-    height: calc(100vh - var(--topbar-height));
+    height: calc(100vh - var(--topbar-height) - var(--techbar-height));
     flex-shrink: 0;
     align-self: flex-start;
     background: var(--color-bg-surface);
@@ -474,7 +475,7 @@
 /* ─── Table of Contents (right sidebar) ─── */
 ::deep .toc {
     position: sticky;
-    top: calc(var(--topbar-height) + var(--spacing-xl));
+    top: calc(var(--topbar-height) + var(--techbar-height) + var(--spacing-xl));
     align-self: flex-start;
     flex-shrink: 0;
     width: 200px;

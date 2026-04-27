@@ -7,34 +7,38 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard Tech="daisyui">
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            DaisyUI is a Tailwind CSS component plugin that provides semantic class names
-            like <code>card</code>, <code>btn</code>, and <code>hero</code>.
-        </p>
+            <p class="subtitle">
+                DaisyUI is a Tailwind CSS component plugin that provides semantic class names
+                like <code>card</code>, <code>btn</code>, and <code>hero</code>.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Setup</h3>
+            <h3>Setup</h3>
 
-        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Tailwind.DaisyUI);</code></pre>
+            <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Tailwind.DaisyUI);</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard Tech="daisyui">
+        <section class="card">
 
-        <h2 id="specializations">Specializations</h2>
+            <h2 id="specializations">Specializations</h2>
 
-        <p>
-            DaisyUI components support specializations such as <code>bg-base-100</code>,
-            <code>w-96</code>, <code>shadow-sm</code>, which are returned by
-            <code>GetSpecializations()</code>.
-        </p>
+            <p>
+                DaisyUI components support specializations such as <code>bg-base-100</code>,
+                <code>w-96</code>, <code>shadow-sm</code>, which are returned by
+                <code>GetSpecializations()</code>.
+            </p>
 
-    </section>
+        </section>
+    </TechCard>
 
 </main>
 

@@ -1,4 +1,4 @@
-﻿@page "/cards"
+@page "/cards"
 <PageTitle>Cards Example</PageTitle>
 
 <h1 id="card-components">Card Components</h1>
@@ -7,53 +7,113 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="example-card-title">Example Card Title</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            This is a simple subtitle inside the card component.
-            It helps highlight the main idea before the detailed content.
-        </p>
+            <p class="subtitle">
+                Cards are the primary content container in Saascade documentation.
+                Use the framework filter above to see framework-specific examples.
+            </p>
 
-        <hr />
+            <hr />
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec vehicula, augue in dignissim viverra, mauris nunc
-            fermentum lorem, sed suscipit turpis sapien vel augue.
-        </p>
+            <p>
+                Each design system renders a <code>&lt;Card&gt;</code> component with its own CSS class
+                mapping. The content and structure remain the same across frameworks — only the
+                class names differ.
+            </p>
 
-        <p>
-            Curabitur sit amet ligula sed neque volutpat tristique.
-            Integer facilisis, nisl at volutpat porta, neque ipsum
-            varius erat, sit amet facilisis justo nisl non lectus.
-        </p>
+        </section>
+    </TechCard>
 
-        <p>
-            This text exists only to demonstrate how paragraphs behave
-            inside the card layout. You can replace it later with your
-            real content or documentation.
-        </p>
+    <TechCard Tech="bootstrap">
+        <section class="card">
 
-    </section>
+            <h2 id="bootstrap-card">Bootstrap 5 Card</h2>
+
+            <p class="subtitle">
+                In Bootstrap 5, the <code>Card</code> component maps to the <code>.card</code> class
+                with <code>.card-body</code> for inner content.
+            </p>
+
+            <hr />
+
+            <pre><code>// Bootstrap 5 setup
+builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Bootstrap5.VanillaBootstrap5);
+
+// Razor usage
+&lt;Card&gt;
+    &lt;CardTitle&gt;My Title&lt;/CardTitle&gt;
+    &lt;CardBody&gt;Content here.&lt;/CardBody&gt;
+&lt;/Card&gt;</code></pre>
+
+            <p>Renders as: <code>&lt;div class="card"&gt;&lt;div class="card-body"&gt;...&lt;/div&gt;&lt;/div&gt;</code></p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="daisyui-card">DaisyUI Card</h2>
+
+            <p class="subtitle">
+                In DaisyUI, the <code>Card</code> component maps to the <code>.card</code> class with
+                specializations like <code>bg-base-100</code>, <code>w-96</code>, <code>shadow-sm</code>.
+            </p>
+
+            <hr />
+
+            <pre><code>// DaisyUI setup
+builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Tailwind.DaisyUI);
+
+// Razor usage
+&lt;Card&gt;
+    &lt;CardTitle&gt;My Title&lt;/CardTitle&gt;
+    &lt;CardBody&gt;Content here.&lt;/CardBody&gt;
+&lt;/Card&gt;</code></pre>
+
+            <p>Renders as: <code>&lt;div class="card bg-base-100 w-96 shadow-sm"&gt;...&lt;/div&gt;</code></p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="basecoat-card">Basecoat Card</h2>
+
+            <p class="subtitle">
+                In Basecoat, the <code>Card</code> component uses Tailwind utility classes to
+                achieve a clean, minimal card style.
+            </p>
+
+            <hr />
+
+            <pre><code>// Basecoat setup
+builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Tailwind.Basecoat);
+
+// Razor usage
+&lt;Card&gt;
+    &lt;CardTitle&gt;My Title&lt;/CardTitle&gt;
+    &lt;CardBody&gt;Content here.&lt;/CardBody&gt;
+&lt;/Card&gt;</code></pre>
+
+            <p>Renders with Basecoat's minimal utility-first class composition.</p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("card-components", "Card Components"),
-    new TocItem("example-card-title", "Example Card Title", 2)
+    new TocItem("overview", "Overview", 2),
+    new TocItem("bootstrap-card", "Bootstrap 5 Card", 2),
+    new TocItem("daisyui-card", "DaisyUI Card", 2),
+    new TocItem("basecoat-card", "Basecoat Card", 2)
 ])" />
 
 </div>
-
-@* <Card>
-
-
-</Card>
-
-cards
-@code 
-{
-
-} *@

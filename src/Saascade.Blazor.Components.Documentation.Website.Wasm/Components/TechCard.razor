@@ -1,0 +1,22 @@
+@inject TechFilterService FilterService
+@implements IDisposable
+
+@if (FilterService.IsVisible(Tech))
+{
+    @ChildContent
+}
+
+@code {
+    [Parameter] public string Tech { get; set; } = "";
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    protected override void OnInitialized()
+    {
+        FilterService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        FilterService.OnChange -= StateHasChanged;
+    }
+}
