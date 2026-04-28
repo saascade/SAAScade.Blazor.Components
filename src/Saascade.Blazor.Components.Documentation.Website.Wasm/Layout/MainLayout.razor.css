@@ -239,7 +239,7 @@
     z-index: 1000;
     overscroll-behavior: contain;
     scrollbar-gutter: stable;
-    scrollbar-width: thin;
+    scrollbar-width: auto;
     scrollbar-color: var(--color-scrollbar) transparent;
 }
 
@@ -249,7 +249,7 @@
 }
 
 .sidebar::-webkit-scrollbar {
-    width: 10px;
+    width: 14px;
 }
 
 .sidebar::-webkit-scrollbar-track {
