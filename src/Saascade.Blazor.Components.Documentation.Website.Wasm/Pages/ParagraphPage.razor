@@ -7,46 +7,111 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;P&gt;</code> component renders a semantic <code>&lt;p&gt;</code>
-            element with design-system-aware styling.
-        </p>
+            <p class="subtitle">
+                The P component renders a semantic p element with design-system-aware styling.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
+            <pre><code>&lt;P&gt;This is a paragraph of text rendered through the Saascade component.&lt;/P&gt;</code></pre>
 
-        <pre><code>&lt;P&gt;This is a paragraph of text rendered through the Saascade component.&lt;/P&gt;</code></pre>
+        </section>
+    </TechCard>
 
-    </section>
+    <TechCard>
+        <section class="card">
 
-    <section class="card">
+            <h2 id="parameters">Parameters</h2>
 
-        <h2 id="parameters">Parameters</h2>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Paragraph text content.</td></tr>
+                </tbody>
+            </table>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Paragraph text content.</td></tr>
-            </tbody>
-        </table>
+        </section>
+    </TechCard>
 
-    </section>
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="paragraph-bootstrap">Bootstrap 5 Paragraph</h2>
+
+            <p class="subtitle">Bootstrap 5 Paragraph</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the P component renders as a standard p element and inherits
+                Bootstrap's typography reboot styles. Bootstrap sets a consistent bottom margin
+                on paragraphs and applies the base font size from the Bootstrap typography
+                configuration. You can apply Bootstrap text utility classes such as lead,
+                text-muted, or fw-bold through the Specialization or Class parameters.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="paragraph-daisyui">DaisyUI Paragraph</h2>
+
+            <p class="subtitle">DaisyUI Paragraph</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the P component renders as a standard p element with DaisyUI's
+                base typography styles applied through the Tailwind CSS base layer. DaisyUI's
+                text color tokens adapt to the active theme, so paragraph text automatically
+                uses the appropriate foreground color without requiring explicit color utilities.
+                You can override typography with Tailwind text size and color utilities through
+                the Class parameter.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="paragraph-basecoat">Basecoat Paragraph</h2>
+
+            <p class="subtitle">Basecoat Paragraph</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the P component renders as a standard p element styled with
+                Tailwind's typography utilities from Basecoat's base configuration. Basecoat
+                applies a consistent line height and text size that follows the Tailwind
+                typographic scale. You can adjust font size, weight, color, and spacing
+                through Tailwind utility classes passed via the Class or Specialization parameters.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("paragraph", "Paragraph"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("parameters", "Parameters", 2)
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("paragraph-bootstrap", "Bootstrap 5 Paragraph", 2),
+    new TocItem("paragraph-daisyui", "DaisyUI Paragraph", 2),
+    new TocItem("paragraph-basecoat", "Basecoat Paragraph", 2)
 ])" />
 
 </div>

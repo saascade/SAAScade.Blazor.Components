@@ -1,49 +1,123 @@
 @page "/anchor"
 <PageTitle>Anchor / Hyperlink - Saascade Docs</PageTitle>
 
-<h1>Anchor / Hyperlink</h1>
+<h1 id="anchor">Anchor / Hyperlink</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;A&gt;</code> component renders an anchor (<code>&lt;a&gt;</code>)
-            element. The <code>&lt;Hyperlink&gt;</code> alias is also available.
-        </p>
+            <p class="subtitle">
+                The A component renders an anchor element. The Hyperlink alias is also available.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
+            <h3>Basic Usage</h3>
+            <pre><code>&lt;A Href="https://example.com"&gt;Visit Example&lt;/A&gt;</code></pre>
 
-        <pre><code>&lt;A Href="https://example.com"&gt;Visit Example&lt;/A&gt;</code></pre>
-
-        <h3>With HyperlinkTarget</h3>
-
-        <pre><code>&lt;A Href="/docs" Target="HyperlinkTarget.Blank"&gt;
+            <h3>With HyperlinkTarget</h3>
+            <pre><code>&lt;A Href="/docs" Target="HyperlinkTarget.Blank"&gt;
     Open in new tab
 &lt;/A&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Parameters</h2>
+            <h2 id="parameters">Parameters</h2>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Href</td><td>string?</td><td>Link destination URL.</td></tr>
-                <tr><td>Target</td><td>HyperlinkTarget?</td><td>Link target behavior.</td></tr>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Link text or content.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Href</td><td>string?</td><td>Link destination URL.</td></tr>
+                    <tr><td>Target</td><td>HyperlinkTarget?</td><td>Link target behavior.</td></tr>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Link text or content.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="anchor-bootstrap">Bootstrap 5 Anchor</h2>
+
+            <p class="subtitle">Bootstrap 5 Anchor</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the A component renders as a standard anchor element with
+                Bootstrap's link color styles applied through Bootstrap's base CSS. You can
+                apply Bootstrap link utility classes such as link-primary, link-secondary, or
+                link-underline-opacity-50 through the Specialization parameter to control
+                the link color, underline, and hover behavior.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="anchor-daisyui">DaisyUI Anchor</h2>
+
+            <p class="subtitle">DaisyUI Anchor</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the A component can use the DaisyUI link class and its variants
+                such as link-primary, link-secondary, or link-hover. These classes apply
+                DaisyUI's theme-aware link colors and underline behavior. Links inside DaisyUI's
+                menu component automatically receive the appropriate hover and active styles
+                through DaisyUI's CSS without additional class configuration.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="anchor-basecoat">Basecoat Anchor</h2>
+
+            <p class="subtitle">Basecoat Anchor</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the A component is styled with Tailwind utility classes for color,
+                underline decoration, and hover states. The default Basecoat anchor style uses
+                the theme's primary color with an underline that appears on hover. You can
+                override the color, decoration, and transition behavior through Tailwind utilities
+                passed via the Class or Specialization parameters.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("anchor", "Anchor / Hyperlink"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("anchor-bootstrap", "Bootstrap 5 Anchor", 2),
+    new TocItem("anchor-daisyui", "DaisyUI Anchor", 2),
+    new TocItem("anchor-basecoat", "Basecoat Anchor", 2)
+])" />
+
+</div>

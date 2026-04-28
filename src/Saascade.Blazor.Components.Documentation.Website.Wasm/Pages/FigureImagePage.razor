@@ -7,53 +7,117 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="img">Img</h2>
+            <h2 id="img">Img</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Img&gt;</code> component renders an <code>&lt;img&gt;</code> element.
-            The <code>&lt;Image&gt;</code> alias is also available.
-        </p>
+            <p class="subtitle">
+                The Img component renders an img element. The Image alias is also available.
+            </p>
 
-        <hr />
+            <hr />
 
-        <pre><code>&lt;Img Src="photo.jpg" AriaLabel="A scenic landscape" /&gt;</code></pre>
+            <pre><code>&lt;Img Src="photo.jpg" AriaLabel="A scenic landscape" /&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="figure">Figure</h2>
+            <h2 id="figure">Figure</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Figure&gt;</code> component wraps an image with a caption
-            using the semantic <code>&lt;figure&gt;</code> element.
-        </p>
+            <p class="subtitle">
+                The Figure component wraps an image with a caption using the semantic figure element.
+            </p>
 
-        <pre><code>&lt;Figure&gt;
+            <pre><code>&lt;Figure&gt;
     &lt;Img Src="diagram.png" /&gt;
 &lt;/Figure&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="parameters">Parameters</h2>
+            <h2 id="parameters">Parameters</h2>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Src</td><td>string?</td><td>Image source URL (Img only).</td></tr>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Figure child content.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Src</td><td>string?</td><td>Image source URL (Img only).</td></tr>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Figure child content.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="figure-image-bootstrap">Bootstrap 5 Figure &amp; Image</h2>
+
+            <p class="subtitle">Bootstrap 5 Figure &amp; Image</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the Figure component maps to Bootstrap's figure class and the
+                Img component inside it maps to figure-img. Bootstrap's figure component is a
+                simple semantic wrapper that provides consistent spacing between the image and
+                any caption below it. The Specialization parameter can add Bootstrap image
+                utilities such as img-fluid or rounded.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="figure-image-daisyui">DaisyUI Figure &amp; Image</h2>
+
+            <p class="subtitle">DaisyUI Figure &amp; Image</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the Figure component is used inside Card components as the card's
+                image area. The figure element receives no additional DaisyUI-specific class
+                beyond the default figure semantic element, while the Img inside it can receive
+                Tailwind responsive utilities. When used inside a Card, the figure sits above
+                the CardBody and DaisyUI styles the image-to-body transition automatically.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="figure-image-basecoat">Basecoat Figure &amp; Image</h2>
+
+            <p class="subtitle">Basecoat Figure &amp; Image</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the Figure and Img components are styled with Tailwind utility
+                classes. The Img component can receive responsive width and height utilities
+                through the Class or Specialization parameters. Basecoat does not apply
+                opinionated default styling to figure elements, giving you full control over
+                the image presentation through Tailwind utilities.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
@@ -61,7 +125,10 @@
     new TocItem("figure-image", "Figure & Image"),
     new TocItem("img", "Img", 2),
     new TocItem("figure", "Figure", 2),
-    new TocItem("parameters", "Parameters", 2)
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("figure-image-bootstrap", "Bootstrap 5", 2),
+    new TocItem("figure-image-daisyui", "DaisyUI", 2),
+    new TocItem("figure-image-basecoat", "Basecoat", 2)
 ])" />
 
 </div>

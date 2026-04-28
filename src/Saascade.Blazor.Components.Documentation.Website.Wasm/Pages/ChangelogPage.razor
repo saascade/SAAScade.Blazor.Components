@@ -1,44 +1,119 @@
 @page "/changelog"
 <PageTitle>Changelog - Saascade Docs</PageTitle>
 
-<h1>Changelog</h1>
+<h1 id="changelog">Changelog</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Unreleased</h2>
+            <h2 id="unreleased">Unreleased</h2>
 
-        <p class="subtitle">
-            Changes that are in development and not yet released.
-        </p>
+            <p class="subtitle">
+                Changes that are in development and not yet released.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Added</h3>
-        <ul>
-            <li>Documentation website with full sidebar navigation.</li>
-            <li>Dark / Light theme toggle.</li>
-            <li>Responsive sidebar with mobile overlay.</li>
-        </ul>
+            <h3>Added</h3>
+            <ul>
+                <li>Documentation website with full sidebar navigation.</li>
+                <li>Dark / Light theme toggle.</li>
+                <li>Responsive sidebar with mobile overlay.</li>
+                <li>Framework filter for Bootstrap 5, DaisyUI, and Basecoat.</li>
+            </ul>
 
-        <h3>Components</h3>
-        <ul>
-            <li>Card, CardBody, CardTitle, CardsGrid</li>
-            <li>Button and semantic button aliases (Accept, Cancel, Close, Delete, Destructive)</li>
-            <li>Drawer, DrawerSide, DrawerContent</li>
-            <li>Hero, Carousel, Figure, Navbar</li>
-            <li>H1–H6, P, A, Ul, Li, Img, Div, Section, Main, Header, Footer, Column</li>
-        </ul>
+            <h3>Components</h3>
+            <ul>
+                <li>Card, CardBody, CardTitle, CardsGrid</li>
+                <li>Button and semantic button aliases (Accept, Cancel, Close, Delete, Destructive)</li>
+                <li>Drawer, DrawerSide, DrawerContent</li>
+                <li>Hero, Carousel, Figure, Navbar</li>
+                <li>H1–H6, P, A, Ul, Li, Img, Div, Section, Main, Header, Footer, Column</li>
+            </ul>
 
-        <h3>Design Systems</h3>
-        <ul>
-            <li>Bootstrap 5 (Vanilla)</li>
-            <li>Tailwind / DaisyUI</li>
-            <li>Tailwind / Basecoat</li>
-            <li>Custom: Basic1, Handdrawn (Accessible, B&amp;W, Color), Empty</li>
-        </ul>
+            <h3>Design Systems</h3>
+            <ul>
+                <li>Bootstrap 5 (Vanilla)</li>
+                <li>Tailwind / DaisyUI</li>
+                <li>Tailwind / Basecoat</li>
+                <li>Custom: Basic1, Handdrawn (Accessible, B&amp;W, Color), Empty</li>
+            </ul>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="changelog-bootstrap">Bootstrap 5 Changelog</h2>
+
+            <p class="subtitle">Bootstrap 5 Changelog</p>
+
+            <hr />
+
+            <p>
+                The VanillaBootstrap5 design system was added with full support for the Card,
+                Button, Navbar, Hero, Carousel, Figure, Drawer, and all typography and layout
+                components. Semantic button aliases map to Bootstrap's color variant classes.
+                The design system returns Bootstrap's CDN stylesheet and bundle script references
+                automatically via DesignSystemStylesheetReferences and DesignSystemJavaScriptReferences.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="changelog-daisyui">DaisyUI Changelog</h2>
+
+            <p class="subtitle">DaisyUI Changelog</p>
+
+            <hr />
+
+            <p>
+                The DaisyUI design system was added with full support for all Saascade components.
+                Card resolves to DaisyUI's card class with bg-base-100 and shadow-sm specializations.
+                Button resolves to btn. The design system is CSS-only and returns the DaisyUI CDN
+                stylesheet. Theme switching via the data-theme attribute on the html element is
+                supported and works without any Saascade-specific configuration.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="changelog-basecoat">Basecoat Changelog</h2>
+
+            <p class="subtitle">Basecoat Changelog</p>
+
+            <hr />
+
+            <p>
+                The Basecoat design system was added with full support for all Saascade components.
+                Each component resolves to a curated set of Tailwind utility classes from the
+                Basecoat library. The design system is CSS-only and returns the Basecoat CDN
+                stylesheet. The implementation is independent from the DaisyUI design system and
+                provides a different visual aesthetic while sharing the same Tailwind foundation.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("changelog", "Changelog"),
+    new TocItem("unreleased", "Unreleased", 2),
+    new TocItem("changelog-bootstrap", "Bootstrap 5", 2),
+    new TocItem("changelog-daisyui", "DaisyUI", 2),
+    new TocItem("changelog-basecoat", "Basecoat", 2)
+])" />
+
+</div>

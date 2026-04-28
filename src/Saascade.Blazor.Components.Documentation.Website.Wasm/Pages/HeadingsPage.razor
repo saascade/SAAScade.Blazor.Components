@@ -7,59 +7,123 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;H1&gt;</code> through <code>&lt;H6&gt;</code> components
-            render semantic heading elements with design-system-aware styling.
-        </p>
+            <p class="subtitle">
+                The H1 through H6 components render semantic heading elements with
+                design-system-aware styling.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
-
-        <pre><code>&lt;H1&gt;Main Title&lt;/H1&gt;
+            <pre><code>&lt;H1&gt;Main Title&lt;/H1&gt;
 &lt;H2&gt;Section Title&lt;/H2&gt;
 &lt;H3&gt;Subsection Title&lt;/H3&gt;
 &lt;H4&gt;Sub-subsection&lt;/H4&gt;
 &lt;H5&gt;Minor Heading&lt;/H5&gt;
 &lt;H6&gt;Smallest Heading&lt;/H6&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="visual-hierarchy">Visual Hierarchy</h2>
+            <h2 id="visual-hierarchy">Visual Hierarchy</h2>
 
-        <p>Each heading level decreases in size and visual weight:</p>
+            <p>Each heading level decreases in size and visual weight:</p>
 
-        <div style="padding: 16px 0;">
-            <h1 style="margin: 8px 0;">H1 — Main Title</h1>
-            <h2 style="margin: 8px 0;">H2 — Section Title</h2>
-            <h3 style="margin: 8px 0;">H3 — Subsection</h3>
-            <h4 style="margin: 8px 0;">H4 — Sub-subsection</h4>
-        </div>
+            <div style="padding: 16px 0;">
+                <h1 style="margin: 8px 0;">H1 — Main Title</h1>
+                <h2 style="margin: 8px 0;">H2 — Section Title</h2>
+                <h3 style="margin: 8px 0;">H3 — Subsection</h3>
+                <h4 style="margin: 8px 0;">H4 — Sub-subsection</h4>
+            </div>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="parameters">Parameters</h2>
+            <h2 id="parameters">Parameters</h2>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Heading text.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Heading text.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="headings-bootstrap">Bootstrap 5 Headings</h2>
+
+            <p class="subtitle">Bootstrap 5 Headings</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, heading components render with their native h1 through h6 HTML
+                elements and inherit Bootstrap's typography reboot styles. You can apply
+                Bootstrap display heading classes such as display-1 or display-4 through the
+                Specialization parameter for larger hero-style headings. Bootstrap also provides
+                text color utility classes that can be applied through the Class parameter.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="headings-daisyui">DaisyUI Headings</h2>
+
+            <p class="subtitle">DaisyUI Headings</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, heading components render as native h1 through h6 elements and
+                receive their visual styling from DaisyUI's typography base styles. DaisyUI
+                applies consistent font sizing and weight across headings through its base
+                CSS layer. The text color adapts to the active DaisyUI theme automatically.
+                You can apply additional Tailwind text utility classes through the Class parameter.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="headings-basecoat">Basecoat Headings</h2>
+
+            <p class="subtitle">Basecoat Headings</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, heading components render as native h1 through h6 elements styled
+                with Tailwind typography utilities from Basecoat's base configuration. Font size,
+                weight, and line height scale from h1 down to h6 following Basecoat's typographic
+                scale. You can override or extend heading styles by passing additional Tailwind
+                text size or font weight utilities through the Class or Specialization parameters.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
@@ -67,7 +131,10 @@
     new TocItem("headings", "Headings (H1–H6)"),
     new TocItem("overview", "Overview", 2),
     new TocItem("visual-hierarchy", "Visual Hierarchy", 2),
-    new TocItem("parameters", "Parameters", 2)
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("headings-bootstrap", "Bootstrap 5 Headings", 2),
+    new TocItem("headings-daisyui", "DaisyUI Headings", 2),
+    new TocItem("headings-basecoat", "Basecoat Headings", 2)
 ])" />
 
 </div>

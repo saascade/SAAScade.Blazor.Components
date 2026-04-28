@@ -7,50 +7,115 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Carousel&gt;</code> component creates a slideshow
-            for cycling through content — images, cards, or any child elements.
-        </p>
+            <p class="subtitle">
+                The Carousel component creates a slideshow for cycling through content —
+                images, cards, or any child elements.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
-
-        <pre><code>&lt;Carousel&gt;
+            <pre><code>&lt;Carousel&gt;
     &lt;Img Src="slide1.jpg" /&gt;
     &lt;Img Src="slide2.jpg" /&gt;
     &lt;Img Src="slide3.jpg" /&gt;
 &lt;/Carousel&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="parameters">Parameters</h2>
+            <h2 id="parameters">Parameters</h2>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Slide elements.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Slide elements.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="carousel-bootstrap">Bootstrap 5 Carousel</h2>
+
+            <p class="subtitle">Bootstrap 5 Carousel</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the Carousel component maps to the Bootstrap carousel class
+                with the required data-bs-ride attribute. Slide navigation is handled by
+                Bootstrap's JavaScript bundle. Each child element is wrapped in a carousel-item
+                div. The Bootstrap 5 design system injects the necessary class names and
+                data attributes automatically.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="carousel-daisyui">DaisyUI Carousel</h2>
+
+            <p class="subtitle">DaisyUI Carousel</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the Carousel component maps to the DaisyUI carousel class. DaisyUI's
+                carousel is CSS-only and uses scroll snapping instead of JavaScript-driven slides.
+                Navigation between slides is done via anchor links to slide IDs. The DaisyUI design
+                system applies the carousel and carousel-item classes and the snap behavior is
+                handled entirely by CSS without any JavaScript dependency.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="carousel-basecoat">Basecoat Carousel</h2>
+
+            <p class="subtitle">Basecoat Carousel</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the Carousel component is composed from Tailwind utility classes
+                that implement a horizontal scrollable container with scroll snapping. The
+                overflow, flex layout, and snap alignment are expressed as Tailwind utilities
+                defined in the Basecoat design system. You can adjust the snap behavior and
+                scrollbar visibility through the Specialization or Class parameters.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("carousel", "Carousel"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("parameters", "Parameters", 2)
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("carousel-bootstrap", "Bootstrap 5 Carousel", 2),
+    new TocItem("carousel-daisyui", "DaisyUI Carousel", 2),
+    new TocItem("carousel-basecoat", "Basecoat Carousel", 2)
 ])" />
 
 </div>

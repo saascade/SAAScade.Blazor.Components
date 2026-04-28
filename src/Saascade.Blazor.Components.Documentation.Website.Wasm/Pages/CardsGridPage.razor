@@ -7,20 +7,19 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;CardsGrid&gt;</code> component renders a responsive
-            grid container for <code>&lt;Card&gt;</code> components.
-        </p>
+            <p class="subtitle">
+                The CardsGrid component renders a responsive grid container for Card components.
+                Use the framework filter to see how the grid layout is expressed in each design system.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
-
-        <pre><code>&lt;CardsGrid&gt;
+            <pre><code>&lt;CardsGrid&gt;
     &lt;Card&gt;
         &lt;CardBody&gt;
             &lt;CardTitle&gt;Card 1&lt;/CardTitle&gt;
@@ -35,26 +34,92 @@
     &lt;/Card&gt;
 &lt;/CardsGrid&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="related-components">Related Components</h2>
+            <h2 id="related-components">Related Components</h2>
 
-        <ul>
-            <li><a href="cards">Card</a> — individual card container.</li>
-            <li><code>&lt;CardBody&gt;</code> — card content wrapper.</li>
-            <li><code>&lt;CardTitle&gt;</code> — card heading.</li>
-        </ul>
+            <ul>
+                <li><a href="cards">Card</a> — individual card container.</li>
+                <li><code>&lt;CardBody&gt;</code> — card content wrapper.</li>
+                <li><code>&lt;CardTitle&gt;</code> — card heading.</li>
+            </ul>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="cards-grid-bootstrap">Bootstrap 5 Cards Grid</h2>
+
+            <p class="subtitle">Bootstrap 5 Cards Grid</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the CardsGrid component maps to a row container with Bootstrap's
+                grid classes. Each child Card is wrapped in a column element so the cards flow
+                into a responsive multi-column layout. The number of columns adapts at Bootstrap's
+                standard breakpoints using the col utility classes defined in the Bootstrap 5
+                design system.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="cards-grid-daisyui">DaisyUI Cards Grid</h2>
+
+            <p class="subtitle">DaisyUI Cards Grid</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the CardsGrid component uses Tailwind's grid utilities to create a
+                responsive card layout. Child Card components receive DaisyUI's card class with
+                bg-base-100 and shadow-sm by default. The grid column count responds to the
+                viewport width through Tailwind's responsive prefix classes defined in the
+                DaisyUI design system implementation.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="cards-grid-basecoat">Basecoat Cards Grid</h2>
+
+            <p class="subtitle">Basecoat Cards Grid</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the CardsGrid component composes a grid layout from Tailwind utility
+                classes. The grid gap, column count, and responsive behavior are controlled by the
+                Tailwind utilities in the Basecoat design system definition. You can override or
+                extend the layout by passing additional Tailwind utilities through the Class or
+                Specialization parameters on the CardsGrid component.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("cards-grid", "Cards Grid"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("related-components", "Related Components", 2)
+    new TocItem("related-components", "Related Components", 2),
+    new TocItem("cards-grid-bootstrap", "Bootstrap 5 Cards Grid", 2),
+    new TocItem("cards-grid-daisyui", "DaisyUI Cards Grid", 2),
+    new TocItem("cards-grid-basecoat", "Basecoat Cards Grid", 2)
 ])" />
 
 </div>

@@ -1,53 +1,130 @@
 @page "/semantic-buttons"
 <PageTitle>Semantic Buttons - Saascade Docs</PageTitle>
 
-<h1>Semantic Buttons</h1>
+<h1 id="semantic-buttons">Semantic Buttons</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            Saascade provides semantic button aliases that convey intent
-            and apply appropriate design-system styling automatically.
-        </p>
+            <p class="subtitle">
+                Saascade provides semantic button aliases that convey intent
+                and apply appropriate design-system styling automatically.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>AcceptButton</h3>
-        <pre><code>&lt;AcceptButton&gt;Accept&lt;/AcceptButton&gt;</code></pre>
-        <p>Typically styled as a success/confirmation action.</p>
+            <h3>AcceptButton</h3>
+            <pre><code>&lt;AcceptButton&gt;Accept&lt;/AcceptButton&gt;</code></pre>
+            <p>Typically styled as a success/confirmation action.</p>
 
-        <h3>CancelButton</h3>
-        <pre><code>&lt;CancelButton&gt;Cancel&lt;/CancelButton&gt;</code></pre>
-        <p>A neutral action to dismiss or cancel an operation.</p>
+            <h3>CancelButton</h3>
+            <pre><code>&lt;CancelButton&gt;Cancel&lt;/CancelButton&gt;</code></pre>
+            <p>A neutral action to dismiss or cancel an operation.</p>
 
-        <h3>CloseButton</h3>
-        <pre><code>&lt;CloseButton /&gt;</code></pre>
-        <p>Renders a close/dismiss button (usually an ✕ icon).</p>
+            <h3>CloseButton</h3>
+            <pre><code>&lt;CloseButton /&gt;</code></pre>
+            <p>Renders a close/dismiss button (usually an ✕ icon).</p>
 
-        <h3>DeleteButton</h3>
-        <pre><code>&lt;DeleteButton&gt;Delete&lt;/DeleteButton&gt;</code></pre>
-        <p>A destructive action styled as a warning/danger button.</p>
+            <h3>DeleteButton</h3>
+            <pre><code>&lt;DeleteButton&gt;Delete&lt;/DeleteButton&gt;</code></pre>
+            <p>A destructive action styled as a warning/danger button.</p>
 
-        <h3>DestructiveButton</h3>
-        <pre><code>&lt;DestructiveButton&gt;Remove All&lt;/DestructiveButton&gt;</code></pre>
-        <p>A generic destructive action with high-visibility warning styling.</p>
+            <h3>DestructiveButton</h3>
+            <pre><code>&lt;DestructiveButton&gt;Remove All&lt;/DestructiveButton&gt;</code></pre>
+            <p>A generic destructive action with high-visibility warning styling.</p>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Shared Parameters</h2>
+            <h2 id="shared-parameters">Shared Parameters</h2>
 
-        <p>
-            All semantic buttons inherit from <code>Button</code> and share the
-            same parameters: <code>Class</code>, <code>Specialization</code>,
-            <code>Style</code>, <code>Tooltip</code>, and <code>ChildContent</code>.
-        </p>
+            <p>
+                All semantic buttons inherit from <code>Button</code> and share the
+                same parameters: <code>Class</code>, <code>Specialization</code>,
+                <code>Style</code>, <code>Tooltip</code>, and <code>ChildContent</code>.
+            </p>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="semantic-buttons-bootstrap">Bootstrap 5 Semantic Buttons</h2>
+
+            <p class="subtitle">Bootstrap 5 Semantic Buttons</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, each semantic button alias resolves to the appropriate Bootstrap
+                variant class. AcceptButton maps to btn-success, CancelButton maps to btn-secondary,
+                DeleteButton and DestructiveButton map to btn-danger, and CloseButton maps to
+                Bootstrap's btn-close. These mappings are defined in the VanillaBootstrap5 design
+                system and apply automatically without any manual class configuration.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="semantic-buttons-daisyui">DaisyUI Semantic Buttons</h2>
+
+            <p class="subtitle">DaisyUI Semantic Buttons</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, semantic button aliases map to DaisyUI's semantic color tokens.
+                AcceptButton uses btn-success, CancelButton uses btn-neutral, DeleteButton and
+                DestructiveButton use btn-error. These tokens are theme-aware, meaning their
+                visual appearance adapts when you switch DaisyUI themes. CloseButton renders
+                with a minimal btn-ghost style suitable for inline dismiss controls.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="semantic-buttons-basecoat">Basecoat Semantic Buttons</h2>
+
+            <p class="subtitle">Basecoat Semantic Buttons</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, semantic button aliases are composed from Tailwind utility classes
+                that reflect the intent of each action. AcceptButton uses green-toned utilities,
+                CancelButton uses neutral utilities, and DeleteButton and DestructiveButton use
+                red-toned utilities. Because Basecoat is utility-first, you can further refine
+                the appearance of any semantic button through the Class or Specialization parameters.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("semantic-buttons", "Semantic Buttons"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("shared-parameters", "Shared Parameters", 2),
+    new TocItem("semantic-buttons-bootstrap", "Bootstrap 5 Semantic Buttons", 2),
+    new TocItem("semantic-buttons-daisyui", "DaisyUI Semantic Buttons", 2),
+    new TocItem("semantic-buttons-basecoat", "Basecoat Semantic Buttons", 2)
+])" />
+
+</div>

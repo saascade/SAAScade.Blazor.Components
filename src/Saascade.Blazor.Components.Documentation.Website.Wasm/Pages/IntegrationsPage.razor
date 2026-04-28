@@ -1,6 +1,126 @@
-﻿@page "/integrations"
-<h3>IntegrationsPage</h3>
+@page "/integrations"
+<PageTitle>Integrations - Saascade Docs</PageTitle>
 
-@code {
+<h1 id="integrations">Integrations</h1>
 
-}
+<div class="doc-layout">
+
+<main class="documentation">
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="overview">Overview</h2>
+
+            <p class="subtitle">
+                Saascade components integrate with the standard Blazor ecosystem.
+                They work in Blazor WebAssembly, Blazor Server, and .NET MAUI Blazor Hybrid
+                projects without additional configuration.
+            </p>
+
+            <hr />
+
+            <p>
+                Any library or tool that works with standard Blazor components works with
+                Saascade components. The library does not introduce custom rendering pipelines,
+                non-standard lifecycle methods, or proprietary JavaScript dependencies.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="asset-references">Asset References</h2>
+
+            <p class="subtitle">
+                The DesignSystemStylesheetReferences and DesignSystemJavaScriptReferences
+                components inject the stylesheet and script links required by the active
+                design system into the page.
+            </p>
+
+            <hr />
+
+            <p>
+                Place DesignSystemStylesheetReferences in the head of your index.html or
+                App.razor layout. Place DesignSystemJavaScriptReferences before the closing
+                body tag. The components call GetStylesheetReferences and GetJavaScriptReferences
+                on the registered IDesignSystem and render the appropriate link and script tags.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="integrations-bootstrap">Bootstrap 5 Integration</h2>
+
+            <p class="subtitle">Bootstrap 5 Integration</p>
+
+            <hr />
+
+            <p>
+                Bootstrap 5 integration requires no JavaScript interop beyond what Bootstrap
+                itself provides. The VanillaBootstrap5 design system returns Bootstrap's CDN
+                stylesheet URL from GetStylesheetReferences and Bootstrap's bundle script URL
+                from GetJavaScriptReferences. Bootstrap interactive components such as modals
+                and dropdowns work through standard Bootstrap JavaScript after the bundle loads.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="integrations-daisyui">DaisyUI Integration</h2>
+
+            <p class="subtitle">DaisyUI Integration</p>
+
+            <hr />
+
+            <p>
+                DaisyUI integration is CSS-only — DaisyUI components are driven by CSS rather
+                than JavaScript. The DaisyUI design system returns the Tailwind plus DaisyUI CDN
+                stylesheet from GetStylesheetReferences and returns no JavaScript references.
+                Interactive DaisyUI patterns such as dropdowns and modals use CSS-only mechanisms
+                and work without any JavaScript initialization.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="integrations-basecoat">Basecoat Integration</h2>
+
+            <p class="subtitle">Basecoat Integration</p>
+
+            <hr />
+
+            <p>
+                Basecoat integration is also CSS-only, built on Tailwind utility classes.
+                The Basecoat design system returns the Tailwind plus Basecoat CDN stylesheet
+                from GetStylesheetReferences and no JavaScript references. Because Basecoat
+                uses pure utility classes without component-level JavaScript, it integrates
+                cleanly with Blazor's server-side rendering and prerendering pipelines.
+            </p>
+
+        </section>
+    </TechCard>
+
+</main>
+
+<TableOfContents Items="@([
+    new TocItem("integrations", "Integrations"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("asset-references", "Asset References", 2),
+    new TocItem("integrations-bootstrap", "Bootstrap 5", 2),
+    new TocItem("integrations-daisyui", "DaisyUI", 2),
+    new TocItem("integrations-basecoat", "Basecoat", 2)
+])" />
+
+</div>

@@ -7,40 +7,126 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="built-in-custom-themes">Built-in Custom Themes</h2>
+            <h2 id="built-in-custom-themes">Built-in Custom Themes</h2>
 
-        <p class="subtitle">
-            Saascade ships with several custom design systems that don't depend
-            on any external CSS framework.
-        </p>
+            <p class="subtitle">
+                Saascade ships with several custom design systems that don't depend
+                on any external CSS framework.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic1</h3>
-        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Custom.Basic1);</code></pre>
-        <p>A minimal custom design system with basic styling.</p>
+            <h3>Basic1</h3>
+            <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Custom.Basic1);</code></pre>
+            <p>A minimal custom design system with basic styling.</p>
 
-        <h3>Handdrawn</h3>
-        <p>Three handdrawn variants are available:</p>
-        <ul>
-            <li><strong>HanddrawnAssessible</strong> — accessible color palette with hand-drawn borders.</li>
-            <li><strong>HanddrawnBlackAndWhite</strong> — monochrome hand-drawn aesthetic.</li>
-            <li><strong>HanddrawnColor</strong> — colorful hand-drawn style.</li>
-        </ul>
+            <h3>Handdrawn</h3>
+            <p>Three handdrawn variants are available:</p>
+            <ul>
+                <li><strong>HanddrawnAssessible</strong> — accessible color palette with hand-drawn borders.</li>
+                <li><strong>HanddrawnBlackAndWhite</strong> — monochrome hand-drawn aesthetic.</li>
+                <li><strong>HanddrawnColor</strong> — colorful hand-drawn style.</li>
+            </ul>
 
-        <h3>Empty</h3>
-        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Custom.EmptyDesignSystem);</code></pre>
-        <p>A blank canvas — no classes applied. Useful for fully custom CSS.</p>
+            <h3>Empty</h3>
+            <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Custom.EmptyDesignSystem);</code></pre>
+            <p>A blank canvas — no classes applied. Useful for fully custom CSS.</p>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="creating-your-own">Creating Your Own</h2>
+
+            <p class="subtitle">
+                You can implement IDesignSystem to build a fully custom design system
+                that maps Saascade components to any class names you choose.
+            </p>
+
+            <hr />
+
+            <p>
+                See the Creating a Design System page for a step-by-step walkthrough.
+                Custom design systems are registered the same way as the built-in ones
+                and can return any stylesheet or JavaScript references your theme requires.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="custom-themes-bootstrap">Bootstrap 5 Theming</h2>
+
+            <p class="subtitle">Bootstrap 5 Custom Theming</p>
+
+            <hr />
+
+            <p>
+                Bootstrap 5 supports Sass variable overrides and custom CSS properties for theming.
+                When using Saascade with Bootstrap 5, you can customize colors, spacing, and
+                typography by overriding Bootstrap's CSS custom properties or by providing a compiled
+                Bootstrap build via GetStylesheetReferences in a custom design system class that
+                extends the Bootstrap 5 preset.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="custom-themes-daisyui">DaisyUI Theming</h2>
+
+            <p class="subtitle">DaisyUI Custom Theming</p>
+
+            <hr />
+
+            <p>
+                DaisyUI has a built-in theme system driven by CSS custom properties. You can switch
+                themes at runtime by changing the data-theme attribute on the html element. Custom
+                DaisyUI themes are defined in your Tailwind configuration and automatically apply
+                to all Saascade components without any code changes in the component layer.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="custom-themes-basecoat">Basecoat Theming</h2>
+
+            <p class="subtitle">Basecoat Custom Theming</p>
+
+            <hr />
+
+            <p>
+                Basecoat theming is done through Tailwind CSS configuration. You can extend or
+                override the default Tailwind theme tokens — colors, fonts, spacing — in your
+                tailwind.config.js file. Because Basecoat uses utility classes directly, custom
+                theme tokens are immediately available to Saascade components through the
+                Specialization and Class parameters.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("custom-themes", "Custom Themes"),
-    new TocItem("built-in-custom-themes", "Built-in Custom Themes", 2)
+    new TocItem("built-in-custom-themes", "Built-in Custom Themes", 2),
+    new TocItem("creating-your-own", "Creating Your Own", 2),
+    new TocItem("custom-themes-bootstrap", "Bootstrap 5 Theming", 2),
+    new TocItem("custom-themes-daisyui", "DaisyUI Theming", 2),
+    new TocItem("custom-themes-basecoat", "Basecoat Theming", 2)
 ])" />
 
 </div>

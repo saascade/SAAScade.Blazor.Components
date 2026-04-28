@@ -1,49 +1,128 @@
 @page "/button"
 <PageTitle>Button - Saascade Docs</PageTitle>
 
-<h1>Button</h1>
+<h1 id="button-component">Button</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Button&gt;</code> component renders a <code>&lt;button&gt;</code>
-            element with design-system-aware class names.
-        </p>
+            <p class="subtitle">
+                The Button component renders a standard HTML button element with design-system-aware class names.
+                Use the framework filter to see how the Button behaves in each supported design system.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
+            <p>
+                The component accepts optional specialization classes, inline styles, a tooltip, and any child content.
+                The actual CSS classes applied depend on the active design system registered in your application.
+            </p>
 
-        <pre><code>&lt;Button&gt;Click me&lt;/Button&gt;</code></pre>
+        </section>
+    </TechCard>
 
-        <h3>With Specialization</h3>
+    <TechCard>
+        <section class="card">
 
-        <pre><code>&lt;Button Specialization="btn-primary"&gt;Primary Action&lt;/Button&gt;
-&lt;Button Specialization="btn-outline"&gt;Outline Style&lt;/Button&gt;</code></pre>
+            <h2 id="parameters">Parameters</h2>
 
-    </section>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Specialization</td><td>string?</td><td>Design system variant classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>Tooltip</td><td>string?</td><td>Tooltip text.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Button label or content.</td></tr>
+                </tbody>
+            </table>
 
-    <section class="card">
+        </section>
+    </TechCard>
 
-        <h2>Parameters</h2>
+    <TechCard Tech="bootstrap">
+        <section class="card">
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Specialization</td><td>string?</td><td>Design system variant classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>Tooltip</td><td>string?</td><td>Tooltip text.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Button label/content.</td></tr>
-            </tbody>
-        </table>
+            <h2 id="bootstrap-button">Bootstrap 5 Button</h2>
 
-    </section>
+            <p class="subtitle">
+                In Bootstrap 5, the Button component maps to the btn class. Variants such as btn-primary,
+                btn-secondary, or btn-outline-danger are applied via the Specialization parameter.
+            </p>
+
+            <hr />
+
+            <p>
+                Bootstrap 5 buttons follow the standard btn base class model. The design system resolves
+                the correct class prefix and the Specialization value is appended to produce the full class
+                string. A primary action button renders as a solid filled button, while outline variants
+                produce a bordered style with a transparent background.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="daisyui-button">DaisyUI Button</h2>
+
+            <p class="subtitle">
+                In DaisyUI, the Button component maps to the btn class with Tailwind-based semantic
+                variants such as btn-primary, btn-ghost, or btn-outline.
+            </p>
+
+            <hr />
+
+            <p>
+                DaisyUI buttons are built on Tailwind CSS and use semantic color tokens tied to your
+                theme configuration. The Specialization parameter accepts any valid DaisyUI button
+                modifier. Because DaisyUI is theme-aware, switching between light and dark themes
+                updates button colors automatically without changing markup.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="basecoat-button">Basecoat Button</h2>
+
+            <p class="subtitle">
+                In Basecoat, the Button component uses utility-first Tailwind classes to produce
+                a minimal, unstyled-by-default button that you can compose freely.
+            </p>
+
+            <hr />
+
+            <p>
+                Basecoat buttons are composed from low-level Tailwind utilities rather than opinionated
+                component classes. The design system provides a sensible default set of utility classes
+                for layout and focus states. The Specialization parameter appends additional utilities,
+                giving you fine-grained control over padding, color, border-radius, and interaction styles.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("button-component", "Button"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("bootstrap-button", "Bootstrap 5 Button", 2),
+    new TocItem("daisyui-button", "DaisyUI Button", 2),
+    new TocItem("basecoat-button", "Basecoat Button", 2)
+])" />
+
+</div>

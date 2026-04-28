@@ -7,45 +7,112 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="header">Header</h2>
+            <h2 id="header">Header</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Header&gt;</code> component renders a semantic
-            <code>&lt;header&gt;</code> element for introductory content or navigation.
-        </p>
+            <p class="subtitle">
+                The Header component renders a semantic header element for introductory content
+                or navigation.
+            </p>
 
-        <hr />
+            <hr />
 
-        <pre><code>&lt;Header&gt;
+            <pre><code>&lt;Header&gt;
     &lt;H1&gt;Welcome&lt;/H1&gt;
     &lt;Navbar&gt;...&lt;/Navbar&gt;
 &lt;/Header&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="footer">Footer</h2>
+            <h2 id="footer">Footer</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Footer&gt;</code> component renders a semantic
-            <code>&lt;footer&gt;</code> element for page or section footers.
-        </p>
+            <p class="subtitle">
+                The Footer component renders a semantic footer element for page or section footers.
+            </p>
 
-        <pre><code>&lt;Footer&gt;
+            <pre><code>&lt;Footer&gt;
     &lt;P&gt;&amp;copy; 2025 Saascade&lt;/P&gt;
 &lt;/Footer&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="header-footer-bootstrap">Bootstrap 5 Header &amp; Footer</h2>
+
+            <p class="subtitle">Bootstrap 5 Header &amp; Footer</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the Header and Footer components render as their standard HTML
+                semantic elements. Bootstrap uses the Navbar component class for navigation
+                bars placed inside the header. The Footer element typically receives Bootstrap
+                utility classes such as bg-dark or text-light through the Class parameter to
+                establish the footer's visual appearance.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="header-footer-daisyui">DaisyUI Header &amp; Footer</h2>
+
+            <p class="subtitle">DaisyUI Header &amp; Footer</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the Header component wraps DaisyUI's navbar component and any other
+                introductory content. The Footer component maps to DaisyUI's footer class, which
+                provides a structured footer layout with support for footer-title sections and
+                multi-column link groups. DaisyUI's footer is theme-aware and adapts its
+                background and text colors to the active theme.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="header-footer-basecoat">Basecoat Header &amp; Footer</h2>
+
+            <p class="subtitle">Basecoat Header &amp; Footer</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the Header and Footer components are styled with Tailwind utility
+                classes. The Header typically receives flex layout and padding utilities to
+                position the logo, navigation, and action buttons. The Footer receives
+                background and text color utilities along with a grid layout for multi-column
+                link sections. All styling is controlled through Tailwind utilities passed
+                via Class or Specialization.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("header-footer", "Header & Footer"),
     new TocItem("header", "Header", 2),
-    new TocItem("footer", "Footer", 2)
+    new TocItem("footer", "Footer", 2),
+    new TocItem("header-footer-bootstrap", "Bootstrap 5", 2),
+    new TocItem("header-footer-daisyui", "DaisyUI", 2),
+    new TocItem("header-footer-basecoat", "Basecoat", 2)
 ])" />
 
 </div>

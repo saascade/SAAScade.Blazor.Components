@@ -70,22 +70,54 @@
                     <li><NavLink class="sidebar-link" href="design-systems">How It Works</NavLink></li>
                     @if (FilterService.IsVisible("bootstrap"))
                     {
-                        <li><NavLink class="sidebar-link" href="bootstrap5">Bootstrap 5</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="bootstrap5">Bootstrap 5</NavLink></li>
                     }
                     @if (FilterService.IsVisible("daisyui"))
                     {
-                        <li><NavLink class="sidebar-link" href="daisyui">DaisyUI</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="daisyui">DaisyUI</NavLink></li>
                     }
                     @if (FilterService.IsVisible("basecoat"))
                     {
-                        <li><NavLink class="sidebar-link" href="basecoat">Basecoat</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="basecoat">Basecoat</NavLink></li>
                     }
                     <li><NavLink class="sidebar-link" href="custom-themes">Custom Themes</NavLink></li>
 
-                    @* <li><hr /></li> *@
 
                     <li class="sidebar-section-label">
-                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+                        Actions
+                    </li>
+                    <li><NavLink class="sidebar-link" href="button">Button</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="semantic-buttons">Semantic Buttons</NavLink></li>
+
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
+                        Advanced
+                    </li>
+                    <li><NavLink class="sidebar-link" href="base-components">Base Components</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="render-foreach">Render &amp; Foreach</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="name-attribute-selection">Name Attribute</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="create-design-system">Creating a Design System</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="api-reference">API Reference</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="changelog">Changelog</NavLink></li>
+
+                    @* <li><hr /></li> *@
+
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                        Data Display
+                    </li>
+                    <li><NavLink class="sidebar-link" href="cards">Card</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="figure-image">Figure &amp; Image</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="list">List</NavLink></li>
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>
                         Layout
                     </li>
                     <li><NavLink class="sidebar-link" href="column">Column</NavLink></li>
@@ -94,7 +126,14 @@
                     <li><NavLink class="sidebar-link" href="hero">Hero</NavLink></li>
                     <li><NavLink class="sidebar-link" href="drawer">Drawer</NavLink></li>
 
-                    @* <li><hr /></li> *@
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></svg>
+                        Navigation
+                    </li>
+                    <li><NavLink class="sidebar-link" href="anchor">Anchor / Hyperlink</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="navbar">Navbar</NavLink></li>
+
+
 
                     <li class="sidebar-section-label">
                         <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
@@ -105,43 +144,13 @@
 
                     @* <li><hr /></li> *@
 
-                    <li class="sidebar-section-label">
-                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                        Data Display
-                    </li>
-                    <li><NavLink class="sidebar-link" href="cards">Card</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="figure-image">Figure &amp; Image</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="list">List</NavLink></li>
+                    
 
-                    <li class="sidebar-section-label">
-                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-                        Navigation
-                    </li>
-                    <li><NavLink class="sidebar-link" href="anchor">Anchor / Hyperlink</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="navbar">Navbar</NavLink></li>
-
-                    <li class="sidebar-section-label">
-                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        Actions
-                    </li>
-                    <li><NavLink class="sidebar-link" href="button">Button</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="semantic-buttons">Semantic Buttons</NavLink></li>
+                    
 
                    @*  <li><hr /></li> *@
 
-                    <li class="sidebar-section-label">
-                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-                        Advanced
-                    </li>
-                    <li><NavLink class="sidebar-link" href="base-components">Base Components</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="render-foreach">Render &amp; Foreach</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="name-attribute-selection">Name Attribute</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="create-design-system">Creating a Design System</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="api-reference">API Reference</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
-                    <li><NavLink class="sidebar-link" href="changelog">Changelog</NavLink></li>
+
                 </ul>
             </nav>
         </aside>

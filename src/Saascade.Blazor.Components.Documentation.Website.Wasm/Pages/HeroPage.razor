@@ -7,50 +7,115 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Hero&gt;</code> component creates a large, prominent
-            banner section — ideal for landing pages and key call-to-action areas.
-        </p>
+            <p class="subtitle">
+                The Hero component creates a large, prominent banner section — ideal for
+                landing pages and key call-to-action areas.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
-
-        <pre><code>&lt;Hero&gt;
+            <pre><code>&lt;Hero&gt;
     &lt;H1&gt;Build faster with Saascade&lt;/H1&gt;
     &lt;P&gt;Design-system-agnostic Blazor components.&lt;/P&gt;
     &lt;Button&gt;Get Started&lt;/Button&gt;
 &lt;/Hero&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="parameters">Parameters</h2>
+            <h2 id="parameters">Parameters</h2>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Hero content.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Hero content.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="hero-bootstrap">Bootstrap 5 Hero</h2>
+
+            <p class="subtitle">Bootstrap 5 Hero</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the Hero component is styled as a jumbotron-style section.
+                Bootstrap 5 removed the jumbotron component in favor of utility classes, so
+                the Saascade Bootstrap 5 design system composes the hero from container,
+                padding, and background utilities. You can adjust the hero's height, background
+                color, and text alignment through the Specialization or Class parameters.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="hero-daisyui">DaisyUI Hero</h2>
+
+            <p class="subtitle">DaisyUI Hero</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the Hero component maps to the DaisyUI hero class. DaisyUI's hero
+                component centers its content both vertically and horizontally by default and
+                supports a hero-content child for the text and action area. The hero adapts its
+                background and text styling to the active DaisyUI theme without requiring
+                additional class configuration.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="hero-basecoat">Basecoat Hero</h2>
+
+            <p class="subtitle">Basecoat Hero</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the Hero component is composed from Tailwind utility classes that
+                create a full-width centered section. The default composition includes flex
+                layout, vertical padding, and text centering utilities. You can control the
+                hero's background, minimum height, and content alignment by passing additional
+                Tailwind utilities through the Class or Specialization parameters.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("hero", "Hero"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("parameters", "Parameters", 2)
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("hero-bootstrap", "Bootstrap 5 Hero", 2),
+    new TocItem("hero-daisyui", "DaisyUI Hero", 2),
+    new TocItem("hero-basecoat", "Basecoat Hero", 2)
 ])" />
 
 </div>

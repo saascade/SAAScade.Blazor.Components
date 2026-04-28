@@ -7,48 +7,113 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Column&gt;</code> component renders a column element,
-            typically used inside grid or flex layouts.
-        </p>
+            <p class="subtitle">
+                The Column component renders a column element typically used inside grid or
+                flex layouts.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
-
-        <pre><code>&lt;Column&gt;
+            <pre><code>&lt;Column&gt;
     Content inside a column.
 &lt;/Column&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="parameters">Parameters</h2>
+            <h2 id="parameters">Parameters</h2>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>ChildContent</td><td>RenderFragment</td><td>Column content.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>ChildContent</td><td>RenderFragment</td><td>Column content.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="column-bootstrap">Bootstrap 5 Column</h2>
+
+            <p class="subtitle">Bootstrap 5 Column</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the Column component maps to the col class inside a Bootstrap
+                row or grid container. You can control the column width by passing Bootstrap
+                responsive column tokens such as col-md-6 or col-lg-4 through the Specialization
+                parameter. Bootstrap's twelve-column grid system governs the layout proportions
+                at each breakpoint.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="column-daisyui">DaisyUI Column</h2>
+
+            <p class="subtitle">DaisyUI Column</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the Column component uses Tailwind's flex or grid column utilities.
+                Because DaisyUI is built on Tailwind, column sizing is expressed as Tailwind
+                responsive classes such as w-1/2 or basis-1/3. These can be passed through
+                the Specialization parameter. DaisyUI does not define a separate column
+                component class — it relies entirely on Tailwind's layout utilities.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="column-basecoat">Basecoat Column</h2>
+
+            <p class="subtitle">Basecoat Column</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the Column component is composed from Tailwind utility classes
+                for flex or grid child sizing. Basecoat follows the same Tailwind-native approach
+                as DaisyUI for column layout. Column width and responsive behavior are controlled
+                through Tailwind utility tokens passed via Specialization or Class. The default
+                Basecoat column resolves to a standard flex child that fills its available space.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("column", "Column"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("parameters", "Parameters", 2)
+    new TocItem("parameters", "Parameters", 2),
+    new TocItem("column-bootstrap", "Bootstrap 5 Column", 2),
+    new TocItem("column-daisyui", "DaisyUI Column", 2),
+    new TocItem("column-basecoat", "Basecoat Column", 2)
 ])" />
 
 </div>

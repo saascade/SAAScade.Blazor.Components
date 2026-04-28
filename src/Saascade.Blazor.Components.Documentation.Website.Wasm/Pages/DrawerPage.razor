@@ -7,21 +7,19 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Drawer&gt;</code> component creates a side-panel layout
-            with <code>&lt;DrawerSide&gt;</code> and <code>&lt;DrawerContent&gt;</code>
-            children.
-        </p>
+            <p class="subtitle">
+                The Drawer component creates a side-panel layout with DrawerSide and
+                DrawerContent children.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
-
-        <pre><code>&lt;Drawer&gt;
+            <pre><code>&lt;Drawer&gt;
     &lt;DrawerSide&gt;
         Sidebar navigation here.
     &lt;/DrawerSide&gt;
@@ -30,30 +28,96 @@
     &lt;/DrawerContent&gt;
 &lt;/Drawer&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="sub-components">Sub-components</h2>
+            <h2 id="sub-components">Sub-components</h2>
 
-        <table>
-            <thead>
-                <tr><th>Component</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td><code>&lt;DrawerSide&gt;</code></td><td>The sidebar/panel area.</td></tr>
-                <tr><td><code>&lt;DrawerContent&gt;</code></td><td>The main content area next to the drawer.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Component</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>&lt;DrawerSide&gt;</code></td><td>The sidebar/panel area.</td></tr>
+                    <tr><td><code>&lt;DrawerContent&gt;</code></td><td>The main content area next to the drawer.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="drawer-bootstrap">Bootstrap 5 Drawer</h2>
+
+            <p class="subtitle">Bootstrap 5 Drawer</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the Drawer component is implemented using Bootstrap's offcanvas
+                component. DrawerSide maps to the offcanvas panel and DrawerContent maps to the
+                main page area. Opening and closing the drawer is handled via Bootstrap's
+                offcanvas JavaScript API. The drawer can be positioned on the left, right, top,
+                or bottom using Bootstrap's offcanvas placement modifier classes.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="drawer-daisyui">DaisyUI Drawer</h2>
+
+            <p class="subtitle">DaisyUI Drawer</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the Drawer component maps to DaisyUI's drawer class. DaisyUI's drawer
+                is a CSS-only side panel controlled by a hidden checkbox input. DrawerSide maps to
+                the drawer-side element and DrawerContent maps to the drawer-content element. The
+                open state is toggled by checking or unchecking the associated input without any
+                JavaScript interaction.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="drawer-basecoat">Basecoat Drawer</h2>
+
+            <p class="subtitle">Basecoat Drawer</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the Drawer component is composed from Tailwind utility classes that
+                create a side-panel layout using CSS transforms and transitions. DrawerSide
+                receives absolute or fixed positioning utilities and a translate transform that
+                slides it in and out of view. DrawerContent occupies the remaining page area.
+                The open and closed states are controlled through a CSS class toggle.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("drawer", "Drawer"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("sub-components", "Sub-components", 2)
+    new TocItem("sub-components", "Sub-components", 2),
+    new TocItem("drawer-bootstrap", "Bootstrap 5 Drawer", 2),
+    new TocItem("drawer-daisyui", "DaisyUI Drawer", 2),
+    new TocItem("drawer-basecoat", "Basecoat Drawer", 2)
 ])" />
 
 </div>

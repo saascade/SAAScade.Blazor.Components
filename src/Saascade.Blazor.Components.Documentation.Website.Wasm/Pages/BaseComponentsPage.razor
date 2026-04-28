@@ -1,82 +1,172 @@
 @page "/base-components"
 <PageTitle>Base Components - Saascade Docs</PageTitle>
 
-<h1>Base Components</h1>
+<h1 id="base-components">Base Components</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            All Saascade components inherit from a hierarchy of base classes
-            that provide common parameters, parent cascading, and design system integration.
-        </p>
+            <p class="subtitle">
+                All Saascade components inherit from a hierarchy of base classes
+                that provide common parameters, parent cascading, and design system integration.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>BaseComponent</h3>
+            <h3>BaseComponent</h3>
 
-        <p>
-            The root abstract class. Provides these shared parameters:
-        </p>
+            <p>
+                The root abstract class. Provides these shared parameters:
+            </p>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Id</td><td>string?</td><td>HTML id attribute.</td></tr>
-                <tr><td>Name</td><td>string?</td><td>Component name for form hierarchies.</td></tr>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Specialization</td><td>string?</td><td>Design system variant classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>Tooltip</td><td>string?</td><td>Tooltip text.</td></tr>
-                <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
-                <tr><td>AriaLabelledby</td><td>string?</td><td>ID of the labelling element.</td></tr>
-                <tr><td>AriaRole</td><td>string?</td><td>ARIA role attribute.</td></tr>
-                <tr><td>Parent</td><td>BaseComponent?</td><td>Cascading parent reference.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Id</td><td>string?</td><td>HTML id attribute.</td></tr>
+                    <tr><td>Name</td><td>string?</td><td>Component name for form hierarchies.</td></tr>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Specialization</td><td>string?</td><td>Design system variant classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>Tooltip</td><td>string?</td><td>Tooltip text.</td></tr>
+                    <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
+                    <tr><td>AriaLabelledby</td><td>string?</td><td>ID of the labelling element.</td></tr>
+                    <tr><td>AriaRole</td><td>string?</td><td>ARIA role attribute.</td></tr>
+                    <tr><td>Parent</td><td>BaseComponent?</td><td>Cascading parent reference.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>BaseComponentWithOptionalChildContent</h2>
+            <h2 id="child-content-variants">Child Content Variants</h2>
 
-        <p>
-            Extends <code>BaseComponent</code> with an optional
-            <code>ChildContent</code> render fragment.
-        </p>
+            <p class="subtitle">
+                Two subclasses extend BaseComponent with child content support.
+            </p>
 
-    </section>
+            <hr />
 
-    <section class="card">
+            <h3>BaseComponentWithOptionalChildContent</h3>
 
-        <h2>BaseComponentWithRequiredChildContent</h2>
+            <p>
+                Extends BaseComponent with an optional ChildContent render fragment.
+                Use this as the base when child content is valid but not required.
+            </p>
 
-        <p>
-            Extends <code>BaseComponent</code> with a required
-            <code>ChildContent</code> render fragment via
-            <code>[EditorRequired]</code>.
-        </p>
+            <h3>BaseComponentWithRequiredChildContent</h3>
 
-    </section>
+            <p>
+                Extends BaseComponent with a required ChildContent render fragment via
+                the EditorRequired attribute. Blazor will warn at compile time if child
+                content is omitted on components that inherit from this class.
+            </p>
 
-    <section class="card">
+        </section>
+    </TechCard>
 
-        <h2>Name Hierarchy</h2>
+    <TechCard>
+        <section class="card">
 
-        <p>
-            The <code>GetFullname()</code> method recursively builds a dot-separated
-            name path from parent components — useful for form field naming.
-        </p>
+            <h2 id="name-hierarchy">Name Hierarchy</h2>
 
-        <pre><code>// If Parent.Name = "address" and Name = "street"
-// GetFullname() returns "address.street"</code></pre>
+            <p class="subtitle">
+                The GetFullname method builds a dot-separated name path from the component
+                tree — useful for semantic CSS targeting and form field naming.
+            </p>
 
-    </section>
+            <hr />
+
+            <p>
+                Each component receives a cascading Parent reference from its ancestor.
+                GetFullname recursively walks up the parent chain and concatenates Name values
+                with dots. This lets you write CSS selectors against the data-fullname attribute
+                to target specific components in a layout without class collisions.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="base-components-bootstrap">Bootstrap 5 Base Components</h2>
+
+            <p class="subtitle">Bootstrap 5 Base Components</p>
+
+            <hr />
+
+            <p>
+                When Bootstrap 5 is the active design system, GetComponentName returns Bootstrap
+                class names for each component type. The Specialization parameter accepts any
+                Bootstrap modifier token such as btn-primary, card-header, or text-muted. The
+                base class passes these values through to GetSpecializations in the Bootstrap 5
+                design system, which appends them to the resolved base class.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="base-components-daisyui">DaisyUI Base Components</h2>
+
+            <p class="subtitle">DaisyUI Base Components</p>
+
+            <hr />
+
+            <p>
+                When DaisyUI is active, GetComponentName returns DaisyUI's semantic class names
+                and GetSpecializations may return additional theme-aware classes such as
+                bg-base-100 or shadow-sm. The base component infrastructure is identical across
+                all frameworks — only the values returned by the design system differ. DaisyUI
+                specializations are theme-sensitive and update when the active DaisyUI theme changes.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="base-components-basecoat">Basecoat Base Components</h2>
+
+            <p class="subtitle">Basecoat Base Components</p>
+
+            <hr />
+
+            <p>
+                When Basecoat is active, GetComponentName and GetSpecializations return Tailwind
+                utility class combinations curated by Basecoat. Because the base class infrastructure
+                is framework-agnostic, switching from DaisyUI to Basecoat or vice versa requires
+                only changing the registered IDesignSystem instance — no changes to component
+                parameters or Razor markup are needed.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("base-components", "Base Components"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("child-content-variants", "Child Content Variants", 2),
+    new TocItem("name-hierarchy", "Name Hierarchy", 2),
+    new TocItem("base-components-bootstrap", "Bootstrap 5 Base Components", 2),
+    new TocItem("base-components-daisyui", "DaisyUI Base Components", 2),
+    new TocItem("base-components-basecoat", "Basecoat Base Components", 2)
+])" />
+
+</div>
