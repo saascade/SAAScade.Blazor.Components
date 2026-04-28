@@ -1,4 +1,5 @@
 @inject TechFilterService FilterService
+@inject NavigationManager NavigationManager
 @implements IDisposable
 
 <nav class="toc">
@@ -7,7 +8,7 @@
         @foreach (var item in Items.Where(IsVisible))
         {
             <li class="@(item.Level == 2 ? "toc-h2" : "toc-h1")">
-                <a href="#@item.Id">@item.Text</a>
+                <a href="@GetHref(item)">@item.Text</a>
             </li>
         }
     </ul>
@@ -15,6 +16,21 @@
 
 @code {
     [Parameter] public List<TocItem> Items { get; set; } = [];
+
+    private string GetHref(TocItem item)
+    {
+        var currentPath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        var fragmentIndex = currentPath.IndexOf('#');
+
+        if (fragmentIndex >= 0)
+        {
+            currentPath = currentPath[..fragmentIndex];
+        }
+
+        return string.IsNullOrWhiteSpace(currentPath)
+            ? $"#{item.Id}"
+            : $"{currentPath}#{item.Id}";
+    }
 
     private bool IsVisible(TocItem item) =>
         FilterService.IsVisible(GetTech(item));
