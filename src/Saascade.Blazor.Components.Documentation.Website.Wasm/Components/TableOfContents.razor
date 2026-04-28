@@ -1,7 +1,10 @@
+@inject TechFilterService FilterService
+@implements IDisposable
+
 <nav class="toc">
     <span class="toc-title">On this page</span>
     <ul class="toc-list">
-        @foreach (var item in Items)
+        @foreach (var item in Items.Where(IsVisible))
         {
             <li class="@(item.Level == 2 ? "toc-h2" : "toc-h1")">
                 <a href="#@item.Id">@item.Text</a>
@@ -12,4 +15,44 @@
 
 @code {
     [Parameter] public List<TocItem> Items { get; set; } = [];
+
+    private bool IsVisible(TocItem item) =>
+        FilterService.IsVisible(GetTech(item));
+
+    private static string GetTech(TocItem item)
+    {
+        if (!string.IsNullOrWhiteSpace(item.Tech))
+        {
+            return item.Tech;
+        }
+
+        var searchableText = $"{item.Id} {item.Text}";
+
+        if (searchableText.Contains("bootstrap", StringComparison.OrdinalIgnoreCase))
+        {
+            return "bootstrap";
+        }
+
+        if (searchableText.Contains("daisyui", StringComparison.OrdinalIgnoreCase))
+        {
+            return "daisyui";
+        }
+
+        if (searchableText.Contains("basecoat", StringComparison.OrdinalIgnoreCase))
+        {
+            return "basecoat";
+        }
+
+        return "";
+    }
+
+    protected override void OnInitialized()
+    {
+        FilterService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        FilterService.OnChange -= StateHasChanged;
+    }
 }
