@@ -18,4 +18,4 @@ public static class HyperlinkTargetResolver
         HyperlinkTarget.Self => "_self",
         _ => "_self"
     };
-}
+} 
