@@ -20,7 +20,7 @@
 
 <div class="app-shell @(darkMode ? "dark-theme" : "light-theme")">
     <header class="topbar">
-        <div class="topbar-left @(menuOpen ? "" : "closed")">
+        <div class="topbar-left @(menuOpen ? "" : "")">
             <a class="brand" href="/">
                 <img src="images/SAAScade-Logo-64x.png" alt="SAAScade" width="32" height="32" />
                 <div class="brand-text">
@@ -31,28 +31,34 @@
         </div>
         <div class="topbar-center">
             <nav class="topnav">
-                <button class="menu-toggle" aria-label="Toggle menu" @onclick="ToggleMenu">☰</button>
-                <a class="top-action" href="/">Home</a>
+                @* <button class="menu-toggle" aria-label="Toggle menu" @onclick="ToggleMenu">☰</button> *@
+                @* <a class="top-action" href="/">Home</a> *@
                 @* <a class="top-action" href="docs">Docs</a> *@
             </nav>
         </div>
         <div class="topbar-right">
-            @* <a class="top-action" href="pricing">Pricing</a> *@
+            @* <a class="top-action" href="pricing">Pricing</a> *@f
             @* <a class="top-action" href="account">Account</a> *@
             <button class="theme-toggle" @onclick="ToggleTheme">
                 🌙
             </button>
-            <div class="topbar-search">
+            <button class="menu-toggle" aria-label="Toggle menu" @onclick="ToggleMenu">☰</button>
+            @* <div class="topbar-search">
                 <input placeholder="Search..." />
-            </div>
+            </div> *@
         </div>
     </header>
 
     <div class="layout-body">
         <aside class="sidebar @(menuOpen ? "open" : "")" aria-label="Primary navigation">
+            @* <div class="topbar-search">
+                <input placeholder="Search..." />
+            </div> *@
             <SidebarTechFilter />
+
             <nav class="sidebar-nav">
                 <ul>
+
                     <li class="sidebar-section-label">
                         <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l3 3"/></svg>
                         Getting Started
