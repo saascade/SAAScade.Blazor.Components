@@ -39,9 +39,9 @@ jobs:
       - name: Generate version
         id: version
         run: |
-          DATE=$(date -u +'%Y%m%d')
+          DATE=$(date -u +'%Y%m%d%H%M')
           SHA=${GITHUB_SHA::7}
-          VERSION="0.0.0.0-${DATE}.${SHA}"
+          VERSION="0.0.0.${DATE}.${SHA}"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Build
