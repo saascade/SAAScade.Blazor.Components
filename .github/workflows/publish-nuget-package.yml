@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - 'src/Saascade.Blazor.Components/**' 
+      - '.github/workflows/publish-nuget-package.yml'
     # tags:
     #   - 'v*'   # trigger on version tags like v1.0.0
   workflow_dispatch:
