@@ -7,45 +7,109 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Ul&gt;</code> and <code>&lt;Li&gt;</code> components render
-            semantic unordered list elements with design-system styling.
-        </p>
+            <p class="subtitle">
+                The Ul and Li components render semantic unordered list elements with
+                design-system-aware styling.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Basic Usage</h3>
-
-        <pre><code>&lt;Ul&gt;
+            <pre><code>&lt;Ul&gt;
     &lt;Li&gt;First item&lt;/Li&gt;
     &lt;Li&gt;Second item&lt;/Li&gt;
     &lt;Li&gt;Third item&lt;/Li&gt;
 &lt;/Ul&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="programmatic-lists">Programmatic Lists</h2>
+            <h2 id="programmatic-lists">Programmatic Lists</h2>
 
-        <p>
-            Use the <code>&lt;Foreach&gt;</code> or <code>&lt;ListOf&gt;</code> base
-            components to render lists from data collections. See the
-            <a href="render-foreach">Render &amp; Foreach</a> page.
-        </p>
+            <p>
+                Use the Foreach or ListOf base components to render lists from data collections.
+                See the <a href="render-foreach">Render &amp; Foreach</a> page.
+            </p>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="list-bootstrap">Bootstrap 5 List</h2>
+
+            <p class="subtitle">Bootstrap 5 List</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, the Ul component maps to a list-group container and each Li
+                maps to a list-group-item. This produces Bootstrap's styled list with borders
+                and appropriate padding. You can apply additional Bootstrap list-group modifiers
+                such as list-group-item-action or list-group-item-primary through the
+                Specialization parameter on individual Li components.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="list-daisyui">DaisyUI List</h2>
+
+            <p class="subtitle">DaisyUI List</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, the Ul component maps to a menu container and each Li maps to a
+                menu item. DaisyUI's menu component supports vertical and horizontal layouts
+                and is commonly used inside drawers and dropdowns. The menu class and
+                its modifier variants such as menu-horizontal or menu-compact are available
+                through the Specialization parameter.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="list-basecoat">Basecoat List</h2>
+
+            <p class="subtitle">Basecoat List</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, the Ul and Li components are styled with Tailwind utility classes
+                that produce a clean list layout. The default styling removes list-style markers
+                and applies consistent vertical spacing between items. You can restore markers,
+                adjust spacing, or add borders and backgrounds through the Class or Specialization
+                parameters on either the Ul or individual Li components.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("list", "List (Ul / Li)"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("programmatic-lists", "Programmatic Lists", 2)
+    new TocItem("programmatic-lists", "Programmatic Lists", 2),
+    new TocItem("list-bootstrap", "Bootstrap 5 List", 2),
+    new TocItem("list-daisyui", "DaisyUI List", 2),
+    new TocItem("list-basecoat", "Basecoat List", 2)
 ])" />
 
 </div>

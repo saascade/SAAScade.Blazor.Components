@@ -1,73 +1,198 @@
-﻿@page "/name-attribute-selection"
-<div id="thisDivIsNeededForCssIsolationToWork">
-<H1>Name Selection</H1>
-    TODO: describe how to use CSS to target elements using the data-name and data-fullname attributes, to simplify writing semantic CSS like this:
+@page "/name-attribute-selection"
+<PageTitle>Name Attribute - Saascade Docs</PageTitle>
 
-    <H2>CSS:</H2>
-    <code><pre>@ExampleCss</pre></code>
+<h1 id="name-attribute">Name Attribute Selection</h1>
 
-    <H2>Razor: (Pay attention to the 'Name' properties)</H2>
-    <code><pre>@ExampleBlazorCode</pre></code>
-    
-    <H2>Output:</H2>
-    <Div>
-        <CardsGrid Name="Adverts">
-            <Card Name="Advert">
-                <Figure>
-                    <Img Alt="Shoes" Src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" />
-                </Figure>
-                <CardBody>
-                    <CardTitle>Card Title</CardTitle>
-                    <P>A card component has a figure, a body part, and inside body there are title and actions parts</P>
-                        <Div>
-                            @* Formatting Div without a name (1) *@
-                            <div>
-                                @* Pure html formatting div (2) *@
-                                <Div Class="card-actions justify-end">
-                                    @* data-fullname = Adverts.Advert.BuyButton *@
-                                    <PrimaryButton Name="BuyButton">Buy Now</PrimaryButton>
+<div class="doc-layout">
+
+<main class="documentation">
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="overview">Overview</h2>
+
+            <p class="subtitle">
+                Every Saascade component exposes a Name parameter that is rendered as a
+                data-name attribute on the underlying HTML element. Parent components
+                cascade their name down, and GetFullname builds a dot-separated path
+                that appears as the data-fullname attribute.
+            </p>
+
+            <hr />
+
+            <p>
+                This mechanism lets you write semantic CSS selectors that target specific
+                components by their logical name in the component tree, rather than by
+                fragile positional or class-based selectors.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="example">Example</h2>
+
+            <p class="subtitle">
+                In the example below, the PrimaryButton has Name="BuyButton" and its
+                parent Card has Name="Advert" inside a CardsGrid with Name="Adverts".
+                The resulting data-fullname is Adverts.Advert.BuyButton.
+            </p>
+
+            <hr />
+
+            <h3>CSS</h3>
+            <code><pre>@ExampleCss</pre></code>
+
+            <h3>Razor</h3>
+            <code><pre>@ExampleBlazorCode</pre></code>
+
+        </section>
+    </TechCard>
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="live-demo">Live Demo</h2>
+
+            <p class="subtitle">
+                The component below is rendered live. Hover the Buy Now button to see
+                the transform scale effect applied through the data-fullname selector.
+            </p>
+
+            <hr />
+
+            <div id="thisDivIsNeededForCssIsolationToWork">
+                <Div>
+                    <CardsGrid Name="Adverts">
+                        <Card Name="Advert">
+                            <Figure>
+                                <Img Alt="Shoes" Src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" />
+                            </Figure>
+                            <CardBody>
+                                <CardTitle>Card Title</CardTitle>
+                                <P>A card component has a figure, a body part, and inside body there are title and actions parts</P>
+                                <Div>
+                                    <div>
+                                        <Div Class="card-actions justify-end">
+                                            <PrimaryButton Name="BuyButton">Buy Now</PrimaryButton>
+                                        </Div>
+                                    </div>
                                 </Div>
-                            </div>
-                        </Div>
-                </CardBody>
-            </Card>
-        </CardsGrid> 
-    </Div>
+                            </CardBody>
+                        </Card>
+                    </CardsGrid>
+                </Div>
+            </div>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="name-attribute-bootstrap">Bootstrap 5 Name Attribute</h2>
+
+            <p class="subtitle">Bootstrap 5 Name Attribute</p>
+
+            <hr />
+
+            <p>
+                When Bootstrap 5 is the active design system, the data-name and data-fullname
+                attributes are still rendered on every Saascade component regardless of the
+                framework. This means your CSS selectors based on data-fullname work identically
+                across Bootstrap, DaisyUI, and Basecoat. The Name parameter is a framework-agnostic
+                feature of the base component infrastructure.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="name-attribute-daisyui">DaisyUI Name Attribute</h2>
+
+            <p class="subtitle">DaisyUI Name Attribute</p>
+
+            <hr />
+
+            <p>
+                When DaisyUI is the active design system, data-name and data-fullname attributes
+                are present on all rendered elements just as in any other framework. You can
+                combine data-fullname selectors with DaisyUI's CSS custom property overrides to
+                achieve fine-grained per-component theme customization without touching the
+                Razor markup or the design system registration.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="name-attribute-basecoat">Basecoat Name Attribute</h2>
+
+            <p class="subtitle">Basecoat Name Attribute</p>
+
+            <hr />
+
+            <p>
+                When Basecoat is the active design system, the data-name and data-fullname
+                attributes work identically. Because Basecoat is utility-first, the Name
+                attribute selection pattern is especially useful for applying one-off style
+                overrides to specific components in the tree without adding Tailwind utilities
+                directly to the Razor file or creating a dedicated CSS class.
+            </p>
+
+        </section>
+    </TechCard>
+
+</main>
+
+<TableOfContents Items="@([
+    new TocItem("name-attribute", "Name Attribute"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("example", "Example", 2),
+    new TocItem("live-demo", "Live Demo", 2),
+    new TocItem("name-attribute-bootstrap", "Bootstrap 5", 2),
+    new TocItem("name-attribute-daisyui", "DaisyUI", 2),
+    new TocItem("name-attribute-basecoat", "Basecoat", 2)
+])" />
+
 </div>
-@code 
+
+@code
 {
     private string ExampleBlazorCode =
     """
      <CardsGrid Name="Adverts">
         <Card Name="Advert">
             <Figure>
-                <Img Alt="Shoes" Src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" />
+                <Img Alt="Shoes" Src="..." />
             </Figure>
             <CardBody>
                 <CardTitle>Card Title</CardTitle>
-                <P>A card component has a figure, a body part, and inside body there are title and actions parts</P>
-                    <Div>
-                        @* Formatting Div without a name (1) *@
-                        <div>
-                            @* Pure html formatting div (2) *@
-                            <Div Class="card-actions justify-end">
-                                @* data-fullname = Adverts.Advert.BuyButton *@
-                                <PrimaryButton Name="BuyButton">Buy Now</PrimaryButton>
-                            </Div>
-                        </div>
-                    </Div>
+                <P>Description text here.</P>
+                <Div>
+                    <div>
+                        <Div Class="card-actions justify-end">
+                            <PrimaryButton Name="BuyButton">Buy Now</PrimaryButton>
+                        </Div>
+                    </div>
+                </Div>
             </CardBody>
         </Card>
-    </CardsGrid> 
+    </CardsGrid>
     """;
 
-    private string ExampleCss = 
+    private string ExampleCss =
     """
-    ::deep [data-fullname="Adverts.Advert.BuyButton"]:hover 
+    ::deep [data-fullname="Adverts.Advert.BuyButton"]:hover
     {
-        /*  Making buy button bigger on hover  */
         transform: scale(1.3) perspective(1px)
     }
     """;
-
 }

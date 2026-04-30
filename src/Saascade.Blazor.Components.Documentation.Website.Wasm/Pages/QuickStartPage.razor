@@ -1,6 +1,128 @@
-﻿@page "/quick-start"
-<h3>QuickStartPage</h3>
+@page "/quick-start"
+<PageTitle>Quick Start - Saascade Docs</PageTitle>
 
-@code {
+<h1 id="quick-start">Quick Start</h1>
 
-}
+<div class="doc-layout">
+
+<main class="documentation">
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="steps">Steps</h2>
+
+            <p class="subtitle">
+                Get a Saascade-powered Blazor app running in three steps.
+            </p>
+
+            <hr />
+
+            <p>
+                Install the NuGet package, register your chosen design system in Program.cs,
+                and add the using directive to _Imports.razor. After that, all Saascade
+                components are available across your entire application.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="first-component">Your First Component</h2>
+
+            <p class="subtitle">
+                Once the library is installed and the design system is registered, you can use
+                any Saascade component directly in any Razor page or component.
+            </p>
+
+            <hr />
+
+            <pre><code>&lt;Card&gt;
+    &lt;CardTitle&gt;Hello, Saascade&lt;/CardTitle&gt;
+    &lt;CardBody&gt;
+        &lt;P&gt;Your first design-system-aware card.&lt;/P&gt;
+        &lt;Button Specialization="btn-primary"&gt;Get Started&lt;/Button&gt;
+    &lt;/CardBody&gt;
+&lt;/Card&gt;</code></pre>
+
+            <p>
+                The CSS classes applied to each element depend entirely on the active design system.
+                Switching frameworks requires only changing the registration in Program.cs.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="quickstart-bootstrap">Bootstrap 5 Quick Start</h2>
+
+            <p class="subtitle">Bootstrap 5 Quick Start</p>
+
+            <hr />
+
+            <p>
+                Register VanillaBootstrap5 in Program.cs and include DesignSystemStylesheetReferences
+                in your layout. The Card above will render with Bootstrap's card and card-body classes,
+                the Button will receive btn and the specialization value you pass. Bootstrap's CDN
+                stylesheet loads automatically — no additional configuration is required.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="quickstart-daisyui">DaisyUI Quick Start</h2>
+
+            <p class="subtitle">DaisyUI Quick Start</p>
+
+            <hr />
+
+            <p>
+                Register DaisyUI in Program.cs and include DesignSystemStylesheetReferences in
+                your layout. The same Card markup will render with DaisyUI's semantic classes and
+                default theme tokens. You can change the active DaisyUI theme by setting the
+                data-theme attribute on the html element — all Saascade components update
+                automatically since they rely on DaisyUI's CSS variables.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="quickstart-basecoat">Basecoat Quick Start</h2>
+
+            <p class="subtitle">Basecoat Quick Start</p>
+
+            <hr />
+
+            <p>
+                Register Basecoat in Program.cs and include DesignSystemStylesheetReferences in
+                your layout. The same Card markup will render with Basecoat's utility-first Tailwind
+                class composition. Basecoat gives you a minimal starting point that you can extend
+                with additional Tailwind utilities through the Class or Specialization parameters
+                without modifying the component itself.
+            </p>
+
+        </section>
+    </TechCard>
+
+</main>
+
+<TableOfContents Items="@([
+    new TocItem("quick-start", "Quick Start"),
+    new TocItem("steps", "Steps", 2),
+    new TocItem("first-component", "Your First Component", 2),
+    new TocItem("quickstart-bootstrap", "Bootstrap 5 Quick Start", 2),
+    new TocItem("quickstart-daisyui", "DaisyUI Quick Start", 2),
+    new TocItem("quickstart-basecoat", "Basecoat Quick Start", 2)
+])" />
+
+</div>

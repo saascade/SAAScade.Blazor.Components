@@ -1,0 +1,52 @@
+@inject TechFilterService FilterService
+@implements IDisposable
+
+<div class="stf-wrapper">
+    <div class="stf-label" id="framework-filter-label">
+        <svg class="stf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+        </svg>
+        Framework
+    </div>
+
+    <div class="stf-options" role="radiogroup" aria-labelledby="framework-filter-label">
+        <button class="stf-option @(FilterService.SelectedTech == "bootstrap" ? "stf-active" : "")"
+                type="button"
+                role="radio"
+                aria-checked="@(FilterService.SelectedTech == "bootstrap")"
+                @onclick='() => FilterService.Select("bootstrap")'>
+            <span class="stf-radio" aria-hidden="true"></span>
+            <span>Bootstrap 5</span>
+        </button>
+
+        <button class="stf-option @(FilterService.SelectedTech == "daisyui" ? "stf-active" : "")"
+                type="button"
+                role="radio"
+                aria-checked="@(FilterService.SelectedTech == "daisyui")"
+                @onclick='() => FilterService.Select("daisyui")'>
+            <span class="stf-radio" aria-hidden="true"></span>
+            <span>DaisyUI</span>
+        </button>
+
+        <button class="stf-option @(FilterService.SelectedTech == "basecoat" ? "stf-active" : "")"
+                type="button"
+                role="radio"
+                aria-checked="@(FilterService.SelectedTech == "basecoat")"
+                @onclick='() => FilterService.Select("basecoat")'>
+            <span class="stf-radio" aria-hidden="true"></span>
+            <span>Basecoat</span>
+        </button>
+    </div>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        FilterService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        FilterService.OnChange -= StateHasChanged;
+    }
+}

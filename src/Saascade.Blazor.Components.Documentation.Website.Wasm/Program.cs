@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Saascade.Blazor.DesignSystems;
-using Saascade.Blazor.Components.Documentation.Website.Wasm; 
+using Saascade.Blazor.Components.Documentation.Website.Wasm;
+using Saascade.Blazor.Components.Documentation.Website.Wasm.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 var services = builder.Services;
@@ -11,6 +12,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<DesignSystemJavaScriptReferences>("body::after");
 
 services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+services.AddScoped<TechFilterService>();
 
 
 //Pick a UI design system

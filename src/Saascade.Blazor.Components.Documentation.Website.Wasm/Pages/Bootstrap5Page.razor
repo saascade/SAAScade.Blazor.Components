@@ -7,46 +7,50 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard Tech="bootstrap">
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            Use Saascade components with Bootstrap 5's vanilla CSS classes.
-        </p>
+            <p class="subtitle">
+                Use Saascade components with Bootstrap 5's vanilla CSS classes.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Setup</h3>
+            <h3>Setup</h3>
 
-        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Bootstrap5.VanillaBootstrap5);</code></pre>
+            <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Bootstrap5.VanillaBootstrap5);</code></pre>
 
-        <p>
-            The <code>VanillaBootstrap5DesignSystem</code> maps each component to standard
-            Bootstrap 5 class names — <code>card</code>, <code>btn</code>, <code>navbar</code>, etc.
-        </p>
+            <p>
+                The <code>VanillaBootstrap5DesignSystem</code> maps each component to standard
+                Bootstrap 5 class names — <code>card</code>, <code>btn</code>, <code>navbar</code>, etc.
+            </p>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard Tech="bootstrap">
+        <section class="card">
 
-        <h2 id="stylesheet-references">Stylesheet References</h2>
+            <h2 id="stylesheet-references">Stylesheet References</h2>
 
-        <p>
-            The design system provides Bootstrap's CDN stylesheet automatically via
-            <code>GetStylesheetReferences()</code>. Include the
-            <code>&lt;DesignSystemStylesheetReferences /&gt;</code> component in your
-            <code>index.html</code> or layout.
-        </p>
+            <p>
+                The design system provides Bootstrap's CDN stylesheet automatically via
+                <code>GetStylesheetReferences()</code>. Include the
+                <code>&lt;DesignSystemStylesheetReferences /&gt;</code> component in your
+                <code>index.html</code> or layout.
+            </p>
 
-    </section>
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("bootstrap-5", "Bootstrap 5"),
-    new TocItem("overview", "Overview", 2),
-    new TocItem("stylesheet-references", "Stylesheet References", 2)
+    new TocItem("overview", "Overview", 2, "bootstrap"),
+    new TocItem("stylesheet-references", "Stylesheet References", 2, "bootstrap")
 ])" />
 
 </div>

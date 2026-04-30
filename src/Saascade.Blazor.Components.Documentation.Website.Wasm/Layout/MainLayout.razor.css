@@ -1,8 +1,9 @@
 /* ─── Design Tokens ─── */
 .app-shell {
+    --text-strong:#f4f4f5;
     --color-bg: #1F232A;
-    --color-bg-surface: #0c1622;
-    --color-bg-topbar: #0b1220;
+    --color-bg-surface: #17171D;
+    --color-bg-topbar: #17171D;
     --color-bg-input: #1F232A;
     --color-text: #e6eef8;
     --color-text-muted: #94a3b8;
@@ -20,21 +21,19 @@
     --color-overlay: rgba(0, 0, 0, 0.20);
     --color-accent-focus: rgba(59, 130, 246, 0.25);
     --color-accent-hint: rgba(59, 130, 246, 0.4);
-
-    --sidebar-width: 200px;
+    --sidebar-width: 250px;
     --topbar-height: 50px;
+    --techbar-height: 42px;
     --content-margin-open: 40px;
     --content-margin-closed: 140px;
     --content-margin-mobile: 20px;
-    --sidebar-link-indent: 30px;
-
+    --sidebar-link-indent: 50px;
     --spacing-xs: 4px;
     --spacing-sm: 6px;
     --spacing-md: 10px;
     --spacing-lg: 12px;
     --spacing-xl: 28px;
-
-    --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family: "Inter", system-ui, -apple-system, sans-serif;
     --font-family-mono: ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
     --font-size-sm: 0.8125rem;
     --font-size-base: 0.875rem;
@@ -43,16 +42,28 @@
     --font-size-heading: 2rem;
     --line-height-base: 1.5;
     --line-height-tight: 1.2;
-
     --radius: 6px;
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-hover-in: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
     --transition-hover-out: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    /* ─── Hero glow — ajuste estes três tokens ─── */
+    --hero-glow-opacity: 0.18; /* transparência: 0 = invisível · 1 = sólido */
+    --hero-glow-spread: 70%; /* largura horizontal do brilho               */
+    --hero-glow-depth: 30%; /* altura / alcance vertical do brilho        */
 
     font-family: var(--font-family);
     color: var(--color-text);
-    background: var(--color-bg);
+    /*    amarelo*/
+    /*        background:
+        radial-gradient(
+            ellipse var(--hero-glow-spread) var(--hero-glow-depth) at 50% 0%,
+            rgba(255, 221, 39, var(--hero-glow-opacity)),
+            transparent
+        ),
+        var(--color-bg);*/
+    /*    background: radial-gradient(circle at 50% -20%, rgba(79, 142, 247, 0.12), transparent 50%), radial-gradient(circle at 10% 40%, rgba(139, 92, 246, 0.08), transparent 30%), radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05), transparent 30%), var(--bg);*/
+
     line-height: var(--line-height-base);
     color-scheme: dark;
     isolation: isolate;
@@ -115,12 +126,39 @@
 }
 
 .brand {
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
     white-space: nowrap;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+/*    line-height: 1.1;*/
+}
+
+.brand-mark {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+}
+
+.brand-name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+    line-height: 1;
+/*    letter-spacing: 0.04em;*/
+    color: var(--text-strong);
 }
 
 .menu-toggle {
@@ -178,6 +216,7 @@
 
 /* ─── Layout Body ─── */
 .layout-body {
+    background: var(--color-bg); 
     display: flex;
     min-height: calc(100vh - var(--topbar-height) - 6px);
 }
@@ -192,7 +231,7 @@
     align-self: flex-start;
     background: var(--color-bg-surface);
     border-right: 1px solid var(--color-border);
-    padding: var(--spacing-md) 0;
+    padding: 0;
     transition: margin-left var(--transition-normal);
     overflow: hidden;
     box-shadow: 5px 0 10px var(--color-shadow);
@@ -200,7 +239,7 @@
     z-index: 1000;
     overscroll-behavior: contain;
     scrollbar-gutter: stable;
-    scrollbar-width: thin;
+    scrollbar-width: auto;
     scrollbar-color: var(--color-scrollbar) transparent;
 }
 
@@ -210,7 +249,7 @@
 }
 
 .sidebar::-webkit-scrollbar {
-    width: 6px;
+    width: 14px;
 }
 
 .sidebar::-webkit-scrollbar-track {
@@ -251,7 +290,7 @@
 
 .sidebar-nav ul {
     list-style: none;
-    padding: var(--spacing-lg) 0 0 0;
+    padding: 0 0 var(--spacing-lg) 0;
     margin: 0;
 }
 
@@ -262,15 +301,25 @@
 }
 
 .sidebar-section-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 0.7rem;
     font-weight: 700;
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.20em;
-    padding: var(--spacing-lg) var(--sidebar-link-indent) var(--spacing-xs);
+    padding: var(--spacing-lg) 30px var(--spacing-xs);
     margin-top: var(--spacing-sm);
     user-select: none;
     pointer-events: none;
+}
+
+.section-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: currentColor;
 }
 
 .sidebar-section-label:first-child {
@@ -304,6 +353,7 @@
 /* ─── Main Content ─── */
 .main-content {
     flex: 1;
+    min-width: 0;
     padding: var(--spacing-xl) 0;
     transition: margin-left var(--transition-normal);
 }
@@ -347,6 +397,8 @@
     max-width: 860px;
     min-width: 0;
     flex: 1;
+
+
 }
 
 ::deep .card {
@@ -542,7 +594,7 @@
 
 .footer-columns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-xl);
     max-width: 900px;
     margin: 0 auto;
@@ -660,6 +712,7 @@
     .main-content.menu-open,
     .main-content.menu-closed {
         margin-left: var(--content-margin-mobile);
+        margin-right: var(--content-margin-mobile);
     }
 
     .footer-columns {
@@ -677,6 +730,47 @@
 
     ::deep .toc {
         display: none;
+    }
+}
+
+/* ─── Small Mobile (≤ 430px) ─── */
+@media (max-width: 430px) {
+    .topbar-left {
+        width: auto;
+        padding-left: var(--spacing-md);
+    }
+
+    .main-content {
+        padding: var(--spacing-md) 0;
+    }
+
+    .main-content.menu-open,
+    .main-content.menu-closed {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    ::deep .doc-layout {
+        gap: 0;
+        margin-top: 8px;
+    }
+
+    ::deep .documentation {
+        gap: var(--spacing-lg);
+    }
+
+    ::deep .card {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    ::deep .card table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 

@@ -1,0 +1,42 @@
+@inject TechFilterService FilterService
+@implements IDisposable
+
+<div class="tech-bar">
+    <span class="tech-bar-label">Framework:</span>
+
+    <button class="tech-btn bootstrap @(FilterService.SelectedTech == "bootstrap" ? "active" : "")"
+            @onclick='() => FilterService.Select("bootstrap")'>
+        Bootstrap 5
+    </button>
+
+    <button class="tech-btn daisyui @(FilterService.SelectedTech == "daisyui" ? "active" : "")"
+            @onclick='() => FilterService.Select("daisyui")'>
+        DaisyUI
+    </button>
+
+    <button class="tech-btn basecoat @(FilterService.SelectedTech == "basecoat" ? "active" : "")"
+            @onclick='() => FilterService.Select("basecoat")'>
+        Basecoat
+    </button>
+
+    <div class="tech-bar-clear-slot">
+        @if (!string.IsNullOrEmpty(FilterService.SelectedTech))
+        {
+            <button class="tech-btn-clear" @onclick='() => FilterService.Select(FilterService.SelectedTech)'>
+                ✕ Clear
+            </button>
+        }
+    </div>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        FilterService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        FilterService.OnChange -= StateHasChanged;
+    }
+}

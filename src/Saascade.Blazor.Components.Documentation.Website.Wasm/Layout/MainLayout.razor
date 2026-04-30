@@ -1,8 +1,10 @@
-﻿@using Saascade.Blazor.Components.Documentation.Website.Wasm.Components
+@using Saascade.Blazor.Components.Documentation.Website.Wasm.Components
 @inherits LayoutComponentBase
 @implements IDisposable
 @inject NavigationManager Navigation
 @inject IJSRuntime JS
+@inject TechFilterService FilterService
+
 
 @{
     var path = Navigation.ToBaseRelativePath(Navigation.Uri);
@@ -18,143 +20,189 @@
 
 <div class="app-shell @(darkMode ? "dark-theme" : "light-theme")">
     <header class="topbar">
-    <div class="topbar-left @(menuOpen ? "" : "closed")">
-      <div class="brand">Saascade Docs</div>
-
-    </div>
-    <div class="topbar-center">
-      <nav class="topnav">
-        <button class="menu-toggle" aria-label="Toggle menu" @onclick="ToggleMenu">☰</button>
-        <a class="top-action" href="/">Home</a>
-        <a class="top-action" href="docs">Docs</a>
-      </nav>
-    </div>
-    <div class="topbar-right">
-        <a class="top-action" href="pricing">Pricing</a>
-        <a class="top-action" href="account">Account</a>
-        <button class="theme-toggle" @onclick="ToggleTheme">
-            🌙
-        </button>
-        <div class="topbar-search">
-          <input placeholder="Search..." />
+        <div class="topbar-left @(menuOpen ? "" : "")">
+            <a class="brand" href="/">
+                <img src="images/SAAScade-Logo-64x.png" alt="SAAScade" width="32" height="32" />
+                <div class="brand-text">
+                    <span class="brand-mark">SAASCADE</span>
+                    <span class="brand-name">Components</span>
+                </div>
+            </a>
         </div>
+        <div class="topbar-center">
+            <nav class="topnav">
+                @* <button class="menu-toggle" aria-label="Toggle menu" @onclick="ToggleMenu">☰</button> *@
+                @* <a class="top-action" href="/">Home</a> *@
+                @* <a class="top-action" href="docs">Docs</a> *@
+            </nav>
+        </div>
+        <div class="topbar-right">
+            @* <a class="top-action" href="pricing">Pricing</a> *@
+            @* <a class="top-action" href="account">Account</a> *@
+            <button class="theme-toggle" @onclick="ToggleTheme">
+                🌙
+            </button>
+            <button class="menu-toggle" aria-label="Toggle menu" @onclick="ToggleMenu">☰</button>
+            @* <div class="topbar-search">
+                <input placeholder="Search..." />
+            </div> *@
+        </div>
+    </header>
+
+    <div class="layout-body">
+        <aside class="sidebar @(menuOpen ? "open" : "")" aria-label="Primary navigation">
+            @* <div class="topbar-search">
+                <input placeholder="Search..." />
+            </div> *@
+            <SidebarTechFilter />
+
+            <nav class="sidebar-nav">
+                <ul>
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l3 3"/></svg>
+                        Getting Started
+                    </li>
+                    <li><NavLink class="sidebar-link" href="overview">Overview</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="installation">Installation</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="quick-start">Quick Start</NavLink></li>
+
+                    @* <li><hr /></li> *@
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/><path d="M13.5 9v3l-3 3"/><path d="M13.5 9v3l3 3"/></svg>
+                        Design Systems
+                    </li>
+                    <li><NavLink class="sidebar-link" href="design-systems">How It Works</NavLink></li>
+                    @* @if (FilterService.IsVisible("bootstrap"))
+                    {
+                    <li><NavLink class="sidebar-link" href="bootstrap5">Bootstrap 5</NavLink></li>
+                    }
+                    @if (FilterService.IsVisible("daisyui"))
+                    {
+                    <li><NavLink class="sidebar-link" href="daisyui">DaisyUI</NavLink></li>
+                    }
+                    @if (FilterService.IsVisible("basecoat"))
+                    {
+                    <li><NavLink class="sidebar-link" href="basecoat">Basecoat</NavLink></li>
+                    } *@
+                    <li><NavLink class="sidebar-link" href="custom-themes">Custom Themes</NavLink></li>
+
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+                        Actions
+                    </li>
+                    <li><NavLink class="sidebar-link" href="button">Button</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="semantic-buttons">Semantic Buttons</NavLink></li>
+
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
+                        Advanced
+                    </li>
+                    <li><NavLink class="sidebar-link" href="base-components">Base Components</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="render-foreach">Render &amp; Foreach</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="name-attribute-selection">Name Attribute</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="create-design-system">Creating a Design System</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="api-reference">API Reference</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="changelog">Changelog</NavLink></li>
+
+                    @* <li><hr /></li> *@
+
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                        Data Display
+                    </li>
+                    <li><NavLink class="sidebar-link" href="cards">Card</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="figure-image">Figure &amp; Image</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="list">List</NavLink></li>
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>
+                        Layout
+                    </li>
+                    <li><NavLink class="sidebar-link" href="column">Column</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="div-section-main">Div</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="header-footer">Header &amp; Footer</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="hero">Hero</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="drawer">Drawer</NavLink></li>
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></svg>
+                        Navigation
+                    </li>
+                    <li><NavLink class="sidebar-link" href="anchor">Anchor / Hyperlink</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="navbar">Navbar</NavLink></li>
+
+
+
+                    <li class="sidebar-section-label">
+                        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                        Typography
+                    </li>
+                    <li><NavLink class="sidebar-link" href="headings">Headings (H1–H6)</NavLink></li>
+                    <li><NavLink class="sidebar-link" href="paragraph">Paragraph</NavLink></li>
+
+                    @* <li><hr /></li> *@
+
+                    
+
+                    
+
+                   @*  <li><hr /></li> *@
+
+
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content @(menuOpen ? "menu-open" : "menu-closed")">
+            <div class="page-header">
+                <div class="breadcrumb">@breadcrumb</div>
+            </div>
+            <section class="doc-body">
+                @Body
+            </section>
+        </main>
     </div>
-  </header>
 
-
-  <div class="layout-body">
-    <aside class="sidebar @(menuOpen ? "open" : "")" aria-label="Primary navigation">
-      <nav class="sidebar-nav">
-        <ul>
-          <li class="sidebar-section-label">Getting Started</li>
-          <li><NavLink class="sidebar-link" href="overview">Overview</NavLink></li>
-          <li><NavLink class="sidebar-link" href="installation">Installation</NavLink></li>
-          <li><NavLink class="sidebar-link" href="quick-start">Quick Start</NavLink></li>
-
-          <li><hr/></li>
-
-          <li class="sidebar-section-label">Design Systems</li>
-          <li><NavLink class="sidebar-link" href="design-systems">How It Works</NavLink></li>
-          <li><NavLink class="sidebar-link" href="bootstrap5">Bootstrap 5</NavLink></li>
-          <li><NavLink class="sidebar-link" href="daisyui">DaisyUI</NavLink></li>
-          <li><NavLink class="sidebar-link" href="basecoat">Basecoat</NavLink></li>
-          <li><NavLink class="sidebar-link" href="custom-themes">Custom Themes</NavLink></li>
-
-          <li><hr/></li>
-
-          <li class="sidebar-section-label">Layout</li>
-          <li><NavLink class="sidebar-link" href="column">Column</NavLink></li>
-          <li><NavLink class="sidebar-link" href="div-section-main">Div </NavLink></li>
-          <li><NavLink class="sidebar-link" href="header-footer">Header &amp; Footer</NavLink></li>
-          <li><NavLink class="sidebar-link" href="hero">Hero</NavLink></li>
-          <li><NavLink class="sidebar-link" href="drawer">Drawer</NavLink></li>
-           
-           <li><hr/></li>
-
-          <li class="sidebar-section-label">Typography</li>
-          <li><NavLink class="sidebar-link" href="headings">Headings (H1–H6)</NavLink></li>
-          <li><NavLink class="sidebar-link" href="paragraph">Paragraph</NavLink></li>
-
-          <li><hr/></li><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="styles.css">
-
-           <li class="sidebar-section-label">Data Display</li>
-          <li><NavLink class="sidebar-link" href="cards">Card</NavLink></li>
-          <li><NavLink class="sidebar-link" href="cards-grid">Cards Grid</NavLink></li>
-          <li><NavLink class="sidebar-link" href="carousel">Carousel</NavLink></li>
-          <li><NavLink class="sidebar-link" href="figure-image">Figure &amp; Image</NavLink></li>
-          <li><NavLink class="sidebar-link" href="list">List</NavLink></li> 
-          
-          <li class="sidebar-section-label">Navigation</li>
-          <li><NavLink class="sidebar-link" href="anchor">Anchor / Hyperlink</NavLink></li>
-          <li><NavLink class="sidebar-link" href="navbar">Navbar</NavLink></li>
-
-          <li class="sidebar-section-label">Actions</li>
-          <li><NavLink class="sidebar-link" href="button">Button</NavLink></li>
-          <li><NavLink class="sidebar-link" href="semantic-buttons">Semantic Buttons</NavLink></li>
-
-          <li><hr/></li>
-
-          <li class="sidebar-section-label">Advanced</li>
-          <li><NavLink class="sidebar-link" href="base-components">Base Components</NavLink></li>
-          <li><NavLink class="sidebar-link" href="render-foreach">Render &amp; Foreach</NavLink></li>
-          <li><NavLink class="sidebar-link" href="name-attribute-selection">Name Attribute</NavLink></li>
-          <li><NavLink class="sidebar-link" href="create-design-system">Creating a Design System</NavLink></li>
-
-          <li><hr/></li>
-
-          <li><NavLink class="sidebar-link" href="api-reference">API Reference</NavLink></li>
-          <li><NavLink class="sidebar-link" href="integrations">Integrations</NavLink></li>
-          <li><NavLink class="sidebar-link" href="changelog">Changelog</NavLink></li>  
-        </ul>
-      </nav>
-    </aside>
-
-
-
-    <main class="main-content @(menuOpen ? "menu-open" : "menu-closed")">
-      <div class="page-header">
-        <div class="breadcrumb">@breadcrumb</div>
-@*         <h1>Saascade Bar component</h1>
-        <p class="lead">A responsive navbar that can support images, links, buttons, and dropdowns.</p>
- *@      </div>
-      <section class="doc-body">
-        @Body
-      </section>
-    </main>
-  </div>
-
-  <footer class="site-footer">
-    <div class="footer-columns">
-      <div class="footer-col">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="overview">Overview</a></li>
-          <li><a href="https://github.com/saascade/SAAScade.Blazor.Components" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Guides</h4>
-        <ul>
-          <li><a href="quick-start">Quick Start</a></li>
-          <li><a href="installation">Installation</a></li>
-          <li><a href="design-systems">Design Systems</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Community</h4>
-        <ul>
-          <li><a href="https://github.com/saascade/SAAScade.Blazor.Components/issues" target="_blank" rel="noopener noreferrer">Issues ↗</a></li>
-          <li><a href="https://github.com/saascade/SAAScade.Blazor.Components/discussions" target="_blank" rel="noopener noreferrer">Discussions ↗</a></li>
-          <li><a href="https://www.nuget.org/packages?q=saascade" target="_blank" rel="noopener noreferrer">NuGet ↗</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      Copyright &copy; @DateTime.Now.Year Saascade.
-    </div>
-  </footer>
-</div>  
+    @* <footer class="site-footer">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="overview">Overview</a></li>
+                    <li><a href="https://github.com/saascade/SAAScade.Blazor.Components" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="quick-start">Quick Start</a></li>
+                    <li><a href="installation">Installation</a></li>
+                    <li><a href="design-systems">Design Systems</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="https://github.com/saascade/SAAScade.Blazor.Components/issues" target="_blank" rel="noopener noreferrer">Issues ↗</a></li>
+                    <li><a href="https://github.com/saascade/SAAScade.Blazor.Components/discussions" target="_blank" rel="noopener noreferrer">Discussions ↗</a></li>
+                    <li><a href="https://www.nuget.org/packages?q=saascade" target="_blank" rel="noopener noreferrer">NuGet ↗</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Copyright &copy; @DateTime.Now.Year Saascade.
+        </div>
+    </footer> *@
+</div>
 
 @code {
     bool menuOpen = true;
@@ -174,6 +222,7 @@
     protected override void OnInitialized()
     {
         Navigation.LocationChanged += OnLocationChanged;
+        FilterService.OnChange += StateHasChanged;
     }
 
     async void OnLocationChanged(object? sender, LocationChangedEventArgs e)
@@ -188,28 +237,6 @@
     public void Dispose()
     {
         Navigation.LocationChanged -= OnLocationChanged;
+        FilterService.OnChange -= StateHasChanged;
     }
 }
-
-@* 
-NOTE: Gordon's previous code
-We might want to rename or get rid of the Drawer, DrawerContent, DrawerSide as I suspect these are DaisyUI only names/concepts
-<Drawer Class="lg:drawer-open">
-    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-    <DrawerContent>
-        <!-- Navbar -->
-        <Navbar Class="w-full bg-base-300">
-            <label for="my-drawer-4" aria-label="open sidebar" class="btn btn-square btn-ghost">
-                <!-- Sidebar toggle icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M9 4v16"></path><path d="M14 10l2 2l-2 2"></path></svg>
-            </label>
-            <Div class="px-4">SAAScade Blazor Components</Div>
-        </Navbar>
-
-        <Main Class="p-4">@Body</Main>
-    </DrawerContent>
-
-    <DrawerSide Class="is-drawer-close:overflow-visible">
-        <SidebarNavigationMenu/>
-    </DrawerSide>
-</Drawer> *@

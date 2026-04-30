@@ -1,30 +1,51 @@
 @page "/create-design-system"
 <PageTitle>Creating a Design System - Saascade Docs</PageTitle>
 
-<h1>Creating a Design System</h1>
+<h1 id="create-design-system">Creating a Design System</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            You can create your own design system by implementing the
-            <code>IDesignSystem</code> interface.
-        </p>
+            <p class="subtitle">
+                You can create your own design system by implementing the
+                IDesignSystem interface and registering it in Program.cs.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Step 1: Implement IDesignSystem</h3>
+            <p>
+                A custom design system gives you complete control over the CSS class names
+                applied to each Saascade component. You can map components to any CSS framework,
+                a proprietary design token system, or a fully hand-crafted stylesheet.
+            </p>
 
-        <pre><code>public class MyDesignSystem : IDesignSystem
+        </section>
+    </TechCard>
+
+    <TechCard>
+        <section class="card">
+
+            <h2 id="implement">Step 1: Implement IDesignSystem</h2>
+
+            <p class="subtitle">
+                Implement the IDesignSystem interface to define how each component resolves
+                its class names, specializations, styles, and asset references.
+            </p>
+
+            <hr />
+
+            <pre><code>public class MyDesignSystem : IDesignSystem
 {
     public CssFramework CssFramework =&gt; CssFramework.Custom;
 
     public string GetComponentName(BaseComponent component)
     {
-        // Map component types to CSS class names
         return component switch
         {
             Card =&gt; "my-card",
@@ -52,26 +73,101 @@
         =&gt; [];
 }</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h3>Step 2: Register It</h3>
+            <h2 id="register">Step 2: Register and Reference Assets</h2>
 
-        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(new MyDesignSystem());</code></pre>
+            <p class="subtitle">
+                Register your design system in Program.cs and add asset references to your layout.
+            </p>
 
-    </section>
+            <hr />
 
-    <section class="card">
+            <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(new MyDesignSystem());</code></pre>
 
-        <h3>Step 3: Add Your Stylesheets</h3>
+            <p>
+                Use DesignSystemStylesheetReferences in your layout to automatically include
+                the CSS files returned by GetStylesheetReferences. This keeps your layout
+                clean and ensures stylesheets load in sync with the active design system.
+            </p>
 
-        <p>
-            Use <code>&lt;DesignSystemStylesheetReferences /&gt;</code> in your layout
-            to automatically include the CSS files returned by
-            <code>GetStylesheetReferences()</code>.
-        </p>
+        </section>
+    </TechCard>
 
-    </section>
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="create-ds-bootstrap">Extending Bootstrap 5</h2>
+
+            <p class="subtitle">Extending Bootstrap 5</p>
+
+            <hr />
+
+            <p>
+                You can create a custom design system that extends the built-in Bootstrap 5
+                preset. Override GetComponentName for specific components to return your own
+                class tokens while delegating the rest to the base Bootstrap mapping. This
+                lets you adopt Bootstrap as a foundation while adding project-specific class
+                names for proprietary components that Bootstrap does not cover.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="create-ds-daisyui">Extending DaisyUI</h2>
+
+            <p class="subtitle">Extending DaisyUI</p>
+
+            <hr />
+
+            <p>
+                You can create a custom design system that extends the DaisyUI preset and
+                adds custom DaisyUI component classes or Tailwind utilities for components
+                not covered by DaisyUI. You can also override GetSpecializations to inject
+                default modifier classes such as a shadow or background token that should
+                appear on every instance of a component across your application.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="create-ds-basecoat">Extending Basecoat</h2>
+
+            <p class="subtitle">Extending Basecoat</p>
+
+            <hr />
+
+            <p>
+                You can create a custom design system that extends the Basecoat preset and
+                adjusts the default Tailwind utility class sets for any component. Because
+                Basecoat composes classes from low-level utilities, extending it typically
+                means replacing or appending specific utility tokens in GetComponentName or
+                GetSpecializations rather than building a separate stylesheet.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("create-design-system", "Creating a Design System"),
+    new TocItem("overview", "Overview", 2),
+    new TocItem("implement", "Step 1: Implement", 2),
+    new TocItem("register", "Step 2: Register & Assets", 2),
+    new TocItem("create-ds-bootstrap", "Extending Bootstrap 5", 2),
+    new TocItem("create-ds-daisyui", "Extending DaisyUI", 2),
+    new TocItem("create-ds-basecoat", "Extending Basecoat", 2)
+])" />
+
+</div>

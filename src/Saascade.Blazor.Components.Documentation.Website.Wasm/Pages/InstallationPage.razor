@@ -7,55 +7,109 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="nuget-package">NuGet Package</h2>
+            <h2 id="nuget-package">NuGet Package</h2>
 
-        <p class="subtitle">
-            Install the Saascade Blazor Components library via NuGet or the .NET CLI.
-        </p>
+            <p class="subtitle">
+                Install the Saascade Blazor Components library via NuGet or the .NET CLI.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>.NET CLI</h3>
-        <pre><code>dotnet add package Saascade.Blazor.Components</code></pre>
+            <h3>.NET CLI</h3>
+            <pre><code>dotnet add package Saascade.Blazor.Components</code></pre>
 
-        <h3>Package Manager</h3>
-        <pre><code>Install-Package Saascade.Blazor.Components</code></pre>
+            <h3>Package Manager</h3>
+            <pre><code>Install-Package Saascade.Blazor.Components</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="register-services">Register Services</h2>
+            <h2 id="add-imports">Add Imports</h2>
 
-        <p>
-            Add the design system to your <code>Program.cs</code>:
-        </p>
+            <p>
+                Add the following to your <code>_Imports.razor</code> so components are available
+                across all pages without per-file using directives:
+            </p>
 
-        <pre><code>builder.Services.AddSingleton&lt;IDesignSystem&gt;(DesignSystems.Tailwind.DaisyUI);</code></pre>
+            <pre><code>@@using Saascade.Blazor.Components</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard Tech="bootstrap">
+        <section class="card">
 
-        <h2 id="add-imports">Add Imports</h2>
+            <h2 id="install-bootstrap">Bootstrap 5 Setup</h2>
 
-        <p>
-            Add the following to your <code>_Imports.razor</code>:
-        </p>
+            <p class="subtitle">Bootstrap 5 Installation</p>
 
-        <pre><code>@@using Saascade.Blazor.Components</code></pre>
+            <hr />
 
-    </section>
+            <p>
+                Register the Bootstrap 5 design system in Program.cs using the VanillaBootstrap5
+                preset. Then add the DesignSystemStylesheetReferences component to your index.html
+                or App.razor layout — it automatically injects the Bootstrap CDN stylesheet link,
+                so you do not need to manage the link tag manually.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="install-daisyui">DaisyUI Setup</h2>
+
+            <p class="subtitle">DaisyUI Installation</p>
+
+            <hr />
+
+            <p>
+                Register the DaisyUI design system in Program.cs using the DaisyUI preset.
+                DaisyUI requires Tailwind CSS to be configured in your project. The
+                DesignSystemStylesheetReferences component includes the necessary CDN reference
+                for the DaisyUI stylesheet so components render correctly without manual
+                stylesheet management.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="install-basecoat">Basecoat Setup</h2>
+
+            <p class="subtitle">Basecoat Installation</p>
+
+            <hr />
+
+            <p>
+                Register the Basecoat design system in Program.cs using the Basecoat preset.
+                Like DaisyUI, Basecoat is built on Tailwind CSS. Add the
+                DesignSystemStylesheetReferences component to your layout to include the Basecoat
+                stylesheet automatically. Ensure your Tailwind configuration includes the Basecoat
+                plugin or CDN build for the utility classes to resolve correctly.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("installation", "Installation"),
     new TocItem("nuget-package", "NuGet Package", 2),
-    new TocItem("register-services", "Register Services", 2),
-    new TocItem("add-imports", "Add Imports", 2)
+    new TocItem("add-imports", "Add Imports", 2),
+    new TocItem("install-bootstrap", "Bootstrap 5 Setup", 2),
+    new TocItem("install-daisyui", "DaisyUI Setup", 2),
+    new TocItem("install-basecoat", "Basecoat Setup", 2)
 ])" />
 
 </div>

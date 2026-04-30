@@ -1,58 +1,137 @@
 @page "/render-foreach"
 <PageTitle>Render &amp; Foreach - Saascade Docs</PageTitle>
 
-<h1>Render &amp; Foreach</h1>
+<h1 id="render-foreach">Render &amp; Foreach</h1>
+
+<div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Render</h2>
+            <h2 id="render">Render</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Render&gt;</code> component is a utility for conditionally
-            rendering content without introducing extra DOM elements.
-        </p>
+            <p class="subtitle">
+                The Render component is a utility for conditionally rendering content
+                without introducing extra DOM elements.
+            </p>
 
-        <hr />
+            <hr />
 
-        <pre><code>&lt;Render&gt;
+            <pre><code>&lt;Render&gt;
     @@ChildContent
 &lt;/Render&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>Foreach</h2>
+            <h2 id="foreach">Foreach</h2>
 
-        <p class="subtitle">
-            The <code>&lt;Foreach&gt;</code> component iterates over a collection
-            and renders a template for each item — a declarative alternative to
-            <code>@@foreach</code> in Razor markup.
-        </p>
+            <p class="subtitle">
+                The Foreach component iterates over a collection and renders a template
+                for each item — a declarative alternative to @@foreach in Razor markup.
+            </p>
 
-        <pre><code>&lt;Foreach Items="items" Context="item"&gt;
+            <pre><code>&lt;Foreach Items="items" Context="item"&gt;
     &lt;Li&gt;@@item.Name&lt;/Li&gt;
 &lt;/Foreach&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2>ListOf</h2>
+            <h2 id="listof">ListOf</h2>
 
-        <p class="subtitle">
-            The <code>&lt;ListOf&gt;</code> component renders a typed list of items,
-            combining iteration with list-specific rendering logic.
-        </p>
+            <p class="subtitle">
+                The ListOf component renders a typed list of items, combining iteration
+                with list-specific rendering logic.
+            </p>
 
-        <pre><code>&lt;ListOf Items="products" Context="product"&gt;
+            <pre><code>&lt;ListOf Items="products" Context="product"&gt;
     &lt;Card&gt;
         &lt;CardTitle&gt;@@product.Name&lt;/CardTitle&gt;
     &lt;/Card&gt;
 &lt;/ListOf&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="render-foreach-bootstrap">Bootstrap 5 Render &amp; Foreach</h2>
+
+            <p class="subtitle">Bootstrap 5 Render &amp; Foreach</p>
+
+            <hr />
+
+            <p>
+                When using Foreach or ListOf with Bootstrap 5, the child components inside the
+                template receive Bootstrap class names through the active design system. A Foreach
+                that renders Li elements will produce list-group-item styled items if the parent
+                Ul is given the appropriate specialization. The iteration logic is completely
+                framework-agnostic — only the resolved class names differ.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="render-foreach-daisyui">DaisyUI Render &amp; Foreach</h2>
+
+            <p class="subtitle">DaisyUI Render &amp; Foreach</p>
+
+            <hr />
+
+            <p>
+                When using Foreach or ListOf with DaisyUI, child components inside the template
+                automatically receive DaisyUI semantic class names. A Foreach rendering Card
+                components inside a CardsGrid produces a responsive card layout styled with
+                DaisyUI's card and bg-base-100 classes. The data binding and rendering pipeline
+                is identical regardless of the active design system.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="render-foreach-basecoat">Basecoat Render &amp; Foreach</h2>
+
+            <p class="subtitle">Basecoat Render &amp; Foreach</p>
+
+            <hr />
+
+            <p>
+                When using Foreach or ListOf with Basecoat, child components inside the template
+                receive Basecoat's utility-first Tailwind class compositions. The template
+                body is written once and renders correctly regardless of whether Bootstrap,
+                DaisyUI, or Basecoat is the active design system — making Foreach and ListOf
+                ideal for building reusable data-driven UI patterns.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
+
+<TableOfContents Items="@([
+    new TocItem("render-foreach", "Render & Foreach"),
+    new TocItem("render", "Render", 2),
+    new TocItem("foreach", "Foreach", 2),
+    new TocItem("listof", "ListOf", 2),
+    new TocItem("render-foreach-bootstrap", "Bootstrap 5", 2),
+    new TocItem("render-foreach-daisyui", "DaisyUI", 2),
+    new TocItem("render-foreach-basecoat", "Basecoat", 2)
+])" />
+
+</div>

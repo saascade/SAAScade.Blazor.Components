@@ -1,48 +1,121 @@
-﻿@page "/overview"
-<PageTitle>Overview Example</PageTitle>
+@page "/overview"
+<PageTitle>Overview - Saascade Docs</PageTitle>
 
-<h1 id="overview-components">Overview Components</h1>
+<h1 id="overview">Overview</h1>
 
 <div class="doc-layout">
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="example-overview">Example Overview</h2>
+            <h2 id="what-is-saascade">What is Saascade?</h2>
 
-        <p class="subtitle">
-            This is a simple subtitle inside the overview component.
-            It helps highlight the main idea before the detailed content.
-        </p>
+            <p class="subtitle">
+                Saascade Blazor Components is a library of design-system-agnostic Razor components.
+                Write your markup once and switch between Bootstrap 5, DaisyUI, Basecoat, or any custom
+                theme without changing a single line of component code.
+            </p>
 
-        <hr />
+            <hr />
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec vehicula, augue in dignissim viverra, mauris nunc
-            fermentum lorem, sed suscipit turpis sapien vel augue.
-        </p>
+            <p>
+                Each component resolves its CSS class names at runtime through an IDesignSystem
+                abstraction registered in the dependency injection container. Changing the active
+                design system is a single line change in Program.cs.
+            </p>
 
-        <p>
-            Curabitur sit amet ligula sed neque volutpat tristique.
-            Integer facilisis, nisl at volutpat porta, neque ipsum
-            varius erat, sit amet facilisis justo nisl non lectus.
-        </p>
+        </section>
+    </TechCard>
 
-        <p>
-            This text exists only to demonstrate how paragraphs behave
-            inside the card layout. You can replace it later with your
-            real content or documentation.
-        </p>
+    <TechCard>
+        <section class="card">
 
-    </section>
+            <h2 id="how-it-works">How It Works</h2>
+
+            <p class="subtitle">
+                Components inherit from a shared base class that injects the active IDesignSystem
+                and calls GetComponentName, GetSpecializations, and GetStyleForComponent at render time.
+            </p>
+
+            <hr />
+
+            <p>
+                The Specialization parameter lets you pass framework-specific variant tokens — such as
+                btn-primary in Bootstrap or btn-ghost in DaisyUI — without hard-coding them into your
+                markup. The component passes the value through and the design system resolves it.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="overview-bootstrap">Bootstrap 5</h2>
+
+            <p class="subtitle">Bootstrap 5 Overview</p>
+
+            <hr />
+
+            <p>
+                With Bootstrap 5, Saascade maps each component to the standard Bootstrap class names
+                you already know. A Card becomes a div with the card class, a Button gets btn and any
+                variant you pass through Specialization. You get full Bootstrap styling with zero
+                Bootstrap-specific markup in your Razor files.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="overview-daisyui">DaisyUI</h2>
+
+            <p class="subtitle">DaisyUI Overview</p>
+
+            <hr />
+
+            <p>
+                With DaisyUI, Saascade maps components to DaisyUI's semantic Tailwind class names.
+                The active theme colors, spacing, and border styles all come from DaisyUI's theme
+                system, meaning your components automatically adapt when you switch DaisyUI themes.
+                No Tailwind utility classes need to appear in your Razor markup.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="overview-basecoat">Basecoat</h2>
+
+            <p class="subtitle">Basecoat Overview</p>
+
+            <hr />
+
+            <p>
+                With Basecoat, Saascade composes components from utility-first Tailwind classes using
+                Basecoat's curated class sets. The result is a minimal, unstyled-by-default aesthetic
+                that gives you precise visual control. Basecoat is a good fit when you want the
+                flexibility of raw Tailwind without writing every utility class manually.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
-    new TocItem("overview-components", "Overview Components"),
-    new TocItem("example-overview", "Example Overview", 2)
+    new TocItem("overview", "Overview"),
+    new TocItem("what-is-saascade", "What is Saascade?", 2),
+    new TocItem("how-it-works", "How It Works", 2),
+    new TocItem("overview-bootstrap", "Bootstrap 5", 2),
+    new TocItem("overview-daisyui", "DaisyUI", 2),
+    new TocItem("overview-basecoat", "Basecoat", 2)
 ])" />
 
 </div>

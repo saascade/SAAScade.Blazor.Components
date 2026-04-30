@@ -5,6 +5,10 @@
 <!--    <TrimMode>link</TrimMode>-->
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\.DS_Store" />
+    <None Include="wwwroot\images\supporters\.DS_Store" />
+  </ItemGroup>
 
   <ItemGroup>
 	  <PackageReference Include="Humanizer.Core" />

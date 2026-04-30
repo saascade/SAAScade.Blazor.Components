@@ -7,59 +7,125 @@
 
 <main class="documentation">
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="overview">Overview</h2>
+            <h2 id="overview">Overview</h2>
 
-        <p class="subtitle">
-            Semantic HTML wrapper components that render <code>&lt;div&gt;</code>,
-            <code>&lt;section&gt;</code>, and <code>&lt;main&gt;</code> elements
-            with design-system-aware class names.
-        </p>
+            <p class="subtitle">
+                Semantic HTML wrapper components that render div, section, and main elements
+                with design-system-aware class names.
+            </p>
 
-        <hr />
+            <hr />
 
-        <h3>Div</h3>
-        <pre><code>&lt;Div Class="container"&gt;
+            <h3>Div</h3>
+            <pre><code>&lt;Div Class="container"&gt;
     Generic container content.
 &lt;/Div&gt;</code></pre>
 
-        <h3>Section</h3>
-        <pre><code>&lt;Section&gt;
+            <h3>Section</h3>
+            <pre><code>&lt;Section&gt;
     A thematic grouping of content.
 &lt;/Section&gt;</code></pre>
 
-        <h3>Main</h3>
-        <pre><code>&lt;Main&gt;
+            <h3>Main</h3>
+            <pre><code>&lt;Main&gt;
     Primary page content.
 &lt;/Main&gt;</code></pre>
 
-    </section>
+        </section>
+    </TechCard>
 
-    <section class="card">
+    <TechCard>
+        <section class="card">
 
-        <h2 id="common-parameters">Common Parameters</h2>
+            <h2 id="common-parameters">Common Parameters</h2>
 
-        <table>
-            <thead>
-                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Id</td><td>string?</td><td>HTML id attribute.</td></tr>
-                <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
-                <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
-                <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Id</td><td>string?</td><td>HTML id attribute.</td></tr>
+                    <tr><td>Class</td><td>string?</td><td>Additional CSS classes.</td></tr>
+                    <tr><td>Style</td><td>string?</td><td>Inline styles.</td></tr>
+                    <tr><td>AriaLabel</td><td>string?</td><td>Accessibility label.</td></tr>
+                </tbody>
+            </table>
 
-    </section>
+        </section>
+    </TechCard>
+
+    <TechCard Tech="bootstrap">
+        <section class="card">
+
+            <h2 id="div-section-bootstrap">Bootstrap 5 Div / Section / Main</h2>
+
+            <p class="subtitle">Bootstrap 5 Div / Section / Main</p>
+
+            <hr />
+
+            <p>
+                In Bootstrap 5, Div, Section, and Main components render as their standard HTML
+                elements. Bootstrap does not have a specific component class for these semantic
+                containers — they serve as layout building blocks to which you apply Bootstrap
+                spacing, display, and grid utilities. Pass Bootstrap utilities through the
+                Class parameter to control the container behavior within the Bootstrap grid.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="daisyui">
+        <section class="card">
+
+            <h2 id="div-section-daisyui">DaisyUI Div / Section / Main</h2>
+
+            <p class="subtitle">DaisyUI Div / Section / Main</p>
+
+            <hr />
+
+            <p>
+                In DaisyUI, Div, Section, and Main components render as standard HTML elements
+                and accept any Tailwind utility classes through the Class parameter. DaisyUI
+                provides no opinionated class names for these generic containers — they are
+                building blocks that you style with Tailwind utilities. Use them as structural
+                wrappers around DaisyUI-styled components like Card and Navbar.
+            </p>
+
+        </section>
+    </TechCard>
+
+    <TechCard Tech="basecoat">
+        <section class="card">
+
+            <h2 id="div-section-basecoat">Basecoat Div / Section / Main</h2>
+
+            <p class="subtitle">Basecoat Div / Section / Main</p>
+
+            <hr />
+
+            <p>
+                In Basecoat, Div, Section, and Main components behave identically to the DaisyUI
+                context — they render as plain HTML elements styled with Tailwind utilities passed
+                via the Class parameter. Basecoat applies no default classes to these generic
+                containers. They are the primary structural wrappers for composing Basecoat-styled
+                component trees.
+            </p>
+
+        </section>
+    </TechCard>
 
 </main>
 
 <TableOfContents Items="@([
     new TocItem("div-section-main", "Div / Section / Main"),
     new TocItem("overview", "Overview", 2),
-    new TocItem("common-parameters", "Common Parameters", 2)
+    new TocItem("common-parameters", "Common Parameters", 2),
+    new TocItem("div-section-bootstrap", "Bootstrap 5", 2, "bootstrap"),
+    new TocItem("div-section-daisyui", "DaisyUI", 2, "daisyui"),
+    new TocItem("div-section-basecoat", "Basecoat", 2, "basecoat")
 ])" />
 
 </div>
