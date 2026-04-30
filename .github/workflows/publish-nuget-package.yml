@@ -1,15 +1,20 @@
 name: Publish NuGet Package
 
+
 on:
   push:
-    tags:
-      - 'v*'   # trigger on version tags like v1.0.0
+    branches:
+      - main
+    paths:
+      - 'src/Saascade.Blazor.Components/**' 
+    # tags:
+    #   - 'v*'   # trigger on version tags like v1.0.0
   workflow_dispatch:
     inputs:
         version:
           description: 'Package version'
           required: true
-          default: '0.0.1'
+          default: '0.0.0.1'
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -21,7 +26,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+ 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
@@ -30,6 +35,14 @@ jobs:
       - name: Restore dependencies
         working-directory: ./src/Saascade.Blazor.Components
         run: dotnet restore
+ 
+      - name: Generate version
+        id: version
+        run: |
+          DATE=$(date -u +'%Y%m%d')
+          SHA=${GITHUB_SHA::7}
+          VERSION="0.0.0-${DATE}.${SHA}"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Build
         working-directory: ./src/Saascade.Blazor.Components
@@ -37,7 +50,10 @@ jobs:
 
       - name: Pack
         working-directory: ./src/Saascade.Blazor.Components
-        run: dotnet pack --configuration Release --no-build --output ../../nupkgs
+        run: |
+          dotnet pack --configuration Release \
+            /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
+            --output ../../nupkgs
 
       - name: Publish to GitHub Packages
         run: |
