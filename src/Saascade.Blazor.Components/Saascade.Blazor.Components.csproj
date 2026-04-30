@@ -1,4 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+
+    <PackageId>Temp.SaaS.Components</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>YourName</Authors>
+    <Description>Semantic Blazor Components</Description>
+
+    <!-- <PackageLicenseExpression>MIT</PackageLicenseExpression> -->
+    <RepositoryUrl>https://github.com/saascade/SAAScade.Blazor.Components</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>false</IncludeSymbols>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
+  
    <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
