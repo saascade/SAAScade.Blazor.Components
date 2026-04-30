@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/saascade/SAAScade.Blazor.Components</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>false</IncludeSymbols>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>src/Saascade.Blazor.Components/README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
