@@ -4,7 +4,11 @@ on:
   push:
     tags:
       - 'v*'   # trigger on version tags like v1.0.0
-
+  workflow_dispatch:
+    inputs:
+        version:
+          description: 'Package version'
+          required: true
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
