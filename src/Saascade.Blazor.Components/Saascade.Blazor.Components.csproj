@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
 
     <PackageId>Temp.SaaS.Components</PackageId>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>YourName</Authors>
     <Description>Semantic Blazor Components</Description>
 
