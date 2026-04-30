@@ -353,6 +353,7 @@
 /* ─── Main Content ─── */
 .main-content {
     flex: 1;
+    min-width: 0;
     padding: var(--spacing-xl) 0;
     transition: margin-left var(--transition-normal);
 }
@@ -396,6 +397,8 @@
     max-width: 860px;
     min-width: 0;
     flex: 1;
+
+
 }
 
 ::deep .card {
@@ -709,6 +712,7 @@
     .main-content.menu-open,
     .main-content.menu-closed {
         margin-left: var(--content-margin-mobile);
+        margin-right: var(--content-margin-mobile);
     }
 
     .footer-columns {
@@ -726,6 +730,47 @@
 
     ::deep .toc {
         display: none;
+    }
+}
+
+/* ─── Small Mobile (≤ 430px) ─── */
+@media (max-width: 430px) {
+    .topbar-left {
+        width: auto;
+        padding-left: var(--spacing-md);
+    }
+
+    .main-content {
+        padding: var(--spacing-md) 0;
+    }
+
+    .main-content.menu-open,
+    .main-content.menu-closed {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    ::deep .doc-layout {
+        gap: 0;
+        margin-top: 8px;
+    }
+
+    ::deep .documentation {
+        gap: var(--spacing-lg);
+    }
+
+    ::deep .card {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    ::deep .card table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
