@@ -9,6 +9,7 @@ on:
         version:
           description: 'Package version'
           required: true
+          default: '0.0.1'
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
