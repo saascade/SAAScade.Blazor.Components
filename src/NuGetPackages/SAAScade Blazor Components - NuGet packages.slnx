@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Components/">
+    <Project Path="Saascade.Blazor.Components.Experimental/Saascade.Blazor.Components.Experimental.csproj" />
+    <Project Path="Saascade.Blazor.Components.Seo/Saascade.Blazor.Components.Seo.csproj" />
+    <Project Path="Saascade.Blazor.Components/Saascade.Blazor.Components.csproj" />
+  </Folder>
+  <Folder Name="/DesignSystems/">
+    <Project Path="Saascade.Blazor.Components.Bootstrap4/Saascade.Blazor.Components.Bootstrap4.csproj" />
+    <Project Path="Saascade.Blazor.Components.Bootstrap5/Saascade.Blazor.Components.Bootstrap5.csproj" />
+    <Project Path="Saascade.Blazor.Components.SaascadeLtd/Saascade.Blazor.Components.SaascadeLtd.csproj" />
+    <Project Path="Saascade.Blazor.Components.Tailwind/Saascade.Blazor.Components.Tailwind.csproj" />
+    <Project Path="Saascade.Blazor.Components.Vanilla/Saascade.Blazor.Components.Vanilla.csproj" />
+  </Folder>
+  <Folder Name="/DesignSystems/All/">
+    <Project Path="Saascade.Blazor.Components.DesignSystems/Saascade.Blazor.Components.DesignSystems.csproj" />
+  </Folder> 
+</Solution>
