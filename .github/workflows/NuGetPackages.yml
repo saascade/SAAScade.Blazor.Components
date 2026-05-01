@@ -64,16 +64,16 @@ jobs:
           dotnet pack --configuration Release \
             /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
             --output ../../nupkgs
-  
-      # 🚀 Push all packages
-      - name: Push all packages
+      - name: List packages
+        run: ls -R nupkgs
+
+      # 🚀 Push all packages 
+      - name: Push packages
         run: |
-          dotnet nuget push "./**/*.nupkg" \
+          dotnet nuget push "./nupkgs/*.nupkg" \
             --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
             --api-key ${{ secrets.GITHUB_TOKEN }} \
             --skip-duplicate
-        working-directory: ./src
-
 
       # TODO: Could be useful in future
       # # 📦 Pack all projects
