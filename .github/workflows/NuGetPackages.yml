@@ -62,12 +62,13 @@ jobs:
             echo "Packing $proj"
             dotnet pack "$proj" \
               --configuration Release \
-              --no-build \
               /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
               --output ./../../_work/NuGetPackages
           done
         working-directory: ./src/NuGetPackages
- 
+          
+          
+#          --no-build \
       - name: List folder for debugging
         run: find . -type d
        
