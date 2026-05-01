@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <!-- Nuget package info -->
+        <PackageId>Saascade.Blazor.Components.DesignSystems</PackageId> 
+        <Description>
+        This package is for quick testing, as it allows you to quickly jump between different design systems.
+        To keep download sizes as small as possible, rather reference the specific design system you want to use.
+        For example Saascade.Components.Tailwind for TailwindCSS, Saascade.Components.Bootstrap5 for Bootstrap5,etc...
+        Check out https://www.components.saascade.com for more info.
+        </Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+<!--        I need to investigate why adding any of these references causes a compilation error-->
+        
+<!--      <ProjectReference Include="..\Saascade.Blazor.Components.Bootstrap4\Saascade.Blazor.Components.Bootstrap4.csproj" />-->
+<!--      <ProjectReference Include="..\Saascade.Blazor.Components.Bootstrap5\Saascade.Blazor.Components.Bootstrap5.csproj" />-->
+<!--      <ProjectReference Include="..\Saascade.Blazor.Components.Tailwind\Saascade.Blazor.Components.Tailwind.csproj" />-->
+<!--      <ProjectReference Include="..\Saascade.Blazor.Components.Vanilla\Saascade.Blazor.Components.Vanilla.csproj" />-->
+<!--        -->
+<!--        <ProjectReference Include="..\Saascade.Blazor.Components.Saascade\Saascade.Blazor.Components.Saascade.csproj" />-->
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+﻿@namespace Saascade.Blazor.Components
+@inject IDesignSystem DesignSystem
+<Foreach Context="stylesheetReference" In="DesignSystem.GetStylesheetReferences()" >
+    @((MarkupString)stylesheetReference)
+
+</Foreach>

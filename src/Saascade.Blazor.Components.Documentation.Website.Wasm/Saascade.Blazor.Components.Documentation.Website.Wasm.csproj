@@ -10,15 +10,15 @@
     <None Include="wwwroot\images\supporters\.DS_Store" />
   </ItemGroup>
 
-  <ItemGroup>
-	  <PackageReference Include="Humanizer.Core" />
+  <ItemGroup> 
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Saascade.Blazor.Components.DesignSystems\Saascade.Blazor.Components.DesignSystems.csproj" />
+    <ProjectReference Include="..\Saascade.Blazor.Components.Tailwind\Saascade.Blazor.Components.Tailwind.csproj" />
     <ProjectReference Include="..\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
-    <ProjectReference Include="..\Saascade.Blazor.DesignSystems\Saascade.Blazor.DesignSystems.csproj" />
   </ItemGroup>
 
 </Project>

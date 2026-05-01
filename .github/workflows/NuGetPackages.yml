@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - '.github/workflows/NuGetPackages.yml'
-      - 'src/Saascade.Blazor.Components.Base/**' 
+      - 'src/Saascade.Blazor.Components/**' 
       - 'src/Saascade.Blazor.Components/**' 
       - 'src/Saascade.Blazor.DesignSystems/**'
     tags:
@@ -54,13 +54,6 @@ jobs:
 
 
       # 📦 Pack everything
-      - name: Pack - Saascade.Blazor.Components.Base
-        working-directory: ./src/Saascade.Blazor.Components.Base
-        run: |
-          dotnet pack --configuration Release \
-            /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
-            --output ../../nupkgs
-
       - name: Pack - Saascade.Blazor.Components
         working-directory: ./src/Saascade.Blazor.Components
         run: |
@@ -68,13 +61,33 @@ jobs:
             /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
             --output ../../nupkgs
 
-      - name: Pack - Saascade.Blazor.DesignSystems
-        working-directory: ./src/Saascade.Blazor.DesignSystems
+#      - name: Pack - Saascade.Blazor.Components
+#        working-directory: ./src/Saascade.Blazor.Components
+#        run: |
+#          dotnet pack --configuration Release \
+#            /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
+#            --output ../../nupkgs
+#
+#      - name: Pack - Saascade.Blazor.DesignSystems
+#        working-directory: ./src/Saascade.Blazor.DesignSystems
+#        run: |
+#          dotnet pack --configuration Release \
+#            /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
+#            --output ../../nupkgs
+      # 📦 Pack all projects
+      - name: Pack all projects
         run: |
-          dotnet pack --configuration Release \
-            /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
-            --output ../../nupkgs
-
+          mkdir -p nupkgs
+          for proj in $(find . -name "*.csproj"); do
+            echo "Packing $proj"
+            dotnet pack "$proj" \
+              --configuration Release \
+              --no-build \
+              /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
+              --output ./nupkgs
+          done
+        working-directory: ./src
+        
       - name: List packages
         run: ls -R nupkgs
 
@@ -87,19 +100,20 @@ jobs:
             --skip-duplicate
 
       # TODO: Could be useful in future
-      # # 📦 Pack all projects
-      # - name: Pack all projects
-      #   run: |
-      #     mkdir -p nupkgs
-      #     for proj in $(find . -name "*.csproj"); do
-      #       echo "Packing $proj"
-      #       dotnet pack "$proj" \
-      #         --configuration Release \
-      #         --no-build \
-      #         /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
-      #         --output ./nupkgs
-      #     done
-      #   working-directory: ./src 
+#       # 📦 Pack all projects
+#       - name: Pack all projects
+#         run: |
+#           mkdir -p nupkgs
+#           for proj in $(find . -name "*.csproj"); do
+#             echo "Packing $proj"
+#             dotnet pack "$proj" \
+#               --configuration Release \
+#               --no-build \
+#               /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
+#               --output ./nupkgs
+#           done
+#         working-directory: ./src 
+      
       # - name: Publish packages
       #   run: dotnet nuget push "./nupkgs/*.nupkg" \
       #         --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \

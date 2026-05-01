@@ -1,7 +1,7 @@
 ﻿using Humanizer;
 using Saascade.Blazor.Components.Aliases;
 
-namespace Saascade.Blazor.Components.Base;
+namespace Saascade.Blazor.Components;
 
 public static class BaseComponentExtensions
 { 

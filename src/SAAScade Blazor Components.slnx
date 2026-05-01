@@ -2,13 +2,23 @@
   <Folder Name="/Apps/">
     <Project Path="Saascade.Blazor.Components.Documentation.Website.Wasm/Saascade.Blazor.Components.Documentation.Website.Wasm.csproj" />
   </Folder>
-  <Folder Name="/CICD/">
-    <File Path="..\.github\workflows\azure-static-web-apps-witty-bush-0d8ddbd03.yml" />
-    <File Path="..\.github\workflows\publish-nuget-package.yml" />
+  <Folder Name="/CICD/"> 
+    <File Path="..\.github\workflows\NuGetPackages.yml" /> 
+    <File Path="..\.github\workflows\Website.yml" />
   </Folder>
   <Folder Name="/Library/">
-    <Project Path="Saascade.Blazor.Components.Base/Saascade.Blazor.Components.Base.csproj" Id="03ddfff9-0012-49e1-8904-4c92dc74ceb0" />
-    <Project Path="Saascade.Blazor.Components/Saascade.Blazor.Components.csproj" Id="93335d29-a3bb-46fa-8f88-fcccef8f549f" />
-    <Project Path="Saascade.Blazor.DesignSystems/Saascade.Blazor.DesignSystems.csproj" />
+    <Project Path="Saascade.Blazor.Components.Experimental/Saascade.Blazor.Components.Experimental.csproj" />
+    <Project Path="Saascade.Blazor.Components.Seo/Saascade.Blazor.Components.Seo.csproj" />
+    <Project Path="Saascade.Blazor.Components/Saascade.Blazor.Components.csproj" />
+  </Folder>
+  <Folder Name="/Library/DesignSystems/">
+    <Project Path="Saascade.Blazor.Components.Bootstrap4/Saascade.Blazor.Components.Bootstrap4.csproj" />
+    <Project Path="Saascade.Blazor.Components.Bootstrap5/Saascade.Blazor.Components.Bootstrap5.csproj" />
+    <Project Path="Saascade.Blazor.Components.Saascade/Saascade.Blazor.Components.Saascade.csproj" />
+    <Project Path="Saascade.Blazor.Components.Tailwind/Saascade.Blazor.Components.Tailwind.csproj" />
+    <Project Path="Saascade.Blazor.Components.Vanilla/Saascade.Blazor.Components.Vanilla.csproj" />
+  </Folder>
+  <Folder Name="/Library/DesignSystems/All/">
+    <Project Path="Saascade.Blazor.Components.DesignSystems/Saascade.Blazor.Components.DesignSystems.csproj" />
   </Folder>
 </Solution>

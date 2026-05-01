@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <!-- Nuget package info -->
+        <PackageId>Saascade.Blazor.Components.Bootstrap5</PackageId>
+        <Description>
+        Design systems built on top of Bootstrap5 
+        </Description>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
+    </ItemGroup>
+</Project>

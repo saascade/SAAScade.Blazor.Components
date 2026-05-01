@@ -1,0 +1,6 @@
+﻿@namespace Saascade.Blazor.Components
+@inject IDesignSystem DesignSystem
+<Foreach Context="javascriptReference" In="DesignSystem.GetJavaScriptReferences()">
+    @((MarkupString)javascriptReference)
+
+</Foreach>

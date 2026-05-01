@@ -1,21 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <PackageId>Saascade.Blazor.Components</PackageId>
-    <Version>0.0.0.0</Version>
-    <Authors>SAAScade.com</Authors> 
-    <Company>SAAScade.com</Company>
-    <PackageTags>Blazor;Semantic;Components;UI;Accessible</PackageTags>
+    <!-- Nuget package info --> 
+    <PackageId>Saascade.Blazor.Components</PackageId> 
     <Description>
     A library of Semantic Blazor components. Allowing you to create beautiful and accessible user interfaces while still having clean code - https://www.components.saascade.com
-    </Description>
-    <PackageReadmeFile></PackageReadmeFile>
-    <WebsiteUrl>https://www.components.saascade.com</WebsiteUrl>
-    <PackageProjectUrl>https://www.components.saascade.com</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/saascade/SAAScade.Blazor.Components</RepositoryUrl> 
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>false</IncludeSymbols>
+    </Description> 
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,17 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Humanizer.Core" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Saascade.Blazor.Components.Base\Saascade.Blazor.Components.Base.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\designSystems\bootstrap5\" />
-    <Folder Include="wwwroot\designSystems\tailwind\" />
-  </ItemGroup>
-
+  
 </Project>

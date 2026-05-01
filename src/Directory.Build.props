@@ -1,23 +1,35 @@
-<Project>
+<Project> 
+    <PropertyGroup>
+        <!-- Shared Nuget package info --> 
+        <Version>0.0.0.0</Version>
+        <PackageVersion>0.0.0.0</PackageVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <Authors>SAAScade.com</Authors>
+        <Company>SAAScade.com</Company>
+        <PackageTags>Blazor;Semantic;Components;UI;Accessible</PackageTags>
+        <Description>
+        https://www.components.saascade.com
+        </Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <WebsiteUrl>https://www.components.saascade.com</WebsiteUrl>
+        <PackageProjectUrl>https://www.components.saascade.com</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/saascade/SAAScade.Blazor.Components</RepositoryUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <IncludeSymbols>false</IncludeSymbols>
+        <Copyright>Copyright ©2022 SAAScade LTD</Copyright>
+    </PropertyGroup>
+    
     <PropertyGroup>
         <!-- https://learn.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target -->
-		<!-- NuGet info -->
-        <PackageVersion>0.0.0.1</PackageVersion>
-		<AssemblyVersion>0.0.0.1</AssemblyVersion>
-		<AssemblyFileVersion>0.0.0.1</AssemblyFileVersion>
-		<PackageProjectUrl>https://saascade.com</PackageProjectUrl>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-		<Authors>SAAScade,GordonRudman</Authors>
-		<Copyright>Copyright ©2026 SAAScade LTD</Copyright>
-
+	 
 		<!-- Warnings and Errors -->
         <TargetFramework>net10.0</TargetFramework>
 
 		<!-- Warnings and Errors -->
-        <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <WarningsNotAsErrors></WarningsNotAsErrors>-->
+<!--        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
+        <!-- <WarningsNotAsErrors></WarningsNotAsErrors>-->
         
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-    </PropertyGroup>
+    </PropertyGroup> 
 </Project>

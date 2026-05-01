@@ -1,0 +1,15 @@
+﻿@namespace Saascade.Blazor.Components
+@typeparam TItem
+@foreach (var item in Items)
+{
+	@if (ShowItemsWhen)
+	{
+		@ChildContent(item)
+	}
+}
+@code
+{
+	[Parameter, EditorRequired] public required RenderFragment<TItem> ChildContent { get; set; }
+	[Parameter, EditorRequired] public required IEnumerable<TItem> Items { get; set; } = [];
+	[Parameter] public bool ShowItemsWhen { get; set; } = true;
+}

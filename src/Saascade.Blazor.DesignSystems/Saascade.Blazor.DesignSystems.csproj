@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <!-- Nuget info o--> 
     <PackageId>Saascade.Blazor.DesignSystems</PackageId>
     <Version>0.0.0.0</Version>
     <Authors>SAAScade.com</Authors>
@@ -25,7 +25,8 @@
   <ItemGroup>
     <Folder Include="Bootstrap4\" />
     <Folder Include="Bootstrap5\Handdrawn\" />
-    <Folder Include="Tailwind\DaisyUI\Themes\" />
+    <Folder Include="Custom\" />
+    <Folder Include="Tailwind\" />
   </ItemGroup>
 
   <ItemGroup>

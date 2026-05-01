@@ -1,0 +1,14 @@
+﻿using Saascade.Blazor.DesignSystems.Tailwind.Basecoat;
+using Saascade.Blazor.DesignSystems.Tailwind.DaisyUI; 
+
+namespace Saascade.Blazor.Components.Tailwind;
+
+public class TailwindBasedDesignSystems
+{
+    public static readonly TailwindBasedDesignSystems Instance = new ();
+    private TailwindBasedDesignSystems(){}
+    
+    //https://www.reddit.com/r/tailwindcss/comments/1mkso56/best_tailwind_component_libraries_free/
+    public static IDesignSystem DaisyUI = new DaisyUiDesignSystem();
+    public static IDesignSystem Basecoat = new BasecoatDesignSystem(); 
+}

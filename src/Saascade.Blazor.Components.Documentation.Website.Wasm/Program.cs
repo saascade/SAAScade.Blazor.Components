@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Saascade.Blazor.DesignSystems;
+using Saascade.Blazor.Components; 
 using Saascade.Blazor.Components.Documentation.Website.Wasm;
 using Saascade.Blazor.Components.Documentation.Website.Wasm.Services;
+using Saascade.Blazor.Components.Tailwind;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 var services = builder.Services;
@@ -21,7 +22,7 @@ services.AddScoped<TechFilterService>();
 //services.AddSingleton(DesignSystems.Custom.EmptyComponentLibrary);
 //services.AddSingleton(DesignSystems.Bootstrap5.VanillaBootstrap5);
 //services.AddSingleton(DesignSystems.Tailwind.Basecoat);
-services.AddSingleton(DesignSystems.Tailwind.DaisyUI); 
-
+// services.AddSingleton(AllDesignSystems.Tailwind.DaisyUI);
+services.AddSingleton(TailwindBasedDesignSystems.DaisyUI);
 
 await builder.Build().RunAsync();

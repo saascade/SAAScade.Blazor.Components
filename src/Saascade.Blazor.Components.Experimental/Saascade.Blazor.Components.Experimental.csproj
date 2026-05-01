@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <!-- Nuget package info -->
+        <PackageId>Saascade.Blazor.Components.Experimental</PackageId>
+        <Description>
+        Half-baked experimental components that aren't quite ready yet.
+        </Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Humanizer.Core" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+    </ItemGroup>
+</Project>
