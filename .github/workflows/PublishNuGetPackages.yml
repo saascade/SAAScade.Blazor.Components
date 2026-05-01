@@ -45,10 +45,12 @@ jobs:
       # 📦 Restore everything
       - name: Restore
         run: dotnet restore
+        working-directory: ./src
 
       # 🔨 Build everything
       - name: Build 
         run: dotnet build --configuration Release --no-restore
+        working-directory: ./src
 
       # 📦 Pack all projects
       - name: Pack all projects
@@ -62,6 +64,7 @@ jobs:
               /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
               --output ./nupkgs
           done
+        working-directory: ./src
 
       # 🚀 Push all packages
       - name: Publish packages
@@ -69,3 +72,4 @@ jobs:
               --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
               --api-key ${{ secrets.GITHUB_TOKEN }} \
               --skip-duplicate
+        working-directory: ./src
