@@ -1,8 +1,6 @@
-﻿using Humanizer;
-using Saascade.Blazor.Components; 
-using Saascade.Blazor.Components.Extensions; 
+﻿using Saascade.Blazor.Components.Extensions; 
 
-namespace Saascade.Blazor.DesignSystems.SaascadeLtd;
+namespace Saascade.Blazor.Components.SaascadeLtd.SaascadeLtd;
 
 //https://daisyui.com/components/button/
 public class ElectricBlueV1DesignSystem : IDesignSystem

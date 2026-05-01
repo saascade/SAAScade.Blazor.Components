@@ -3,7 +3,7 @@ using Saascade.Blazor.Components;
 using Saascade.Blazor.Components.Extensions;
 using Saascade.Blazor.Components;
 
-namespace Saascade.Blazor.DesignSystems.Tailwind.Basecoat;
+namespace Saascade.Blazor.Components.Tailwind.Basecoat;
 
 //https://basecoatui.com/
 public class BasecoatDesignSystem : IDesignSystem

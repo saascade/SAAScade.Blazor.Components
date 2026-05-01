@@ -1,8 +1,7 @@
-﻿using Saascade.Blazor.Components.Aliases;
-using Saascade.Blazor.Components;
+﻿using Saascade.Blazor.Components.Aliases; 
 using Saascade.Blazor.Components.Extensions;
 
-namespace Saascade.Blazor.DesignSystems.Custom.Vanilla;
+namespace Saascade.Blazor.Components.Vanilla;
 
 public class Basic1DesignSystem : IDesignSystem
 {

@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
-using Saascade.Blazor.Components;
-using Saascade.Blazor.Components.Aliases;
-using Saascade.Blazor.Components;
-using Saascade.Blazor.Components.Extensions;
+﻿using Saascade.Blazor.Components.Extensions;
 
-namespace Saascade.Blazor.DesignSystems.Bootstrap5.Vanilla;
+namespace Saascade.Blazor.Components.Bootstrap5.Vanilla;
 
 //This is just to show reusing the VanillaBootstrap5DesignSystem instead to repeating all the config again
 public class AnotherBootstrap5DesignSystem : IDesignSystem

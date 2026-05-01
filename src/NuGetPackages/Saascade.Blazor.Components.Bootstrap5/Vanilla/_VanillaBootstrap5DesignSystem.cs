@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
-using Saascade.Blazor.Components;
-using Saascade.Blazor.Components.Aliases;
-using Saascade.Blazor.Components;
+﻿using Saascade.Blazor.Components.Aliases;
 using Saascade.Blazor.Components.Extensions;
 
-namespace Saascade.Blazor.DesignSystems.Bootstrap5.Vanilla;
+namespace Saascade.Blazor.Components.Bootstrap5.Vanilla;
 
 public class VanillaBootstrap5DesignSystem : IDesignSystem
 {

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Saascade.Blazor.DesignSystems.Bootstrap5.Vanilla;  
+﻿using Saascade.Blazor.Components.Bootstrap5.Vanilla;  
 
 namespace Saascade.Blazor.Components.Bootstrap5;
 

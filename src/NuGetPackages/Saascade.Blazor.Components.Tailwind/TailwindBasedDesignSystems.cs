@@ -1,5 +1,5 @@
-﻿using Saascade.Blazor.DesignSystems.Tailwind.Basecoat;
-using Saascade.Blazor.DesignSystems.Tailwind.DaisyUI; 
+﻿using Saascade.Blazor.Components.Tailwind.Basecoat;
+using Saascade.Blazor.Components.Tailwind.DaisyUI; 
 
 namespace Saascade.Blazor.Components.Tailwind;
 

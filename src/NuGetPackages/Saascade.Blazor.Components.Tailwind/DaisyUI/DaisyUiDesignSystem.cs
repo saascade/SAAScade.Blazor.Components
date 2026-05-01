@@ -5,7 +5,7 @@ using Saascade.Blazor.Components;
 using Saascade.Blazor.Components.Extensions;
 using System.ComponentModel;
 
-namespace Saascade.Blazor.DesignSystems.Tailwind.DaisyUI;
+namespace Saascade.Blazor.Components.Tailwind.DaisyUI;
 
 //https://daisyui.com/components/button/
 public class DaisyUiDesignSystem : IDesignSystem

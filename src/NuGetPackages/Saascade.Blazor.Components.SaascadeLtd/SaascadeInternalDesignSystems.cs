@@ -1,4 +1,4 @@
-﻿using Saascade.Blazor.DesignSystems.SaascadeLtd;
+﻿using Saascade.Blazor.Components.SaascadeLtd.SaascadeLtd;
 
 namespace Saascade.Blazor.Components.SaascadeLtd;
 

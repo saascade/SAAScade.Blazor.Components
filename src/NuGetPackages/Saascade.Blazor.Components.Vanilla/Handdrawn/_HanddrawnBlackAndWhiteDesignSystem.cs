@@ -1,8 +1,7 @@
-﻿using Saascade.Blazor.Components.Aliases;
-using Saascade.Blazor.Components;
+﻿using Saascade.Blazor.Components.Aliases; 
 using Saascade.Blazor.Components.Extensions;
 
-namespace Saascade.Blazor.DesignSystems.Vanilla.Handdrawn;
+namespace Saascade.Blazor.Components.Vanilla.Handdrawn;
 
 public class HanddrawnBlackAndWhiteDesignSystem : IDesignSystem
 {

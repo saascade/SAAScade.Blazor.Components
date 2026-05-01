@@ -1,8 +1,6 @@
-﻿using Saascade.Blazor.Components.Aliases;
-using Saascade.Blazor.Components;
-using Saascade.Blazor.Components.Extensions;
+﻿using Saascade.Blazor.Components.Extensions;
 
-namespace Saascade.Blazor.DesignSystems.Vanilla.Empty;
+namespace Saascade.Blazor.Components.Vanilla;
 
 public class EmptyDesignSystem : IDesignSystem
 {
