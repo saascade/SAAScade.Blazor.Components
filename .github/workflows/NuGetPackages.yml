@@ -66,14 +66,13 @@ jobs:
             --output ../../nupkgs
   
       # 🚀 Push all packages
-      - name: Publish packages
-        run: dotnet nuget push "./**/*.nupkg" \
-              --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
-              --api-key ${{ secrets.GITHUB_TOKEN }} \
-              --skip-duplicate
+      - name: Push all packages
+        run: |
+          dotnet nuget push "./**/*.nupkg" \
+            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --api-key ${{ secrets.GITHUB_TOKEN }} \
+            --skip-duplicate
         working-directory: ./src
-
-
 
 
       # TODO: Could be useful in future
