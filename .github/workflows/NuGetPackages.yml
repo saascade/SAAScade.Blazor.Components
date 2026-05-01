@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/NugetPackages.yml'
+      - '.github/workflows/NuGetPackages.yml'
       - 'src/Saascade.Blazor.Components.Base/**' 
       - 'src/Saascade.Blazor.Components/**' 
     # tags:
