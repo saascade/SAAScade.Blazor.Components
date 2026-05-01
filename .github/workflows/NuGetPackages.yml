@@ -40,7 +40,7 @@ jobs:
           VERSION="0.0.0-${DATE}.${SHA}"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
-#      - name: List folder for debugging
+#      - name: Debugging: List folders
 #        run: find . -type d
    
       # 📦 Restore everything
@@ -68,10 +68,10 @@ jobs:
           done
         working-directory: ./src/NuGetPackages
   
-#      - name: List folder for debugging
+#      - name: Debugging: List folders
 #        run: find . -type d
        
-#      - name: List packages
+#      - name: Debugging: List packages
 #        run: ls -R ./_work/NuGetPackages
         
       # 🚀 Push all packages 
