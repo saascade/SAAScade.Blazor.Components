@@ -16,6 +16,7 @@
   <Folder Name="/NuGet Packages/DesignSystems/">
     <Project Path="Saascade.Blazor.Components.Bootstrap4/Saascade.Blazor.Components.Bootstrap4.csproj" />
     <Project Path="Saascade.Blazor.Components.Bootstrap5/Saascade.Blazor.Components.Bootstrap5.csproj" />
+    <Project Path="Saascade.Blazor.Components.Internal/Saascade.Blazor.Components.Internal.csproj" />
     <Project Path="Saascade.Blazor.Components.Tailwind/Saascade.Blazor.Components.Tailwind.csproj" />
     <Project Path="Saascade.Blazor.Components.Vanilla/Saascade.Blazor.Components.Vanilla.csproj" />
   </Folder>

@@ -19,8 +19,7 @@
       <ProjectReference Include="..\Saascade.Blazor.Components.Bootstrap5\Saascade.Blazor.Components.Bootstrap5.csproj" />
       <ProjectReference Include="..\Saascade.Blazor.Components.Tailwind\Saascade.Blazor.Components.Tailwind.csproj" />
       <ProjectReference Include="..\Saascade.Blazor.Components.Vanilla\Saascade.Blazor.Components.Vanilla.csproj" />
-
-        <!--        I need to investigate why adding any of these references causes a compilation error-->
+        <ProjectReference Include="..\Saascade.Blazor.Components.Internal\Saascade.Blazor.Components.Internal.csproj" />
     </ItemGroup>
 
 
