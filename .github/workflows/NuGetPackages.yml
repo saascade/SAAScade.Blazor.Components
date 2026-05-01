@@ -40,8 +40,8 @@ jobs:
           VERSION="0.0.0-${DATE}.${SHA}"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
-      - name: List folder for debugging
-        run: find . -type d
+#      - name: List folder for debugging
+#        run: find . -type d
    
       # 📦 Restore everything
       - name: Restore
@@ -67,18 +67,17 @@ jobs:
               --output ./../../_work/NuGetPackages
           done
         working-directory: ./src/NuGetPackages
-
-
-      - name: List folder for debugging
-        run: find . -type d
+ 
+#      - name: List folder for debugging
+#        run: find . -type d
        
       - name: List packages
-        run: ls -R ./_work/NugetPackages
+        run: ls -R ./_work/NuGetPackages
         
       # 🚀 Push all packages 
       - name: Push packages
         run: |
-          dotnet nuget push "./_work/NugetPackages/*.nupkg" \
+          dotnet nuget push "./_work/NuGetPackages/*.nupkg" \
             --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
             --api-key ${{ secrets.GITHUB_TOKEN }} \
             --skip-duplicate 
