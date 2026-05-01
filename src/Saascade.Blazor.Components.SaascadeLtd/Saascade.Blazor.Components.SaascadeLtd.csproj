@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
         <!-- Nuget package info -->
-        <PackageId>Saascade.Blazor.Components.Internal</PackageId>
+        <PackageId>Saascade.Blazor.Components.SaascadeLtd</PackageId>
         <Description>
             SAAScade's internal design system! - Don't use this as we can/will change it at any moment
         </Description>
+        <RootNamespace>Saascade.Blazor.Components.Internal</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="" />

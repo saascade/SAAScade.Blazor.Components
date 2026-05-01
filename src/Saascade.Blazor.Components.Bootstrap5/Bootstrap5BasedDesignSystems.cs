@@ -8,5 +8,5 @@ public class Bootstrap5BasedDesignSystems
     public static readonly Bootstrap5BasedDesignSystems Instance = new ();
     private Bootstrap5BasedDesignSystems(){}
     
-    public static IDesignSystem VanillaBootstrap5 = new VanillaBootstrap5DesignSystem();
+    public IDesignSystem VanillaBootstrap5 = new VanillaBootstrap5DesignSystem();
 }

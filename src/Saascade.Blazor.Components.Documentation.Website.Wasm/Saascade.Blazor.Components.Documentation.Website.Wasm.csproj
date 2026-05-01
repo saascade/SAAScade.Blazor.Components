@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Saascade.Blazor.Components.DesignSystems\Saascade.Blazor.Components.DesignSystems.csproj" />
+    <ProjectReference Include="..\Saascade.Blazor.Components.SaascadeLtd\Saascade.Blazor.Components.SaascadeLtd.csproj" />
 
      <ProjectReference Include="..\Saascade.Blazor.Components.Tailwind\Saascade.Blazor.Components.Tailwind.csproj" />
     <ProjectReference Include="..\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />

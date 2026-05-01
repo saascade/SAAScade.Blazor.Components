@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Saascade.Blazor.Components; 
+using Saascade.Blazor.Components;
+using Saascade.Blazor.Components.DesignSystems;
 using Saascade.Blazor.Components.Documentation.Website.Wasm;
 using Saascade.Blazor.Components.Documentation.Website.Wasm.Services;
+using Saascade.Blazor.Components.SaascadeLtd;
 using Saascade.Blazor.Components.Tailwind;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -17,12 +19,8 @@ services.AddScoped<TechFilterService>();
 
 
 //Pick a UI design system
-//services.AddSingleton(DesignSystems.Custom.Basic1);
-//services.AddSingleton(DesignSystems.Custom.HanddrawnColor);
-//services.AddSingleton(DesignSystems.Custom.EmptyComponentLibrary);
-//services.AddSingleton(DesignSystems.Bootstrap5.VanillaBootstrap5);
-//services.AddSingleton(DesignSystems.Tailwind.Basecoat);
-// services.AddSingleton(AllDesignSystems.Tailwind.DaisyUI);
-services.AddSingleton(TailwindBasedDesignSystems.DaisyUI);
+//services.AddSingleton(TailwindBasedDesignSystems.Instance.DaisyUI);
+//services.AddSingleton(AllDesignSystems.Tailwind.DaisyUI);
+services.AddSingleton(SaascadeInternalDesignSystems.Instance.ElectricBlueV1);
 
 await builder.Build().RunAsync();
