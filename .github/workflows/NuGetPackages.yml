@@ -67,7 +67,11 @@ jobs:
               --output ./nupkgs
           done
         working-directory: ./src
-        
+
+
+      - name: List folder for debugging
+        run: find . -type d
+       
       - name: List packages
         run: ls -R nupkgs
 
