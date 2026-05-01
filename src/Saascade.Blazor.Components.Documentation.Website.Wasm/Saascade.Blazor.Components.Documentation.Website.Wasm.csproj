@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.DesignSystems\Saascade.Blazor.Components.DesignSystems.csproj" />
-    <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.SaascadeLtd\Saascade.Blazor.Components.SaascadeLtd.csproj" />
+    <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.DesignSystems.All\Saascade.Blazor.Components.DesignSystems.All.csproj" />
+    <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.DesignSystems.SaascadeLtd\Saascade.Blazor.Components.DesignSystems.SaascadeLtd.csproj" />
 
-     <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.Tailwind\Saascade.Blazor.Components.Tailwind.csproj" />
+     <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.DesignSystems.Tailwind\Saascade.Blazor.Components.DesignSystems.Tailwind.csproj" />
     <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
   </ItemGroup>
 

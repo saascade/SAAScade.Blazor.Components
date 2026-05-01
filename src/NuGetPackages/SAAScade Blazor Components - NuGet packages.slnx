@@ -5,13 +5,11 @@
     <Project Path="Saascade.Blazor.Components/Saascade.Blazor.Components.csproj" />
   </Folder>
   <Folder Name="/DesignSystems/">
-    <Project Path="Saascade.Blazor.Components.Bootstrap4/Saascade.Blazor.Components.Bootstrap4.csproj" />
-    <Project Path="Saascade.Blazor.Components.Bootstrap5/Saascade.Blazor.Components.Bootstrap5.csproj" />
-    <Project Path="Saascade.Blazor.Components.SaascadeLtd/Saascade.Blazor.Components.SaascadeLtd.csproj" />
-    <Project Path="Saascade.Blazor.Components.Tailwind/Saascade.Blazor.Components.Tailwind.csproj" />
-    <Project Path="Saascade.Blazor.Components.Vanilla/Saascade.Blazor.Components.Vanilla.csproj" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems.All/Saascade.Blazor.Components.DesignSystems.All.csproj" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems.Bootstrap4/Saascade.Blazor.Components.DesignSystems.Bootstrap4.csproj" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems.Bootstrap5/Saascade.Blazor.Components.DesignSystems.Bootstrap5.csproj" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems.SaascadeLtd/Saascade.Blazor.Components.DesignSystems.SaascadeLtd.csproj" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems.Tailwind/Saascade.Blazor.Components.DesignSystems.Tailwind.csproj" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems.Vanilla/Saascade.Blazor.Components.DesignSystems.Vanilla.csproj" />
   </Folder>
-  <Folder Name="/DesignSystems/All/">
-    <Project Path="Saascade.Blazor.Components.DesignSystems/Saascade.Blazor.Components.DesignSystems.csproj" />
-  </Folder> 
 </Solution>

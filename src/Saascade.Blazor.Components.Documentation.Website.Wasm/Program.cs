@@ -4,8 +4,8 @@ using Saascade.Blazor.Components;
 using Saascade.Blazor.Components.DesignSystems;
 using Saascade.Blazor.Components.Documentation.Website.Wasm;
 using Saascade.Blazor.Components.Documentation.Website.Wasm.Services;
-using Saascade.Blazor.Components.SaascadeLtd;
-using Saascade.Blazor.Components.Tailwind;
+using Saascade.Blazor.Components.DesignSystems.SaascadeLtd;
+using Saascade.Blazor.Components.DesignSystems.Tailwind;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 var services = builder.Services;

@@ -10,14 +10,12 @@
     <Project Path="NuGetPackages/Saascade.Blazor.Components/Saascade.Blazor.Components.csproj" />
   </Folder>
   <Folder Name="/NuGet Packages/DesignSystems/">
-    <Project Path="NuGetPackages/Saascade.Blazor.Components.Bootstrap4/Saascade.Blazor.Components.Bootstrap4.csproj" />
-    <Project Path="NuGetPackages/Saascade.Blazor.Components.Bootstrap5/Saascade.Blazor.Components.Bootstrap5.csproj" />
-    <Project Path="NuGetPackages/Saascade.Blazor.Components.SaascadeLtd\Saascade.Blazor.Components.SaascadeLtd.csproj" />
-    <Project Path="NuGetPackages/Saascade.Blazor.Components.Tailwind/Saascade.Blazor.Components.Tailwind.csproj" />
-    <Project Path="NuGetPackages/Saascade.Blazor.Components.Vanilla/Saascade.Blazor.Components.Vanilla.csproj" />
-  </Folder>
-  <Folder Name="/NuGet Packages/DesignSystems/All/">
-    <Project Path="NuGetPackages/Saascade.Blazor.Components.DesignSystems/Saascade.Blazor.Components.DesignSystems.csproj" />
+    <Project Path="NuGetPackages\Saascade.Blazor.Components.DesignSystems.All\Saascade.Blazor.Components.DesignSystems.All.csproj" />
+    <Project Path="NuGetPackages\Saascade.Blazor.Components.DesignSystems.Bootstrap4\Saascade.Blazor.Components.DesignSystems.Bootstrap4.csproj" />
+    <Project Path="NuGetPackages\Saascade.Blazor.Components.DesignSystems.Bootstrap5\Saascade.Blazor.Components.DesignSystems.Bootstrap5.csproj" />
+    <Project Path="NuGetPackages\Saascade.Blazor.Components.DesignSystems.SaascadeLtd\Saascade.Blazor.Components.DesignSystems.SaascadeLtd.csproj" />
+    <Project Path="NuGetPackages\Saascade.Blazor.Components.DesignSystems.Tailwind\Saascade.Blazor.Components.DesignSystems.Tailwind.csproj" />
+    <Project Path="NuGetPackages\Saascade.Blazor.Components.DesignSystems.VanillaCss\Saascade.Blazor.Components.DesignSystems.VanillaCss.csproj" />
   </Folder>
   <Folder Name="/Websites/">
     <Project Path="Saascade.Blazor.Components.Documentation.Website.Wasm/Saascade.Blazor.Components.Documentation.Website.Wasm.csproj" />

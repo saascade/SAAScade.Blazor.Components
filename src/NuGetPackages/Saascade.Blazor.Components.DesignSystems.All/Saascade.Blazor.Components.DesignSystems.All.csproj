@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <!-- Nuget package info -->
+        <PackageId>Saascade.Blazor.Components.DesignSystems.All</PackageId> 
+        <Description>
+        This package is for quick testing, as it allows you to quickly jump between different design systems.
+        To keep download sizes as small as possible, rather reference the specific design system you want to use.
+        For example Saascade.Components.Tailwind for TailwindCSS, Saascade.Components.Bootstrap5 for Bootstrap5,etc...
+        Check out https://www.components.saascade.com for more info.
+        </Description> 
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+    <ItemGroup>
+        
+      <ProjectReference Include="..\Saascade.Blazor.Components.DesignSystems.Bootstrap4\Saascade.Blazor.Components.DesignSystems.Bootstrap4.csproj" />
+      <ProjectReference Include="..\Saascade.Blazor.Components.DesignSystems.Bootstrap5\Saascade.Blazor.Components.DesignSystems.Bootstrap5.csproj" />
+      <ProjectReference Include="..\Saascade.Blazor.Components.DesignSystems.Tailwind\Saascade.Blazor.Components.DesignSystems.Tailwind.csproj" />
+      <ProjectReference Include="..\Saascade.Blazor.Components.DesignSystems.VanillaCss\Saascade.Blazor.Components.DesignSystems.VanillaCss.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
+    </ItemGroup>
+</Project>
