@@ -7,7 +7,10 @@
         Mostly invisible components to help with SEO
         </Description>
     </PropertyGroup>
- 
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
+
     <ItemGroup>
         <SupportedPlatform Include="browser" />
     </ItemGroup>

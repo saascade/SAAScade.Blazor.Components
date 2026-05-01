@@ -7,13 +7,12 @@
     A library of Semantic Blazor components. Allowing you to create beautiful and accessible user interfaces while still having clean code - https://www.components.saascade.com
     </Description> 
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
 
   <ItemGroup>
-    <None Include="..\Saascade.Blazor.Components\README.md" Pack="true" PackagePath="" />
-  </ItemGroup>
-  
-  
-   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 

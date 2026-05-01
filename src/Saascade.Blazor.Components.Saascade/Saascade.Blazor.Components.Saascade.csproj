@@ -8,7 +8,10 @@
         Check out https://www.components.saascade.com for more info    
         </Description>
     </PropertyGroup>
-    
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
+
     <ItemGroup>
         <SupportedPlatform Include="browser"/>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>

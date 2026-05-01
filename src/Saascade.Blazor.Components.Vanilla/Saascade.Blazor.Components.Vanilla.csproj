@@ -7,6 +7,9 @@
         https://www.components.saascade.com
         </Description>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
     
     <ItemGroup>
         <SupportedPlatform Include="browser"/>

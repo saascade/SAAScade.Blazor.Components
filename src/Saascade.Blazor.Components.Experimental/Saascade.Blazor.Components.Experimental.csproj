@@ -7,6 +7,9 @@
         Half-baked experimental components that aren't quite ready yet.
         </Description>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
 
     <ItemGroup>
         <SupportedPlatform Include="browser" />
