@@ -5,7 +5,7 @@ namespace Saascade.Blazor.Components.DesignSystems.VanillaCss;
 
 public class Basic1DesignSystem : IDesignSystem
 {
-    public CssFramework CssFramework { get; } = CssFramework.Custom;
+    public CssFramework CssFramework { get; } = CssFramework.VanillaCss;
 
 
     public string GetComponentName(BaseComponent component)

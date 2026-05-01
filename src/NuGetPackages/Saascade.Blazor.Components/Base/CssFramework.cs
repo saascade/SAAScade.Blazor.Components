@@ -2,9 +2,11 @@
 
 public enum CssFramework
 { 
-    Custom = 0, //None
+    VanillaCss = 0, //None
 
     Bootstrap4,
     Bootstrap5,
     Tailwind,
+    
+    SaascadeLtd
 }

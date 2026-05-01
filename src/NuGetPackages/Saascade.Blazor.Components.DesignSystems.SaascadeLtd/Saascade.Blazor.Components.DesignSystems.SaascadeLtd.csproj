@@ -15,9 +15,14 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="wwwroot\" />
+        <Folder Include="wwwroot\ElectricBlue\v1\" />
+        <Folder Include="wwwroot\shared\" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\images\SAAScade-Logo-64x.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\ElectricBlue\v1\images\SAAScade-Logo-64x.png" />
     </ItemGroup>
 </Project>

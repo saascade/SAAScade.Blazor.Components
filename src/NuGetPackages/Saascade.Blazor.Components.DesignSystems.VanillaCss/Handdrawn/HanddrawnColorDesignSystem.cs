@@ -6,7 +6,7 @@ namespace Saascade.Blazor.Components.DesignSystems.VanillaCss.Handdrawn;
 
 public class HanddrawnColorDesignSystem : IDesignSystem
 {
-    public CssFramework CssFramework { get; } = CssFramework.Custom;
+    public CssFramework CssFramework { get; } = CssFramework.VanillaCss;
      
 
     public string GetComponentName(BaseComponent component)
