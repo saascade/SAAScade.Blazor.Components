@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - '.github/workflows/NuGetPackages.yml'
-      - 'src/Saascade.Blazor.Components/**'
+      - 'src/NuGetPackages/Saascade.Blazor.Components/**'
     tags:
       - 'v*'   # trigger on version tags like v1.0.0
   workflow_dispatch:
@@ -48,12 +48,12 @@ jobs:
       # 🔨 Build everything
       - name: Build 
         run: dotnet build --configuration Release --no-restore
-        working-directory: ./src
+        working-directory: ./src/NuGetPackages
 
 
       # 📦 Pack everything
       - name: Pack - Saascade.Blazor.Components
-        working-directory: ./src/Saascade.Blazor.Components
+        working-directory: ./src/NuGetPackages/Saascade.Blazor.Components
         run: |
           dotnet pack --configuration Release \
             /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
@@ -84,7 +84,7 @@ jobs:
               /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
               --output ./nupkgs
           done
-        working-directory: ./src
+        working-directory: ./src/NuGetPackages
         
       - name: List packages
         run: ls -R nupkgs
