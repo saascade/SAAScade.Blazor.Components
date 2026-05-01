@@ -43,7 +43,7 @@ jobs:
       # 📦 Restore everything
       - name: Restore
         run: dotnet restore
-        working-directory: ./src
+        working-directory: ./src/NuGetPackages
 
       # 🔨 Build everything
       - name: Build 
