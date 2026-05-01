@@ -51,13 +51,6 @@ jobs:
         run: dotnet build --configuration Release --no-restore
         working-directory: ./src
 
-      - name: Pack - Saascade.Blazor.DesignSystems
-        working-directory: ./src/Saascade.Blazor.DesignSystems
-        run: |
-          dotnet pack --configuration Release \
-            /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
-            --output ../../nupkgs
-
       - name: Pack - Saascade.Blazor.Components.Base
         working-directory: ./src/Saascade.Blazor.Components.Base
         run: |
@@ -71,6 +64,13 @@ jobs:
           dotnet pack --configuration Release \
             /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
             --output ../../nupkgs
+      - name: Pack - Saascade.Blazor.DesignSystems
+        working-directory: ./src/Saascade.Blazor.DesignSystems
+        run: |
+          dotnet pack --configuration Release \
+            /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
+            --output ../../nupkgs
+
       - name: List packages
         run: ls -R nupkgs
 
