@@ -1,6 +1,5 @@
 name: NuGet Packages
 
-
 on:
   push:
     branches:
