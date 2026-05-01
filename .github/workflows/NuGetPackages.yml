@@ -1,4 +1,4 @@
-name: Publish NuGet Packages
+name: NuGet Packages
 
 
 on:
@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/publish-nuget-package.yml'
+      - '.github/workflows/NugetPackages.yml'
       - 'src/Saascade.Blazor.Components.Base/**' 
       - 'src/Saascade.Blazor.Components/**' 
     # tags:

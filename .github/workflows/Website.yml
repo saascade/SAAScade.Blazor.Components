@@ -1,10 +1,11 @@
-name: Public website to Azure Static Web Apps
+name: Website
 
 on:
   push:
     branches:
       - main
     paths:
+      - '.github/workflows/Website.yml'
       - 'src/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
