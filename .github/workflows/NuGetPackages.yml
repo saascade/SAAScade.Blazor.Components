@@ -57,14 +57,14 @@ jobs:
       # 📦 Pack all projects
       - name: Pack all projects
         run: |
-          mkdir -p nupkgs
+          mkdir -p ./../_work/NugetPackages
           for proj in $(find . -name "NuGetPackages/*.csproj"); do
             echo "Packing $proj"
             dotnet pack "$proj" \
               --configuration Release \
               --no-build \
               /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
-              --output ./nupkgs
+              --output ./../_work/NugetPackages
           done
         working-directory: ./src
 
@@ -73,16 +73,17 @@ jobs:
         run: find . -type d
        
       - name: List packages
-        run: ls -R nupkgs
+        run: ls -R ./../_work/NugetPackages
 
       # 🚀 Push all packages 
       - name: Push packages
         run: |
-          dotnet nuget push "./nupkgs/*.nupkg" \
+          dotnet nuget push "./../_work/NugetPackages/*.nupkg" \
             --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
             --api-key ${{ secrets.GITHUB_TOKEN }} \
             --skip-duplicate
-
+        working-directory: ./src
+        
       # TODO: Could be useful in future
 #       # 📦 Pack all projects
 #       - name: Pack all projects
