@@ -52,7 +52,7 @@ jobs:
         working-directory: ./src
 
       - name: Pack - Saascade.Blazor.Components.DesignSystems
-        working-directory: ./src/Saascade.Blazor.Components.Base
+        working-directory: ./src/Saascade.Blazor.Components.DesignSystems
         run: |
           dotnet pack --configuration Release \
             /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
