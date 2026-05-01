@@ -36,6 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\designSystems\bootstrap5\" />
     <Folder Include="wwwroot\designSystems\tailwind\" />
   </ItemGroup>
