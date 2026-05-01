@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\Saascade.Blazor.Components.DesignSystems\README.md" Pack="true" PackagePath="" />
+    <None Include="..\Saascade.Blazor.DesignSystems\README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
   
