@@ -22,5 +22,9 @@
   <Folder Name="/Websites/">
     <Project Path="Saascade.Blazor.Components.Documentation.Website.Wasm/Saascade.Blazor.Components.Documentation.Website.Wasm.csproj" />
   </Folder>
-  <Folder Name="/Websites/Example websites/" />
+  <Folder Name="/Websites/Example websites/">
+    <Project Path="Websites/Saascade.Blazor.Components.ExampleWebsite1.Web/Saascade.Blazor.Components.ExampleWebsite1.Web.Client/Saascade.Blazor.Components.ExampleWebsite1.Web.Client.csproj" />
+    <Project Path="Websites/Saascade.Blazor.Components.ExampleWebsite1.Web/Saascade.Blazor.Components.ExampleWebsite1.Web/Saascade.Blazor.Components.ExampleWebsite1.Web.csproj" />
+    <Project Path="Websites/Saascade.Blazor.Components.ExampleWebsite2.Web/Saascade.Blazor.Components.ExampleWebsite2.Web.csproj" />
+  </Folder>
 </Solution>
