@@ -10,6 +10,6 @@
     <Project Path="Saascade.Blazor.Components.DesignSystems.Bootstrap5/Saascade.Blazor.Components.DesignSystems.Bootstrap5.csproj" />
     <Project Path="Saascade.Blazor.Components.DesignSystems.SaascadeLtd/Saascade.Blazor.Components.DesignSystems.SaascadeLtd.csproj" />
     <Project Path="Saascade.Blazor.Components.DesignSystems.Tailwind/Saascade.Blazor.Components.DesignSystems.Tailwind.csproj" />
-    <Project Path="Saascade.Blazor.Components.DesignSystems.Vanilla/Saascade.Blazor.Components.DesignSystems.Vanilla.csproj" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems.VanillaCss/Saascade.Blazor.Components.DesignSystems.VanillaCss.csproj" />
   </Folder>
 </Solution>
