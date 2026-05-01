@@ -46,12 +46,12 @@ jobs:
       # 📦 Restore everything
       - name: Restore
         run: dotnet restore
-        working-directory: ./src
+        working-directory: ./src/NuGetPackages
 
       # 🔨 Build everything
       - name: Build 
         run: dotnet build --configuration Release --no-restore
-        working-directory: ./src
+        working-directory: ./src/NuGetPackages
 
  
       # 📦 Pack all projects
