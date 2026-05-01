@@ -1,0 +1,71 @@
+name: Publish NuGet Packages
+
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/publish-nuget-package.yml'
+      - 'src/Saascade.Blazor.Components.Base/**' 
+      - 'src/Saascade.Blazor.Components/**' 
+    # tags:
+    #   - 'v*'   # trigger on version tags like v1.0.0
+  workflow_dispatch:
+    inputs:
+        version:
+          description: 'Package version'
+          required: true
+          default: '0.0.0.1'
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+ 
+      - name: Generate version
+        id: version
+        run: |
+          DATE=$(date -u +'%Y%m%d%H%M')
+          SHA=${GITHUB_SHA::7}
+          VERSION="0.0.0-${DATE}.${SHA}"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+ 
+      # 📦 Restore everything
+      - name: Restore
+        run: dotnet restore
+
+      # 🔨 Build everything
+      - name: Build 
+        run: dotnet build --configuration Release --no-restore
+
+      # 📦 Pack all projects
+      - name: Pack all projects
+        run: |
+          mkdir -p nupkgs
+          for proj in $(find . -name "*.csproj"); do
+            echo "Packing $proj"
+            dotnet pack "$proj" \
+              --configuration Release \
+              --no-build \
+              /p:PackageVersion=${{ steps.version.outputs.VERSION }} \
+              --output ./nupkgs
+          done
+
+      # 🚀 Push all packages
+      - name: Publish packages
+        run: dotnet nuget push "./nupkgs/*.nupkg" \
+              --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+              --api-key ${{ secrets.GITHUB_TOKEN }} \
+              --skip-duplicate

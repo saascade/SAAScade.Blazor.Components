@@ -4,6 +4,7 @@
   </Folder>
   <Folder Name="/CICD/">
     <File Path="..\.github\workflows\azure-static-web-apps-witty-bush-0d8ddbd03.yml" />
+    <File Path="..\.github\workflows\publish-nuget-package.yml" />
   </Folder>
   <Folder Name="/Library/">
     <Project Path="Saascade.Blazor.Components.Base/Saascade.Blazor.Components.Base.csproj" Id="03ddfff9-0012-49e1-8904-4c92dc74ceb0" />
