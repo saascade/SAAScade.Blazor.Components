@@ -2,17 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-
-    <PackageId>Temp.SaaS.Components</PackageId>
+    <PackageId>Saascade.Blazor.Components</PackageId>
     <Version>0.0.0.0</Version>
-    <Authors>YourName</Authors>
-    <Description>Semantic Blazor Components</Description>
-
-    <!-- <PackageLicenseExpression>MIT</PackageLicenseExpression> -->
-    <RepositoryUrl>https://github.com/saascade/SAAScade.Blazor.Components</RepositoryUrl>
+    <Authors>SAAScade.com</Authors> 
+    <Company>SAAScade.com</Company>
+    <PackageTags>Blazor;Semantic;Components;UI;Accessible</PackageTags>
+    <Description>
+    A library of Semantic Blazor components. Allowing you to create beautiful and accessible user interfaces while still having clean code - https://www.components.saascade.com
+    </Description>
+    <PackageReadmeFile></PackageReadmeFile>
+    <WebsiteUrl>https://www.components.saascade.com</WebsiteUrl>
+    <PackageProjectUrl>https://www.components.saascade.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/saascade/SAAScade.Blazor.Components</RepositoryUrl> 
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>false</IncludeSymbols>
-    <PackageReadmeFile></PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
