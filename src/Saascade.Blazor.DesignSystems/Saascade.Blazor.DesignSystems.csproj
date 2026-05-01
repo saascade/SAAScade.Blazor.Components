@@ -1,4 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <PackageId>Saascade.Blazor.Components.DesignSystems</PackageId>
+    <Version>0.0.0.0</Version>
+    <Authors>SAAScade.com</Authors>
+    <Company>SAAScade.com</Company>
+    <PackageTags>Blazor;Semantic;Components;UI;Accessible</PackageTags>
+    <Description>
+        https://www.components.saascade.com
+    </Description>
+    <PackageReadmeFile></PackageReadmeFile>
+    <WebsiteUrl>https://www.components.saascade.com</WebsiteUrl>
+    <PackageProjectUrl>https://www.components.saascade.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/saascade/SAAScade.Blazor.Components</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>false</IncludeSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Saascade.Blazor.Components.DesignSystems\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  
   <ItemGroup>
     <Folder Include="Bootstrap4\" />
     <Folder Include="Bootstrap5\Handdrawn\" />
