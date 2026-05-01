@@ -24,4 +24,12 @@
 <!--        <ProjectReference Include="..\Saascade.Blazor.Components.Saascade\Saascade.Blazor.Components.Saascade.csproj" />-->
     </ItemGroup>
 
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="wwwroot\" />
+    </ItemGroup>
 </Project>
