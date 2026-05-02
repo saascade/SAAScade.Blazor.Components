@@ -11,6 +11,7 @@ namespace Saascade.Blazor.Components.DesignSystems.Tailwind.DaisyUI;
 public class DaisyUiDesignSystem : IDesignSystem
 {
     public CssFramework CssFramework { get; } = CssFramework.Tailwind;
+    public string DisplayName { get; } = nameof(DaisyUiDesignSystem).Replace("DesignSystem", "").Humanize();
 
     public string? GetComponentName(BaseComponent component)
     => component.GetStandardizedComponentName() ?? component.GetType().Name switch

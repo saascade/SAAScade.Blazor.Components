@@ -15,6 +15,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
     </ItemGroup>
     <ItemGroup>
+        <Folder Include="ElectricBlue\v2\" />
         <Folder Include="wwwroot\ElectricBlue\v1\" />
         <Folder Include="wwwroot\shared\" />
     </ItemGroup>

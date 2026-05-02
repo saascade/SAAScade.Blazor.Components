@@ -26,4 +26,10 @@
     <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Actions\" />
+    <Folder Include="Features\Advanced\" />
+    <Folder Include="Features\GettingStarted\" />
+  </ItemGroup>
+
 </Project>

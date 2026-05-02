@@ -4,6 +4,8 @@ namespace Saascade.Blazor.Components;
 
 public interface IDesignSystem
 {
+    string DisplayName { get; }
+    
     CssFramework CssFramework { get; }
 
     /// <summary>

@@ -1,5 +1,4 @@
-@using Saascade.Blazor.Components.Experimental
-@* NOTE: Dynamic columns aren't supported by default, so this is a bit hacky *@
+@using Saascade.Blazor.Components.Experimental 
 <DynamicGrid TItem="DynamicRow"
              Items="@rows"
              RowIdSelector="@(r => r.Id)"
@@ -14,38 +13,68 @@
             <strong>@cell.Value</strong>
         }
         else
-        {
+        { 
             //Column Value
-            if (cell.Value is bool and true)
-            { 
-                <span style="color:green !important;">✔️</span> 
-            }
-            else
+            if (cell.Value is LevelOfSupport levelOfSupport)
             {
-                <span style="color:red !important;">✖️</span> 
+                <LevelOfSupportDisplayValue LevelOfSupport="levelOfSupport"/>
             }
         } 
     </CellTemplate>
 </DynamicGrid>
+@inject CssFrameworkService CssFrameworkService
 @inject DesignSystemsService DesignSystemsService
 @inject SaascadeComponentsService ComponentsService
 @code 
-{
+{  
     [Parameter, EditorRequired] public CssFramework Framework { get; set; }
-
+    
     protected override void OnInitialized()
     {
         try
-        {
-            var designSystems = DesignSystemsService.GetAllDesignSystems(Framework);
-            var components = ComponentsService.GetAllComponentsTypes();
+        { 
+            var components = ComponentsService.GetAllComponents();
+            rows = BuildRows(components).OrderBy(r => r.Label).ToList();
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
             throw;
         } 
+        base.OnInitialized();
     }
+
+    private IEnumerable<DynamicRow> BuildRows(IReadOnlyCollection<BaseComponent> components) 
+        => components.Select(component => new DynamicRow( Guid.CreateVersion7(), component.GetType().Name, CalculateLevelOfSupport(component)));
+
+    private Dictionary<string, object?> CalculateLevelOfSupport(BaseComponent component)
+    {
+        var support = new Dictionary<string, object?>();
+    
+        var designSystems = DesignSystemsService.GetAllDesignSystems(Framework, verify: true);
+        foreach (var designSystem in designSystems.OrderBy(ds => ds.DisplayName))
+        {
+            var allMatch = designSystems.All(ds => ds.SupportsComponent(component));
+            if (allMatch)
+            {
+                support.Add(designSystem.DisplayName, LevelOfSupport.Full);
+                continue;
+            }
+
+            var someMatch = designSystems.Any(ds => ds.SupportsComponent(component));
+            if (someMatch)
+            {
+                support.Add(designSystem.DisplayName, LevelOfSupport.Partial);
+                continue;
+            } 
+
+            //None match
+            support.Add(designSystem.DisplayName, LevelOfSupport.None);
+        } 
+    
+        return support;
+    }
+
 
     private List<DynamicRow> rows = [];
 } 

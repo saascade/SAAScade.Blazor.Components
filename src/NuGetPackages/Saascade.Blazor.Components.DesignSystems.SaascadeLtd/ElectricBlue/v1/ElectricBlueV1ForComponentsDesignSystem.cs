@@ -1,13 +1,13 @@
-﻿using Saascade.Blazor.Components.Aliases;
+﻿using Humanizer;
+using Saascade.Blazor.Components.Aliases;
 using Saascade.Blazor.Components.Experimental; 
 
 namespace Saascade.Blazor.Components.DesignSystems.SaascadeLtd;
-
-//https://daisyui.com/components/button/
-public class ElectricBlueV2DesignSystem : IDesignSystem
+ 
+public class ElectricBlueV1ForComponentsDesignSystem : IDesignSystem
 {
-    public CssFramework CssFramework { get; } = CssFramework.SaascadeLtd;
-
+    public CssFramework CssFramework { get; } = CssFramework.SaascadeLtd;    
+    public string DisplayName { get; } = nameof(ElectricBlueV1ForComponentsDesignSystem).Replace("DesignSystem", "").Humanize();
 
     public string? GetComponentName(BaseComponent component)
         => component.GetType().Name switch  // component.GetStandardizedComponentName() ?? 

@@ -1,4 +1,5 @@
-﻿using Saascade.Blazor.Components;
+﻿using Humanizer;
+using Saascade.Blazor.Components;
 using Saascade.Blazor.Components.Extensions; 
 
 namespace Saascade.Blazor.Components.DesignSystems.VanillaCss.Handdrawn;
@@ -6,6 +7,7 @@ namespace Saascade.Blazor.Components.DesignSystems.VanillaCss.Handdrawn;
 public class HanddrawnAssessibleDesignSystem : IDesignSystem
 {
     public CssFramework CssFramework { get; } = CssFramework.VanillaCss;
+    public string DisplayName { get; } = nameof(HanddrawnAssessibleDesignSystem).Replace("DesignSystem", "").Humanize();
 
 
     public string? GetComponentName(BaseComponent component)

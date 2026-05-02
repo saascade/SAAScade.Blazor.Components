@@ -1,5 +1,4 @@
-@using Saascade.Blazor.Components.Experimental
-@* NOTE: Dynamic columns aren't supported by default, so this is a bit hacky *@
+@using Saascade.Blazor.Components.Experimental 
 <DynamicGrid TItem="DynamicRow"
              Items="@rows"
              RowIdSelector="@(r => r.Id)"
@@ -32,7 +31,7 @@
     {
         try
         {
-            var cssFrameworks = CssFrameworkService.GetCssFrameworksToShow();
+            var cssFrameworks = CssFrameworkService.GetCssFrameworksToShow();//.OrderBy(f => f.Humanize()).ToList();
             var components = ComponentsService.GetAllComponents();
             rows = BuildRows(cssFrameworks, components).OrderBy(r => r.Label).ToList();
         }

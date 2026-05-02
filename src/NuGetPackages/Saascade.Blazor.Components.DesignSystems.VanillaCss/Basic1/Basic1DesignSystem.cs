@@ -1,10 +1,12 @@
-﻿using Saascade.Blazor.Components.Aliases;  
+﻿using Humanizer;
+using Saascade.Blazor.Components.Aliases;  
 
 namespace Saascade.Blazor.Components.DesignSystems.VanillaCss;
 
 public class Basic1DesignSystem : IDesignSystem
 {
     public CssFramework CssFramework { get; } = CssFramework.VanillaCss;
+    public string DisplayName { get; } = nameof(Basic1DesignSystem).Replace("DesignSystem", "").Humanize();
 
 
     public string? GetComponentName(BaseComponent component)

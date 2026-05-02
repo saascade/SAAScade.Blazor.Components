@@ -1,4 +1,4 @@
-﻿using Saascade.Blazor.Components.Extensions;
+﻿using Humanizer; 
 
 namespace Saascade.Blazor.Components.DesignSystems.Bootstrap5.Vanilla;
 
@@ -6,7 +6,10 @@ namespace Saascade.Blazor.Components.DesignSystems.Bootstrap5.Vanilla;
 public class AnotherBootstrap5DesignSystem : IDesignSystem
 {
     public CssFramework CssFramework { get; } = CssFramework.Bootstrap5;
+    public string DisplayName { get; } = nameof(AnotherBootstrap5DesignSystem).Replace("DesignSystem", "").Humanize();
 
+ 
+    
     public string? GetComponentName(BaseComponent component)
     => vanillaBootstrap5.GetComponentName(component) ?? component.GetType().Name switch
     {

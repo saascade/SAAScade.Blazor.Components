@@ -1,19 +1,19 @@
 <TechCard>
-    <section class="card">
-        <Accordion Expanded="Expanded">
-            <TitleContent>
-                <h2 id="@Id">@Title</h2>
-            </TitleContent>
-            <ChildContent>
-                <p class="subtitle">
-                    @Subtitle
-                </p>
-                <hr/>
-                @ChildContent
-            </ChildContent>
-        </Accordion>
-    </section>
-</TechCard>
+<section class="card" id="@Id">
+    <Accordion Expanded="Expanded">
+        <TitleContent>
+            <h2>@Title</h2>
+        </TitleContent>
+        <ChildContent>
+            <p class="subtitle">
+                @Subtitle
+            </p>
+            <hr/>
+            @ChildContent
+        </ChildContent>
+    </Accordion>
+</section>
+</TechCard> 
 @code
 {  
     [Parameter, EditorRequired] public string Id { get; set; }  

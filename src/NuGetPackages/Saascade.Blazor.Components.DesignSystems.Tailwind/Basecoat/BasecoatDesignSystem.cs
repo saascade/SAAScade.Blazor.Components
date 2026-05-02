@@ -1,4 +1,5 @@
-﻿using Saascade.Blazor.Components.Aliases;
+﻿using Humanizer;
+using Saascade.Blazor.Components.Aliases;
 using Saascade.Blazor.Components;
 using Saascade.Blazor.Components.Extensions;
 using Saascade.Blazor.Components;
@@ -9,6 +10,7 @@ namespace Saascade.Blazor.Components.DesignSystems.Tailwind.Basecoat;
 public class BasecoatDesignSystem : IDesignSystem
 {
     public CssFramework CssFramework { get; } = CssFramework.Tailwind;
+    public string DisplayName { get; } = nameof(BasecoatDesignSystem).Replace("DesignSystem", "").Humanize();
 
     public string? GetComponentName(BaseComponent component)
     => component.GetStandardizedComponentName() ?? component.GetType().Name switch
