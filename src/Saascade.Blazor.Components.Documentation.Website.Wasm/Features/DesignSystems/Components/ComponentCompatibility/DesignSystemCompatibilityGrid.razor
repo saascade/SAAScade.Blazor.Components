@@ -10,7 +10,7 @@
         @if (cell.Column == "__label")
         { 
             //The label
-            <strong>@cell.Value</strong>
+            <LinkToComponentPage ComponentName="@cell.Value?.ToString()"/>
         }
         else
         { 
