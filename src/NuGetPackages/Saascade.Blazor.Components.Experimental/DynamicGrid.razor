@@ -1,0 +1,186 @@
+@typeparam TItem
+@using Microsoft.AspNetCore.Components.QuickGrid
+@if (_columns.Count > 0)
+{
+    <QuickGrid TGridItem="TItem"
+               Items="Items.AsQueryable()"
+               Class="dynamic-grid">
+
+        @foreach (var column in _columns)
+        {
+            <TemplateColumn Title="@column.Header">
+                <ChildContent Context="row">
+                    @RenderCell(row, column)
+                </ChildContent>
+            </TemplateColumn>
+        }
+
+    </QuickGrid>
+}
+@code {
+
+    // -----------------------------
+    // Parameters
+    // -----------------------------
+
+    [Parameter, EditorRequired]
+    public IEnumerable<TItem> Items { get; set; } = Enumerable.Empty<TItem>();
+
+    [Parameter, EditorRequired]
+    public required Func<TItem, Guid> RowIdSelector { get; set; }
+
+    [Parameter]
+    public Func<TItem, string?>? LabelSelector { get; set; }
+
+    [Parameter]
+    public string LabelColumnHeader { get; set; } = "Label";
+
+    [Parameter, EditorRequired]
+    public required Func<TItem, IDictionary<string, object?>> DynamicAccessor { get; set; }
+
+    [Parameter]
+    public RenderFragment<CellContext<TItem>>? CellTemplate { get; set; }
+
+    // -----------------------------
+    // Column model
+    // -----------------------------
+
+    private sealed class ColumnDefinition
+    {
+        public required string Key { get; set; } 
+        public required string Header { get; set; } 
+        public ColumnAlignment Alignment { get; set; }
+    }
+
+    private enum ColumnAlignment
+    {
+        Left,
+        Center,
+        Right
+    }
+
+    private List<ColumnDefinition> _columns = new();
+
+    // -----------------------------
+    // Lifecycle
+    // -----------------------------
+
+    protected override void OnParametersSet()
+    {
+        if (!Items.Any()) {  return;  }
+
+        BuildColumns();
+    }
+
+    private void BuildColumns()
+    {
+        var dynamicKeys = Items
+            .SelectMany(i => DynamicAccessor(i).Keys)
+            .Where(k => !string.IsNullOrWhiteSpace(k))
+            .Distinct();
+
+        _columns = dynamicKeys
+            .Select(k => new ColumnDefinition
+            {
+                Key = k,
+                Header = k,
+                Alignment = InferAlignment(k)
+            })
+            .ToList();
+
+        if (LabelSelector != null)
+        {
+            _columns.Insert(0, new ColumnDefinition
+            {
+                Key = "__label",
+                Header = LabelColumnHeader,
+                Alignment = ColumnAlignment.Left
+            });
+        }
+    }
+
+    // -----------------------------
+    // Alignment rules
+    // -----------------------------
+
+    private ColumnAlignment InferAlignment(string key)
+    {
+        if (key.Contains("id", StringComparison.OrdinalIgnoreCase))
+            return ColumnAlignment.Center;
+
+        if (key.Contains("price", StringComparison.OrdinalIgnoreCase) ||
+            key.Contains("amount", StringComparison.OrdinalIgnoreCase) ||
+            key.Contains("total", StringComparison.OrdinalIgnoreCase))
+            return ColumnAlignment.Right;
+
+        return ColumnAlignment.Left;
+    }
+
+    // -----------------------------
+    // Value resolution
+    // -----------------------------
+
+    private object? GetValue(TItem row, ColumnDefinition column)
+    {
+        if (column.Key == "__label")
+            return LabelSelector?.Invoke(row);
+
+        var dict = DynamicAccessor(row);
+
+        return dict != null && dict.TryGetValue(column.Key, out var value)
+            ? value
+            : null;
+    }
+
+    private Guid GetRowId(TItem row)
+        => RowIdSelector(row);
+
+    // -----------------------------
+    // Rendering
+    // -----------------------------
+
+    private RenderFragment RenderCell(TItem row, ColumnDefinition column) => builder =>
+    {
+        var value = GetValue(row, column);
+
+        builder.OpenElement(0, "div");
+        builder.AddAttribute(1, "class", GetCellClass(column));
+
+        if (CellTemplate is not null)
+        {
+            builder.AddContent(2, CellTemplate(new CellContext<TItem>
+            {
+                Row = row,
+                RowId = GetRowId(row),
+                Column = column.Key,
+                Value = value
+            }));
+        }
+        else
+        {
+            builder.AddContent(3, value?.ToString() ?? string.Empty);
+        }
+
+        builder.CloseElement();
+    };
+
+    private string GetCellClass(ColumnDefinition column)
+        => column.Alignment switch
+        {
+            ColumnAlignment.Right => "dynamic-grid-cell align-right",
+            ColumnAlignment.Center => "dynamic-grid-cell align-center",
+            _ => "dynamic-grid-cell align-left"
+        };
+
+    // -----------------------------
+    // Context
+    // -----------------------------
+
+    public sealed class CellContext<T>
+    {
+        public required T Row { get; set; }
+        public Guid RowId { get; set; }
+        public required string Column { get; set; }
+        public object? Value { get; set; }
+    }
+}

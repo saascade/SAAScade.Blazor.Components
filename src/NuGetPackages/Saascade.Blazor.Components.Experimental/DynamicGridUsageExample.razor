@@ -1,0 +1,74 @@
+<DynamicGrid TItem="DynamicRow"
+             Items="@rows"
+             RowIdSelector="@(r => r.Id)"
+             LabelSelector="@(r => r.Label)"
+             LabelColumnHeader="Student"
+             DynamicAccessor="@(r => r.Values)">
+
+    <CellTemplate Context="cell">
+        @if (cell.Column == "Student")
+        {
+            //The Label
+            <strong>@cell.Value</strong>
+        }
+        else
+        {
+            //Column Value
+            if (cell.Value is int i)
+            {
+                if (i > 80)
+                {
+                    <span style="color:green">@i</span>
+                }
+                else if (i < 50)
+                {
+                    <span style="color:red">@i</span>
+                }
+                else
+                {
+                    <span>@i</span>
+                }
+            }
+            else if (cell.Value is null)
+            {
+                <em>-</em>
+            }
+            else
+            {
+                @cell.Value
+            }
+        }
+    </CellTemplate> 
+</DynamicGrid>
+@code 
+{
+    private List<DynamicRow> rows = new()
+    {
+        new DynamicRow(
+            Guid.NewGuid(),
+            "Alice",
+            new Dictionary<string, object?>
+            {
+                ["Math"] = 90,
+                ["Science"] = 85
+            }
+        ),
+        new DynamicRow(
+            Guid.NewGuid(),
+            "Bob",
+            new Dictionary<string, object?>
+            {
+                ["Math"] = 75,
+                ["English"] = 45
+            }
+        ),
+        new DynamicRow(
+            Guid.NewGuid(),
+            "Charlie",
+            new Dictionary<string, object?>
+            {
+                ["Science"] = 92
+            }
+        )
+    };
+}
