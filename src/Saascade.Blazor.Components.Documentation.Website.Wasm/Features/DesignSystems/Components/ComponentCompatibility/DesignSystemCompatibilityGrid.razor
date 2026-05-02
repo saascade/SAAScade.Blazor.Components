@@ -54,22 +54,9 @@
         var designSystems = DesignSystemsService.GetAllDesignSystems(Framework, verify: true);
         foreach (var designSystem in designSystems.OrderBy(ds => ds.DisplayName))
         {
-            var allMatch = designSystems.All(ds => ds.SupportsComponent(component));
-            if (allMatch)
-            {
-                support.Add(designSystem.DisplayName, LevelOfSupport.Full);
-                continue;
-            }
-
-            var someMatch = designSystems.Any(ds => ds.SupportsComponent(component));
-            if (someMatch)
-            {
-                support.Add(designSystem.DisplayName, LevelOfSupport.Partial);
-                continue;
-            } 
-
-            //None match
-            support.Add(designSystem.DisplayName, LevelOfSupport.None);
+            var supportsComponent = designSystem.SupportsComponent(component);
+            var levelOfSupport = supportsComponent ? LevelOfSupport.Full : LevelOfSupport.None; 
+            support.Add(designSystem.DisplayName,levelOfSupport);
         } 
     
         return support;

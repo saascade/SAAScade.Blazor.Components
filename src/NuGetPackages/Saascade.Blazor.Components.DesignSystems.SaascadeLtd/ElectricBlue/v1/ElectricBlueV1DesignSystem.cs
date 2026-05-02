@@ -14,6 +14,8 @@ public class ElectricBlueV1DesignSystem : IDesignSystem
     public string? GetComponentName(BaseComponent component)
         => component.GetType().Name switch  // component.GetStandardizedComponentName() ?? 
         {
+            nameof(A) => "a",
+            nameof(H1) => "h1",
             nameof(Button) => "btn",
             nameof(PrimaryButton) => "btn-primary",
             nameof(SecondaryButton) => "btn-secondary",
