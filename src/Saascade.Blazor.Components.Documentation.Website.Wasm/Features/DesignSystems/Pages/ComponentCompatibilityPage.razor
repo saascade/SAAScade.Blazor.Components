@@ -1,0 +1,30 @@
+@page "/component-compatibility"
+@using Saascade.Blazor.Components.Documentation.Website.Wasm.Features.DesignSystems.Components.ComponentCompatibility
+<PageTitle>Component Compatibility - Saascade Docs</PageTitle>
+
+<h1 id="component-compatibility">Component Compatibility</h1>
+
+<div class="doc-layout">
+    <main class="documentation"> 
+        <OverallCompatibilitySection Id="overall-compatibility" Expanded="true"/> 
+        <ListOf Items="CssFrameworkService.GetCssFrameworksToShow()" Context="framework">
+            <FrameworkSection Framework="framework" Expanded="true"/> 
+        </ListOf>
+    </main>
+
+    <TableOfContents Items="GetTocItems().ToList()" /> 
+</div> 
+@inject CssFrameworkService CssFrameworkService
+@code
+{
+    private IEnumerable<TocItem> GetTocItems()
+    {
+        yield return new TocItem("overall-compatibility", "Overall Compatibility");
+
+        foreach (var framework in CssFrameworkService.GetCssFrameworksToShow())
+        {
+            yield return FrameworkSection.CreateTocItem(framework);
+        }
+    }
+
+}

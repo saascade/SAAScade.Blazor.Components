@@ -10,10 +10,10 @@ public class BasecoatDesignSystem : IDesignSystem
 {
     public CssFramework CssFramework { get; } = CssFramework.Tailwind;
 
-    public string GetComponentName(BaseComponent component)
+    public string? GetComponentName(BaseComponent component)
     => component.GetStandardizedComponentName() ?? component.GetType().Name switch
     { 
-        _ => component.GetType().Name.ToLowerSnakeCase()
+        _ => null
     };
 
     public string? GetSpecializations<T>(T component) where T : BaseComponent

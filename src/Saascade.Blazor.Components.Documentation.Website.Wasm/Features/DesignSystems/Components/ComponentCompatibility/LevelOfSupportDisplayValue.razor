@@ -1,0 +1,19 @@
+@switch (LevelOfSupport)
+{
+    case LevelOfSupport.Full:
+        <span style="color:green !important;">✔️</span>
+        break;
+    case LevelOfSupport.Partial:
+        <span style="color:orange !important;">½️</span>
+        break;
+    case LevelOfSupport.None:
+        <span style="color:red !important;">✖️</span>
+        break;
+    default:
+        throw new ArgumentOutOfRangeException();
+}
+@code 
+{
+    [Parameter, EditorRequired]
+    public LevelOfSupport LevelOfSupport { get; set; }    
+}

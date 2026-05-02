@@ -1,0 +1,51 @@
+@using Saascade.Blazor.Components.Experimental
+@* NOTE: Dynamic columns aren't supported by default, so this is a bit hacky *@
+<DynamicGrid TItem="DynamicRow"
+             Items="@rows"
+             RowIdSelector="@(r => r.Id)"
+             LabelSelector="@(r => r.Label)"
+             LabelColumnHeader="Component"
+             DynamicAccessor="@(r => r.Values)">
+
+    <CellTemplate Context="cell"> 
+        @if (cell.Column == "__label")
+        { 
+            //The label
+            <strong>@cell.Value</strong>
+        }
+        else
+        {
+            //Column Value
+            if (cell.Value is bool and true)
+            { 
+                <span style="color:green !important;">✔️</span> 
+            }
+            else
+            {
+                <span style="color:red !important;">✖️</span> 
+            }
+        } 
+    </CellTemplate>
+</DynamicGrid>
+@inject DesignSystemsService DesignSystemsService
+@inject SaascadeComponentsService ComponentsService
+@code 
+{
+    [Parameter, EditorRequired] public CssFramework Framework { get; set; }
+
+    protected override void OnInitialized()
+    {
+        try
+        {
+            var designSystems = DesignSystemsService.GetAllDesignSystems(Framework);
+            var components = ComponentsService.GetAllComponentsTypes();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        } 
+    }
+
+    private List<DynamicRow> rows = [];
+} 

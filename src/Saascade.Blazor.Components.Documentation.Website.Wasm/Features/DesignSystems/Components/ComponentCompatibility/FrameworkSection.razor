@@ -1,0 +1,23 @@
+<CompatibilitySection
+    Id="@GetSectionId(Framework)" 
+    Title="@GetTitle()"
+    Subtitle=""
+    Expanded="Expanded">
+    <DesignSystemCompatibilityGrid Framework="Framework"/>
+</CompatibilitySection>
+@code
+{  
+    [Parameter, EditorRequired] public CssFramework Framework { get; set; }
+    [Parameter] public string? Title { get; set; } 
+    [Parameter] public string? Subtitle { get; set; } 
+    [Parameter] public bool Expanded { get; set; }
+    
+    private  string GetTitle() 
+        => (Title ?? Framework.Humanize()).Replace("css", "CSS");
+    
+    internal static TocItem CreateTocItem(CssFramework framework)
+        => new (GetSectionId(framework), framework.Humanize(), 2);
+
+    private static string GetSectionId(CssFramework framework) 
+        => framework.ToString().ToLower(); 
+}

@@ -1,0 +1,13 @@
+<CompatibilitySection
+    Id="@Id" 
+    Title="Overall component compatibility"
+    Subtitle=""
+    Expanded="Expanded">
+    <FrameworkCompatibilityGrid/>
+</CompatibilitySection>
+@code
+{ 
+    [Parameter, EditorRequired] public string Id { get; set; }
+    [Parameter] public bool Expanded { get; set; }
+}
+

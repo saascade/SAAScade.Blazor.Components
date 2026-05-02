@@ -19,6 +19,7 @@
         <Folder Include="wwwroot\shared\" />
     </ItemGroup>
     <ItemGroup>
+        <ProjectReference Include="..\Saascade.Blazor.Components.Experimental\Saascade.Blazor.Components.Experimental.csproj" />
         <ProjectReference Include="..\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
     </ItemGroup>
     <ItemGroup>

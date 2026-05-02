@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup> 
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" /> 
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" />
   </ItemGroup>
@@ -20,6 +21,8 @@
     <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.DesignSystems.SaascadeLtd\Saascade.Blazor.Components.DesignSystems.SaascadeLtd.csproj" />
 
      <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.DesignSystems.Tailwind\Saascade.Blazor.Components.DesignSystems.Tailwind.csproj" />
+
+     <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components.Experimental\Saascade.Blazor.Components.Experimental.csproj" />
     <ProjectReference Include="..\NuGetPackages\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
   </ItemGroup>
 

@@ -7,10 +7,10 @@ public class EmptyDesignSystem : IDesignSystem
     public CssFramework CssFramework { get; } = CssFramework.VanillaCss;
 
 
-    public string GetComponentName(BaseComponent component)
+    public string? GetComponentName(BaseComponent component)
     => component.GetStandardizedComponentName() ?? component.GetType().Name switch
     {
-        _ => component.GetType().Name.ToLowerSnakeCase()
+        _ => null
     };
 
     public string? GetSpecializations<T>(T component) where T : BaseComponent

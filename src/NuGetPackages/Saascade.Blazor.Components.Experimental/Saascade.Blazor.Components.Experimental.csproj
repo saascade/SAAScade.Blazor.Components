@@ -17,6 +17,7 @@
 
     <ItemGroup>
         <PackageReference Include="Humanizer.Core" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
     </ItemGroup>
 </Project>

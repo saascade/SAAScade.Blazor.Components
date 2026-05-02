@@ -17,6 +17,10 @@ builder.RootComponents.Add<DesignSystemJavaScriptReferences>("body::after");
 services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 services.AddScoped<TechFilterService>();
 
+services.AddSingleton<CssFrameworkService>();
+services.AddSingleton<DesignSystemsService>(); 
+services.AddSingleton<SaascadeComponentsService>();
+
 
 //Pick a UI design system
 //services.AddSingleton(TailwindBasedDesignSystems.Instance.DaisyUI);

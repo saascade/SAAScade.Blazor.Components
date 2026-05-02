@@ -4,15 +4,14 @@ using Saascade.Blazor.Components.Experimental;
 namespace Saascade.Blazor.Components.DesignSystems.SaascadeLtd;
 
 //https://daisyui.com/components/button/
-public class ElectricBlueV1DesignSystem : IDesignSystem
+public class ElectricBlueV2DesignSystem : IDesignSystem
 {
     public CssFramework CssFramework { get; } = CssFramework.SaascadeLtd;
 
 
     public string? GetComponentName(BaseComponent component)
         => component.GetType().Name switch  // component.GetStandardizedComponentName() ?? 
-        {
-            nameof(Button) => "btn",
+        { 
             nameof(PrimaryButton) => "btn-primary",
             nameof(SecondaryButton) => "btn-secondary",
             nameof(Video) => "btn-destructive",

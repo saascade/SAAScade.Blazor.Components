@@ -1,5 +1,4 @@
-﻿using Saascade.Blazor.Components.Aliases; 
-using Saascade.Blazor.Components.Extensions;
+﻿using Saascade.Blazor.Components.Aliases;  
 
 namespace Saascade.Blazor.Components.DesignSystems.VanillaCss;
 
@@ -8,10 +7,10 @@ public class Basic1DesignSystem : IDesignSystem
     public CssFramework CssFramework { get; } = CssFramework.VanillaCss;
 
 
-    public string GetComponentName(BaseComponent component)
+    public string? GetComponentName(BaseComponent component)
     => component.GetStandardizedComponentName() ?? component.GetType().Name switch
     {
-        _ => component.GetType().Name.ToLowerSnakeCase()
+        _ => null
     };
 
     public string? GetSpecializations<T>(T component) where T : BaseComponent

@@ -1,4 +1,6 @@
-﻿namespace Saascade.Blazor.Components;
+﻿using System;
+
+namespace Saascade.Blazor.Components;
 
 public interface IDesignSystem
 {
@@ -11,7 +13,20 @@ public interface IDesignSystem
     /// <example>card</example>
     /// <example>btn</example>
     /// <returns></returns>
-    string GetComponentName(BaseComponent component);
+    string? GetComponentName(BaseComponent component);
+
+    bool SupportsComponent(BaseComponent componentType)
+    {
+        var componentName = GetComponentName(componentType);
+        return componentName is not null;
+    }
+
+    // bool SupportsComponent(Type componentType)
+    // {
+    //     var instance = Activator.CreateInstance(componentType) as BaseComponent;
+    //     if (instance == null) { return false; }
+    //     return GetComponentName(instance) is not null;
+    // }
 
     /// <summary>
     /// Can return multiple values
@@ -33,7 +48,6 @@ public interface IDesignSystem
     string? GetStyleForComponent<T>(T component) where T : BaseComponent;
 
     string[] GetStylesheetReferences();
-    string[] GetJavaScriptReferences();
-
+    string[] GetJavaScriptReferences(); 
 }
 
