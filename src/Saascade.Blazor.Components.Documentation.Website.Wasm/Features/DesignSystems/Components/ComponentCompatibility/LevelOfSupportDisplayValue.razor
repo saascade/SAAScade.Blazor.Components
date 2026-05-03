@@ -1,19 +1,22 @@
-@switch (LevelOfSupport)
-{
-    case LevelOfSupport.Full:
-        <span style="color:green !important;">✔️</span>
-        break;
-    case LevelOfSupport.Partial:
-        <span style="color:orange !important;">½️</span>
-        break;
-    case LevelOfSupport.None:
-        <span style="color:red !important;">✖️</span>
-        break;
-    default:
-        throw new ArgumentOutOfRangeException();
-}
+<span class="@GetLevelOfSupportClass()">@GetLevelOfSupportText()</span>
 @code 
 {
     [Parameter, EditorRequired]
-    public LevelOfSupport LevelOfSupport { get; set; }    
+    public LevelOfSupport LevelOfSupport { get; set; }
+ 
+    private string GetLevelOfSupportClass() => LevelOfSupport switch
+    {
+        LevelOfSupport.None => "level-of-support-none",
+        LevelOfSupport.Partial => "level-of-support-partial",
+        LevelOfSupport.Full => "level-of-support-full",
+        _ => throw new ArgumentOutOfRangeException()
+    };
+    
+    private string GetLevelOfSupportText() => LevelOfSupport switch
+    {
+        LevelOfSupport.None => "✖",
+        LevelOfSupport.Partial => "½",
+        LevelOfSupport.Full => "✔",
+        _ => throw new ArgumentOutOfRangeException()
+    };
 }

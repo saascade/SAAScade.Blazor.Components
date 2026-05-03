@@ -1,0 +1,13 @@
+.level-of-support-full
+{
+    color:green !important;
+}
+
+.level-of-support-partial
+{
+    color:orange !important;
+}
+.level-of-support-none
+{
+    color:red !important;
+}
