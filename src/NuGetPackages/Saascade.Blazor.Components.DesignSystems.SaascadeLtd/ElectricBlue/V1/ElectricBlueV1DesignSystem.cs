@@ -12,7 +12,7 @@ public class ElectricBlueV1DesignSystem : IDesignSystem
 
 
     public string? GetComponentName(BaseComponent component)
-        => component.GetType().Name switch  // component.GetStandardizedComponentName() ?? 
+        => component.GetStandardizedComponentName() ?? component.GetType().Name switch
         {
             nameof(A) => "a",
             nameof(H1) => "h1",
